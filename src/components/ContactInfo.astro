@@ -1,6 +1,8 @@
 ---
 import Catch from '../components/Catch.astro';
 import '../styles/css/contactInfo.css';
+
+const { isRecruitLink = false } = Astro.props;
 ---
 
 <aside class="unitContent contactInfo">
@@ -13,6 +15,12 @@ import '../styles/css/contactInfo.css';
     <div class="imgSet">
       <img src="/imageFile/works_more.png" alt="" class="moreImg">
     </div>
+    { 
+      isRecruitLink && 
+      <div class="moreArea">
+        <a href="/join-us" class="md_btn md_btn--big md_btn--contact">採用情報はこちらから</a>
+      </div>
+    }
     <div class="moreArea">
       <a href="/contact" class="md_btn md_btn--big md_btn--contact">ご相談はこちらから</a>
     </div>

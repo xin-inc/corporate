@@ -10,7 +10,7 @@
 /*----------------------------------------
  works
 ----------------------------------------*/
-.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 5%; margin-top: 300px; padding: 0;
+.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 5%; margin-top: 200px; padding: 0;
   .worksSet { position: relative;
     &:before { display: none; content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 50vw; height: 730px; background-size: contain; background-position: center; background-repeat: no-repeat; transform: translate(-50%,-50%); z-index: -1; }
     .linkArea { position: relative; display: block; padding: 60px 40px; color: #000; transform: skew(8deg);
@@ -55,7 +55,7 @@
         }
       }
     }
-    & + .worksSet { margin-top: 210px; }
+    & + .worksSet { margin-top: 150px; }
     &:nth-child(2n) {
       .linkArea{ transform: skew(-8deg);
         .borderSection { 

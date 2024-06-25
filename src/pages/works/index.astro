@@ -5,6 +5,7 @@ import PageTitle from '../../components/PageTitle.astro';
 import ContentTitle from '../../components/ContentTitle.astro';
 import Catch from '../../components/Catch.astro';
 import WorkUnit from '../../components/WorkUnit.astro';
+import ContactInfo from '../../components/ContactInfo.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -50,6 +51,8 @@ const works = (await getCollection('works'));
       ))
     }
     </div>
+
+    <ContactInfo />
 
 	</div>
 </Layout>
