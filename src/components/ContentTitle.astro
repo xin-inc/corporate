@@ -1,17 +1,13 @@
 ---
 const { title, rubi, isLeft } = Astro.props;
-const titleClass = isLeft ? 'titleSet title--left' : 'titleSet title--right';
+const titleClass = isLeft ? 'unitTitle unitTitle--left' : 'unitTitle unitTitle--right';
+
+import '../styles/css/contentTitle.css';
 ---
 
-<div class="unitTitle">
-  <div class={titleClass}>
+<div class={titleClass}>
+  <div class="titleSet">
     <div class="title">{title}</div>
     <h3 class="rubi">{rubi}</h3>
   </div>
 </div>
-
-<style>
-  .unitTitle { padding: 0 40px; }
-  .unitTitle .title { font-size: 80px; }
-  h3 { margin: 0; padding: 0; }
-</style>

@@ -769,6 +769,7 @@ textarea { position: relative; height: $h_form; padding: 0; background-color: tr
 	// For SP
 	@media only screen and (max-width: $w_break_sp) { width: calc(100vw - 80px); }
 	.unitTitle { position: relative; display: flex;  padding: 0 40px;
+		/*
 		.titleSet { position: relative;
 			&:before { content: ""; position: absolute; top: 50%; left: -40px; display: inline-block; width: 1000px; height: 3px; background-color: #000; transform: translateX(-100%); }
 			.title { font-size: 100px; color: #fff; font-weight: 300; letter-spacing: $ls_medium; white-space: nowrap; }
@@ -777,6 +778,7 @@ textarea { position: relative; height: $h_form; padding: 0; background-color: tr
 				&--right { right: 45px; }
 			}
 		}
+			*/
 		& + .unitContent { margin-top: 280px; }
 		// For tablet
 		@media only screen and (max-width: 1000px) { padding: 0 ;
