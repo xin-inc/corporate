@@ -1,13 +1,16 @@
 ---
 import ServiceMethod from '../components/ServiceMethod.astro';
+import ContentTitle from '../components/ContentTitle.astro';
 
-const { title, description, methods } = Astro.props;
+const { key, title, description, methods, num } = Astro.props;
 const cn = 'serviceUnit';
+const english = key.toUpperCase();
+const isLeft = num % 2 === 1;
 ---
 
 <div class={`${cn}`}>
-  <h4 class={`${cn}_title`}>{title}</h4>
-  <p class={`${cn}_description`} set:html={description}></p>
+  <ContentTitle title={english} rubi={title} isLeft={isLeft}></ContentTitle>
+  <p class:list={[`${cn}_description`, { isRight: !isLeft }]} set:html={description}></p>
   <div class={`${cn}_methods`}>
     {
       methods.map(method => (

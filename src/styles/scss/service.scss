@@ -12,6 +12,11 @@
  Service
 ----------------------------------------*/
 
+.serviceUnitWrap {
+  margin: 60px 0 0;
+  padding: 0 0;
+}
+
 .serviceSectionUnit {
   margin: 60px 0 0;
   padding: 0 60px;
@@ -19,31 +24,50 @@
     font-size: clamp(24px,2.5vw,30px);
     font-weight: bold;
     letter-spacing: $ls_small;
+    text-align: center;
+  }
+  .catchUnit {
+    text-align: center;
+  }
+  &_bigCatch {
+    font-size: clamp(32px,3vw,44px);
+    font-weight: bold;
+    line-height: $lh_medium;
+    margin-top: 20px;
+    .partnerSection & { text-align: center; }
   }
   &_catch {
     font-size: clamp(16px,3vw,24px);
     line-height: $lh_small;
     margin-top: 20px;
     white-space: nowrap;
+    .partnerSection & { text-align: center; }
   }
   &_copy {
     font-size: 16px;
     line-height: $lh_small;
     letter-spacing: $ls_small;
     margin-top: 20px;
+    .partnerSection & { text-align: center; }
   }
+
 }
 
 .serviceDesignUnit {
   margin: 60px 0 0;
-  padding: 0 60px;
+  padding: 0;
   &_title {
+    background-color: #000;
+    color: #FFF;
+    display: inline-block;
     font-size: clamp(16px,2.5vw,24px);
     font-weight: bold;
     letter-spacing: $ls_small;
+    line-height: $lh_medium;
+    padding: 0 10px;
   }
   &_rubi {
-    font-size: clamp(24px,3vw,30px);
+    font-size: clamp(32px,3vw,44px);
     font-weight: bold;
     line-height: $lh_small;
     margin-top: 20px;
@@ -57,27 +81,31 @@
   }
 }
 
-.serviceUnitWrap {
-  margin: 60px 0 0;
-  padding: 0 90px;
-}
-
 .serviceFlow {
   margin: 80px 0 0;
-  padding: 0 90px 200px;
+  padding: 0 0 200px;
   position: relative;
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -60%; left: 50%; 
+    z-index: -1;
+    width: 170vw; height: 190%; background: url(/imageFile/service/bg_flow_.svg) no-repeat center;
+    background-size: contain; transform: translateX(-50%);
+  }
   &_img {
     width: 100%;
   }
   &_elem {
     position: absolute;
-    top: 60%;
+    top: 55%;
     width: 40%;
     &.experience {
-      left: 9.5%;
+      left: 5.25%;
     }
     &.product {
-      right: 9%;
+      right: 5.75%;
     }
   }
   &_elemTitle {
@@ -88,6 +116,7 @@
     span {
       background-color: #000;
       color: #FFF;
+      font-weight: bold;
       letter-spacing: $ls_small;
       line-height: $lh_medium;
       padding: 0 10px;
@@ -95,7 +124,7 @@
   }
   &_elemRubi {
     display: flex;
-    font-size: 24px;
+    font-size: clamp(32px,3vw,44px);
     font-weight: bold;
     justify-content: center;
     margin-top: 15px;
@@ -110,19 +139,8 @@
 }
 
 .serviceUnit {
-  margin: 120px 0 0;
+  margin: 160px 0 0;
   position: relative;
-  &::before {
-    content: '';
-    background-color: #f4f4f4;
-    display: inline-block;
-    border-radius: 4px;
-    height: 100%;
-    left: -30px;
-    position: absolute;
-    top: 0;
-    width: 5px;
-  }
   &_title {
     font-size: 32px;
     font-weight: bold;
@@ -134,33 +152,59 @@
     letter-spacing: $ls_small;
     line-height: $lh_small;
     margin-top: 10px;
+    padding: 0 40px;
+    &.isRight { text-align: right; }
   }
   &_methods {
     display: grid;
-    gap: 40px;
+    gap: 8%;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 50px 0 0;
+    margin: 120px 0 0;
     width: 100%;
+    padding: 0 0 100px;
+    position: relative;
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: -130px; left: -15%; 
+      z-index: -1;
+      width: 120%; height: 120%; background: url(/imageFile/service/bg_method_1.svg) no-repeat center;
+      background-size: contain;
+      transform: scale(.9);
+    }
+  }
+  &:nth-child(2n) {
+    .serviceUnit_methods {
+      &:before {
+        left: -10%; 
+        width: 120%; height: 120%;
+        background-image: url(/imageFile/service/bg_method_2.svg);
+      }
+    }
   }
 }
 
 .methodUnit {
   &_title {
-    font-size: 16px;
+    display: flex;
+    align-items: end;
+    font-size: clamp(16px,2.5vw,24px);
     font-weight: bold;
+    height: 120px;
   }
   &_description {
-    font-size: 12px;
+    font-size: clamp(14px,2.5vw,16px);
     line-height: 1.6;
     text-align: justify;
-    padding: 20px 0 40px;
+    padding: 30px 0 40px;
   }
 }
 
 
 .serviceSubUnit {
   margin: 60px 0 0;
-  padding: 0 60px;
+  padding: 0 0;
   &_title {
     font-size: 20px;
     font-weight: bold;
@@ -169,33 +213,110 @@
   }
   &_wrap {
     display: grid;
-    gap: 50px;
+    gap: 5%;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 30px 30px 0;
+    margin: 150px 30px 0;
     position: relative;
-    &::before {
-      content: '';
-      background-color: #f4f4f4;
-      display: inline-block;
-      border-radius: 4px;
-      height: 100%;
-      left: -30px;
-      position: absolute;
-      top: 0;
-      width: 5px;
-    }
+  }
+  &_wrap2 {
+    display: grid;
+    gap: 10%;
+    grid-template-columns: 1fr 1fr;
+    margin: 150px 30px 0;
+    position: relative;
   }
 }
 .teamUnit {
+  position: relative;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -130px; left: -40%; 
+    z-index: -1;
+    width: 170%; height: 170%; background: url(/imageFile/service/bg_project1.svg) no-repeat center;
+    background-size: contain;
+  }
+  &:nth-child(2) {
+    &:before {
+      left: -25%; 
+      width: 150%; height: 150%;
+      background-image: url(/imageFile/service/bg_project2.svg);
+    }
+  }
+  &:nth-child(3) {
+    &:before {
+      left: -30%; 
+      width: 160%; height: 160%;
+      background-image: url(/imageFile/service/bg_project3.svg);
+    }
+  }
   &_title {
-    font-size: 16px;
+    font-size: clamp(16px,2.5vw,24px);
     font-weight: bold;
   }
   &_description {
-    font-size: 12px;
+    font-size: clamp(14px,2.5vw,16px);
+    line-height: 1.6;
     line-height: 1.6;
     text-align: justify;
     padding: 20px 0 40px;
+  }
+}
+
+.assignUnit {
+  position: relative;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -130px; left: -40%; 
+    z-index: -1;
+    width: 170%; height: 170%; background: url(/imageFile/service/bg_assign1.svg) no-repeat center;
+    background-size: contain;
+  }
+  &:nth-child(2) {
+    &:before {
+      left: -25%; 
+      width: 150%; height: 150%;
+      background-image: url(/imageFile/service/bg_assign2.svg);
+    }
+  }
+  &_title {
+    font-size: clamp(16px,2.5vw,24px);
+    font-weight: bold;
+  }
+  &_description {
+    font-size: clamp(14px,2.5vw,16px);
+    line-height: 1.6;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 20px 0 40px;
+  }
+  &_problem {
+    margin-top: 50px;
+  }
+}
+
+.problemUnit {
+  &_label { font-weight: bold; }
+  &_problems {
+    width: 50%;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: clamp(14px,2.5vw,16px);
+      margin-top: 20px;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        background: url(/imageFile/service/icon_problem.svg) no-repeat left center;
+        background-size: contain;
+      }
+    }
   }
 }
 
@@ -203,10 +324,11 @@
   margin: 60px 0 0;
   padding: 0 60px;
   &_title {
-    font-size: clamp(24px,3vw,30px);
+    font-size: clamp(32px,3vw,44px);
     font-weight: bold;
     line-height: $lh_small;
     white-space: nowrap;
+    text-align: center;
   }
   &_wrap {
     display: grid;
@@ -219,11 +341,17 @@
   background-color: #fff;
   padding: 20px;
   &_title {
-    font-size: 18px;
+    font-size: clamp(16px,2.5vw,24px);
     font-weight: bold;
     letter-spacing: $ls_small;
     line-height: $lh_small;
     text-align: center;
+    .material-symbols-rounded {
+      font-size: 40px;
+      display: block;
+      margin-bottom: 15px;
+      text-align: center;
+    }
   }
   &_dec {
     font-size: 14px;

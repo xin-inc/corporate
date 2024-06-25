@@ -41,7 +41,8 @@ import '../styles/css/service.css';
 			<div class="serviceSectionUnit">
 				<p class="serviceSectionUnit_title">SERVICE DESIGN</p>
 				<Catch>
-					経営とビジネスの旅路に寄り添う伴走者のように。<br />想いと成果にフルコミットでお力になります。
+					私たちのサービスに、決まったカタチはありません。<br />
+					コトのデザイン、モノのデザインそれぞれの領域で、プロジェクトに合わせたメソッドを実践します。
 				</Catch>
 				<div class="serviceFlow">
 					<img src="/imageFile/service/service_flow.svg" class="serviceFlow_img" />
@@ -77,11 +78,13 @@ import '../styles/css/service.css';
 			</div>
 			<div class="serviceUnitWrap">
 			{
-				XINService.experienceDesign.map(step => (
+				XINService.experienceDesign.map((step, index) => (
 					<ServiceUnit
+						key={step.key}
 						title={step.title}
 						description={step.description}
-						methods={step.methods} />
+						methods={step.methods}
+						num={index + 1} />
 				)
 			)}
 			</div>
@@ -100,28 +103,30 @@ import '../styles/css/service.css';
 			</div>
 			<div class="serviceUnitWrap">
 			{
-				XINService.productDesign.map(step => (
+				XINService.productDesign.map((step, index) => (
 					<ServiceUnit
+						key={step.key}
 						title={step.title}
 						description={step.description}
-						methods={step.methods} />
+						methods={step.methods}
+						num={index + 1} />
 				)
 			)}
 			</div>
 		</section>
 
 		<section class="unitContent">
-			<div class="serviceSectionUnit">
+			<div class="serviceSectionUnit partnerSection">
 				<p class="serviceSectionUnit_title">AS A PARTNER</p>
-				<h2 class="serviceSectionUnit_catch">理想を、共に実現するパートナーとして</h2>
-				<p class="serviceSectionUnit_copy">
+				<h2 class="serviceSectionUnit_bigCatch">いっしょに理想を実現する<br />パートナーとして</h2>
+				<Catch>
 					私たちには大規模サイトの体験設計やリニューアル、グロースハックまで幅広いPJ経験と知見があります。<br />
 			お客様のニーズや状況ごとに必要な対応をスピーディーかつ的確にPJを進行します。
-				</p>
+				</Catch>
 			</div>
 
 			<div class="serviceSubUnit">
-				<h4 class="serviceSubUnit_title">XINのプロジェクトマネジメント</h4>
+				<ContentTitle title="PROJECT" rubi="理想に伴走" isLeft={true}></ContentTitle>
 				<div class="serviceSubUnit_wrap">
 					<dl class="teamUnit">
 						<dt class="teamUnit_title">分業制ではなくワンチーム体制</dt>
@@ -141,17 +146,41 @@ import '../styles/css/service.css';
 			</div>
 
 			<div class="serviceSubUnit">
-				<h4 class="serviceSubUnit_title">状況に応じた形で参加します</h4>
-				<div class="serviceSubUnit_wrap">
-					<dl class="teamUnit">
-						<dt class="teamUnit_title">PJや開発チームとして参加</dt>
-						<dd class="teamUnit_description">すべてのフェーズをワンチームで担当。<br />
+				<ContentTitle title="ASSIGN" rubi="柔軟なアサイン" isLeft={false}></ContentTitle>
+				<div class="serviceSubUnit_wrap2">
+					<dl class="assignUnit">
+						<dt class="assignUnit_title">PJや開発チームとして参加</dt>
+						<dd class="assignUnit_description">すべてのフェーズをワンチームで担当。<br />
 							フェーズ間の引継ぎが発生しないため、初めに描いた理想をシュリンクさせることなく実現させます。<br />
 							同じメンバーだからこそ、フェーズを遡る検討にも対応可能。後から生まれたご要望にもお応えします。</dd>
+						<dd class="assignUnit_problem">
+							<dl class="problemUnit">
+								<dt class="problemUnit_label">こんなお困りごとを解消します</dt>
+								<dd class="problemUnit_problems">
+									<ul>
+										<li>グロース施策だけでは成長に限界が来ており、大きな変革が必要</li>
+										<li>インハウスデザイナーはいるが、通常業務が忙しく対応に手が回らない</li>
+										<li>部門ごとに課題が分散しており、組織を横断しての対応が必要</li>
+									</ul>
+								</dd>
+							</dl>
+						</dd>
 					</dl>
-					<dl class="teamUnit">
-						<dt class="teamUnit_title">デザイナーリソースの提供</dt>
-						<dd class="teamUnit_description">週1回以上のオンラインMTGを基本としており、非同期的なコミュニケーション</dd>
+					<dl class="assignUnit">
+						<dt class="assignUnit_title">デザイナーリソースの提供</dt>
+						<dd class="assignUnit_description">週1回以上のオンラインMTGを基本としており、非同期的なコミュニケーション</dd>
+						<dd class="assignUnit_problem">
+							<dl class="problemUnit">
+								<dt class="problemUnit_label">こんなお困りごとを解消します</dt>
+								<dd class="problemUnit_problems">
+									<ul>
+										<li>グロース施策だけでは成長に限界が来ており、大きな変革が必要</li>
+										<li>インハウスデザイナーはいるが、通常業務が忙しく対応に手が回らない</li>
+										<li>部門ごとに課題が分散しており、組織を横断しての対応が必要</li>
+									</ul>
+								</dd>
+							</dl>
+						</dd>
 					</dl>
 				</div>
 			</div>
@@ -162,35 +191,51 @@ import '../styles/css/service.css';
 				<h3 class="trialUnit_title">まずは、お試しも可能です</h3>
 				<div class="trialUnit_wrap">
 					<dl class="trialElement">
-						<dt class="trialElement_title">クリエイティブ<br>壁打ちサービス</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							forum
+							</span>クリエイティブ<br>壁打ちサービス</dt>
 						<dd class="trialElement_dec">短時間低単価、お試しデザインコンサルサービス</dd>
 					</dl>
 					<dl class="trialElement">
-						<dt class="trialElement_title">ライブ<br>プロトタイピング</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							border_color
+							</span>ライブ<br>プロトタイピング</dt>
 						<dd class="trialElement_dec">MTG中に形にしながら検討を加速、意思決定を支援</dd>
 					</dl>
 					<dl class="trialElement">
-						<dt class="trialElement_title">デザイン人材<br>育成支援</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							diversity_1
+							</span>デザイン人材<br>育成支援</dt>
 						<dd class="trialElement_dec">XIN独自の育成メソッドを社内デザイナーに適用</dd>
 					</dl>
 					<dl class="trialElement">
-						<dt class="trialElement_title">UI/UX<br>レビュー</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							checklist
+							</span>UI/UX<br>レビュー</dt>
 						<dd class="trialElement_dec">Webサイト/アプリのUI/UXを徹底レビュー</dd>
 					</dl>
 					<dl class="trialElement">
-						<dt class="trialElement_title">デザイナー<br>単月アサイン</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							calendar_month
+							</span>デザイナー<br>単月アサイン</dt>
 						<dd class="trialElement_dec">まずはお試し、XINのデザイナー価値体験</dd>
 					</dl>
 					<dl class="trialElement">
-						<dt class="trialElement_title">デザイン<br>サブスク</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							bigtop_updates
+							</span>デザイン<br>サブスク</dt>
 						<dd class="trialElement_dec">月額低額でデザインの諸々をまるっと対応</dd>
 					</dl>
 					<dl class="trialElement">
-						<dt class="trialElement_title">グロースハック<br>支援</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							trending_up
+							</span>グロースハック<br>支援</dt>
 						<dd class="trialElement_dec">グロース周りの改善施策を内部デザイナーのように</dd>
 					</dl>
 					<dl class="trialElement">
-						<dt class="trialElement_title">ブレスト＆<br>アイディエーション</dt>
+						<dt class="trialElement_title"><span class="material-symbols-rounded">
+							emoji_objects
+							</span>ブレスト＆<br>アイディエーション</dt>
 						<dd class="trialElement_dec">デザイン思考で会議の進行に新しいひらめきを</dd>
 					</dl>
 				</div>
