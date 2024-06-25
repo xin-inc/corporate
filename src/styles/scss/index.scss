@@ -95,7 +95,7 @@
 			}
 		}
 		// For SP
-		@media only screen and (max-width: $w_break_sp) {
+		@media only screen and (max-width: $w_break_sp) { width: calc(100vw - 80px);
 			.contentArea {
 				.contentSet { 
 					.imgCell { padding-right: 30px; width: 530px; text-align: right;
@@ -343,7 +343,7 @@
 		// For tablet
 		@media only screen and (max-width: 1000px) { 
 			&:before { top: 270px; }
-			.unitContent { 
+			.unitContent { width: calc(100vw - 80px);
 				.contentArea {
 					.contentSet { flex-wrap: wrap;
 						.copyCell { font-size: 22px; 
@@ -690,9 +690,9 @@
 		// For SP
 		@media only screen and (max-width: $w_break_sp) { margin-top: 140px;
 			.unitContent {
-				.worksArea{ margin-top: 100px; padding: 0 5px;
+				.worksArea{ margin-top: 50px; padding: 0 5px; grid-template-columns: 1fr; gap: 5%;
 					.worksSet { position: relative; 
-						&:before { height: 410px; }
+						&:before { height: 300px; }
 						.linkArea { padding: 30px 30px 40px; transform: skew(6deg);
 							.borderSection {
 								&:before { left: 80px; width: calc(100% - 80px); height: 3px; }
@@ -991,7 +991,7 @@
 			}
 			.unitContent {
 				.contentArea {
-					.contactSet { display: flex; flex-direction: column-reverse; justify-content: space-between; align-items: center; margin-top: 100px;
+					.contactSet { display: flex; flex-direction: column-reverse; justify-content: space-between; align-items: center; margin-top: 50px;
 						.imgCell { margin-top: 20px; width: 100%;
 							.contactCatch { width: 100%; height: auto; }
 						}
@@ -1713,6 +1713,24 @@
 			margin-top: 4px;
     }
   }
+	// For SP
+	@media only screen and (max-width: $w_break_sp) { 
+		padding: 20px;
+		&_catch {
+			font-size: 20px;
+		}
+		&_btnCatch {
+			font-size: 16px;
+		}
+		&_inner {
+			grid-template-columns: 1fr;
+			gap: 10px;
+			margin-top: 20px;
+		}
+		&_elem {
+			font-size: 14px;
+		}
+	}
 }
 
 .memberSwiper  {
@@ -1720,10 +1738,17 @@
   margin-top: 100px;
   position: relative;
   &:before { content: ''; display: inline-block; position: absolute; top: 80%; right: inherit; left: 50%; width: 100vw; min-width: 1700px; height: 100%; background: url(/imageFile/member_bg.svg) no-repeat center center; background-size: contain; transform: translate(-50%,-100%); }
+	@media only screen and (max-width: $w_break_sp) {
+		width: calc(100% - 20px);
+  	margin-top: 50px;
+	}
 }
 
 .topNewsList {
 	padding: 0 40px;
+	@media only screen and (max-width: $w_break_sp) {
+		padding: 0;
+	}
 }
 .topNewsContent {
 	border-top: 1px solid #CCC;
@@ -1749,5 +1774,16 @@
 	}
 	.title {
 		display: inline-block;
+	}
+	@media only screen and (max-width: $w_break_sp) {
+		a {
+			padding: 10px;
+			font-size: 14px;
+		}
+	}
+	.label {
+		flex-shrink: 0;
+		font-size: 12px;
+		padding: 4px;
 	}
 }

@@ -65,13 +65,56 @@ body { --sb-track-color: #ffffff; --sb-thumb-color: #aaa; --sb-size: 16px; scrol
 		margin-top: 1.5em;
 		font-size: clamp(16px,1.5vw,20px); line-height: $lh_medium; letter-spacing: $ls_small;
 	}
+	.catchUnit {
+		font-size: 20px;
+    letter-spacing: 0.2em;
+    line-height: 2;
+    margin-top: 1em;
+		&.level2 {
+			font-size: 16px;
+		}
+		&.level3 {
+			font-size: 14px;
+		}
+	}
+
+	// For SP
+	@media only screen and (max-width: $w_break_sp) { 
+		margin: 50px auto 0;
+		width: calc(100vw - 80px);
+		&.pageTopCopy {
+			.catchUnit {
+				padding-left: 0px;
+			}
+		}
+		.catchUnit {
+			font-size: 14px;
+			&.level2 {
+				font-size: 13px;
+			}
+			&.level3 {
+				font-size: 12px;
+			}
+		}
+	}
 }
 
 .breadCrumbs {
+	display: flex;
+  font-size: 15px;
+  gap: 10px;
+  margin-top: 100px;
 	position: absolute;
 	top: 50px;
 	left: 40px;
 	z-index: 20;
+	// For SP
+	@media only screen and (max-width: $w_break_sp) { 
+		font-size: 12px;
+		top: 0px;
+		left: 0px;
+		margin-top: 40px;
+	}
 }
 
 

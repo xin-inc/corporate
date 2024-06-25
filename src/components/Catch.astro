@@ -8,18 +8,3 @@ const cn = 'catchUnit';
 <p class:list={[cn, { level2: level == 2, level3: level == 3 }]}>
   <slot />
 </p>
-
-<style>
-  .catchUnit {
-    font-size: 20px;
-    letter-spacing: 0.2em;
-    line-height: 2;
-    margin-top: 1em;
-  }
-  .level2 { 
-    font-size: 16px;
-  }
-  .level3 { 
-    font-size: 14px;
-  }
-</style>

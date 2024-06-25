@@ -46,6 +46,18 @@ import '../styles/css/swiper.css';
     slidesPerView: 3,
     spaceBetween: 50,
     centeredSlides: true,
+    // 表示幅による分岐
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      }
+    },
+    
   }
 
   const swiper = new Swiper('.swiper', swiperConfig)

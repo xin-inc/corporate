@@ -42,7 +42,7 @@
 }
 // For SP
 @media only screen and (max-width: $w_break_sp) {
-  .pageTitle {
+  .pageTitle { margin: 40px 0 20px; padding: 100px 0 0px;
     .titleSet {
       .subTitle {padding: 0 8px; height: 20px; line-height: 20px; font-size: 10px; }
       .title { top: calc(50% + 15px); height: 90px;
