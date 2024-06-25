@@ -1,4 +1,5 @@
 ---
+import Layout from '../layouts/PageTemplate.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import PageTitle from '../components/PageTitle.astro';
@@ -7,18 +8,17 @@ import Footer from '../components/Footer.astro';
 
 import MemberListTop from '../components/MemberListTop.astro';
 
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+// お知らせの取得
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('news')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 
 import '../styles/css/index.css';
 ---
 
-<!DOCTYPE html>
-<html lang="ja">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
+<Layout title="top" description="">
 
 		<!-- md_contentUnit--panel -->
 		<div id="top" class="md_contentUnit md_contentUnit--panel">
@@ -49,6 +49,20 @@ import '../styles/css/index.css';
 			</div>
 		</div>
 		<!-- /md_contentUnit--panel -->
+
+		<div class="md_contentUnit">
+			<ul class="topNewsList">
+				{
+					posts.map((post) => (
+						<li class="topNewsContent">
+							<a href={`/news/${post.slug}/`}>
+								<span class="label">NEWS</span><span class="date">{post.data.pubDate}</span><span class="title">{post.data.title}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
 
 		<!-- md_contentUnit--about -->
 		<div class="md_contentUnit md_contentUnit--category md_contentUnit--about js_animeReveal02">
@@ -245,9 +259,6 @@ import '../styles/css/index.css';
 								<p class="title">
 									新規事業の未来構想を見える化<br class="spHide"><span class="sp--period"></span>目指すべきかたちを定義し、事業化をブースト
 								</p>
-								<p class="desc">
-									クライアントは、某大手インフラ企業。<br class="spHide">新規事業の立ち上げに際して、<span class="bold">経営層のビジョンが実務を担う部門に伝えられていないことが課題。</span>
-								</p>
 								<div class="imgSection">
 									<img src="imageFile/works_catch001.svg" alt="case1" class="worksCatchImg">
 								</div>
@@ -266,9 +277,6 @@ import '../styles/css/index.css';
 								<div class="label">CASE<span class="bold">2</span></div>
 								<p class="title">
 									あらゆる可能性を<br class="spShow">最速で実現<br>デザインスプリントで<br class="spShow">サービスの理想を追求
-								</p>
-								<p class="desc">
-									某大手BtoBtoCサービス運営企業の新規事業立ち上げチーム。<br class="spHide">新サービスを立ち上げたいが、<span class="bold">未知の領域でイメージが湧かず行き詰っていた。</span>
 								</p>
 								<div class="imgSection">
 									<img src="imageFile/works_catch002.svg" alt="case2" class="worksCatchImg">
@@ -436,6 +444,4 @@ import '../styles/css/index.css';
 		</div>
 		<!-- /md_contentUnit--join -->
 
-		<Footer />
-	</body>
-</html>
+</Layout>

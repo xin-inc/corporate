@@ -511,17 +511,20 @@
 	}
 	&.md_contentUnit--works { margin-top: 600px;
 		.unitContent {
-			.worksArea{ margin-top: 300px; padding: 0 60px ;
+			.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 5%; margin-top: 300px; padding: 0 60px;
 				.worksSet { position: relative;
-					&:before { content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 100vw; height: 730px; background-size: contain; background-position: center; background-repeat: no-repeat; transform: translate(-50%,-50%); z-index: -1; }
+					&:before { display: none; content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 50vw; height: 730px; background-size: contain; background-position: center; background-repeat: no-repeat; transform: translate(-50%,-50%); z-index: -1; }
 					.linkArea { position: relative; display: block; padding: 60px 80px; color: #000; transform: skew(8deg);
 						.borderSection { position: absolute; top:0; right: 0; width: 100%; height: 100%; z-index: 0;
 							&:before, &:after { content: ""; position: absolute; top: 0; left: 0; display: inline-block; height: 8px; background-color: #000; }
 							&:before { left: 170px; width: calc(100% - 170px); height: 8px; }
 							&:after { top: 60px; width: 8px; height: calc(100% - 60px); }
+							&--top {
+								&:before { display: none; }
+							}								
 							&--bottom {
 								&:before { top: 100% ; left: 0; width: 70%; }
-								&:after { top: 0; height: 40%; left: 100%; }
+								&:after { display: none; top: 0; height: 40%; left: 100%; }
 							}
 							.btnSide { position: absolute; bottom: 0; right: 30%; white-space: nowrap; transform: skew(-8deg) translate(100%, 50%);
 								.md_btn {
@@ -535,7 +538,7 @@
 							.label { position: absolute; top: -17%; left: -6%; font-size: clamp(22px,2vw,30px); font-weight: bold; font-style: italic; letter-spacing: $ls_small; transform: translate(-50%,-50%);
 								.bold { padding-left: pxtovw(10); font-size:  clamp(50px,4vw,70px); font-weight: bold; font-style: italic; }
 							}
-							.title { font-size: clamp(28px,2.7vw,40px); font-weight: bold; line-height: $lh_medium; letter-spacing: $ls_small; }
+							.title { font-size: clamp(20px,2.7vw,32px); font-weight: bold; line-height: $lh_medium; letter-spacing: $ls_small; }
 							.desc { width: 80%; margin-top: pxtovw(40); font-size: 20px; line-height: $lh_medium;
 								.bold { font-weight: bold; }
 							}
@@ -557,11 +560,11 @@
 					&:nth-child(2n) {
 						.linkArea{ transform: skew(-8deg);
 							.borderSection { 
-								&:before { left: 0; width: calc(100% - 170px); }
-								&:after { top: 0; height: 40%; }
+								&:before { display: block; left: 0; width: calc(100% - 170px); }
+								&:after { display: block; top: 0; height: 40%; }
 								&--bottom {
-									&:before { left: 25%; width: 75%; transform: translateY(-100%); }
-									&:after { top: 60px; height: calc(100% - 60px); left: 100%; transform: translateX(-100%); }
+									&:before { display: block; left: 25%; width: 75%; transform: translateY(-100%); }
+									&:after { display: block; top: 60px; height: calc(100% - 60px); left: 100%; transform: translateX(-100%); }
 								}
 								.btnSide { right: 70%; transform: skew(8deg) translate(0%, 50%); }
 							}
@@ -576,7 +579,7 @@
 						}
 					}
 					&:first-child { z-index: 3;
-						&:before { top: calc(50% + 30px); left: 400px; width: 115vw; min-width: 1800px; background-image: url(../../imageFile/work_bg_01.svg); }
+						&:before { top: calc(50% + 30px); left: -200px; width: 60vw; min-width: 900px; background-image: url(../../imageFile/work_bg_01.svg); }
 						.linkAreaWrap {
 							.imgSection { 
 								.worksCatchImg { width: pxtovw(120); min-width: 100px; }
@@ -1717,4 +1720,34 @@
   margin-top: 100px;
   position: relative;
   &:before { content: ''; display: inline-block; position: absolute; top: 80%; right: inherit; left: 50%; width: 100vw; min-width: 1700px; height: 100%; background: url(/imageFile/member_bg.svg) no-repeat center center; background-size: contain; transform: translate(-50%,-100%); }
+}
+
+.topNewsList {
+	padding: 0 40px;
+}
+.topNewsContent {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	a {
+		align-items: center;
+		color: #222;
+		display: flex;
+		font-size: 16px;
+		gap: 20px;
+		padding: 20px;
+		width: 100%;
+	}
+	.label {
+		display: inline-block;
+		background-color: #000;
+		color: #FFF;
+		padding: 10px;
+		font-size: 16px;
+	}
+	.date {
+		display: none;
+	}
+	.title {
+		display: inline-block;
+	}
 }

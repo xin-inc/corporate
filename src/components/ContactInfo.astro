@@ -1,19 +1,20 @@
 ---
-
+import Catch from '../components/Catch.astro';
+import '../styles/css/contactInfo.css';
 ---
 
-<aside class="unitContent">
+<aside class="unitContent contactInfo">
   <div class="moreArea">
-    <p class="copy">
+    <Catch>
       その他、会員数100万人を超えるメディアサービスや新卒採用サイトなど、<br class="spShow">多数の実績がございます。<br>
       ひとつひとつのプロジェクトに対し真摯に向き合い、<br class="spHide">
       フルオーダーメイドでニーズにお応えするスタイルを<br class="spShow">信条としています。
-    </p>
+    </Catch>
     <div class="imgSet">
-      <img src="imageFile/works_more.png" alt="" class="moreImg">
+      <img src="/imageFile/works_more.png" alt="" class="moreImg">
     </div>
-    <div>
-      <a href="/contact">ご相談はこちらから</a>
+    <div class="moreArea">
+      <a href="/contact" class="md_btn md_btn--big md_btn--contact">ご相談はこちらから</a>
     </div>
   </div>
 </aside>
