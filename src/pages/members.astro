@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/PageTemplate.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import PageTitle from '../components/PageTitle.astro';
+import ContentTitle from '../components/ContentTitle.astro';
+import Catch from '../components/Catch.astro';
+
+import MemberListWrapper from '../components/MemberListWrapper.astro';
+
+import '../styles/css/member.css';
+---
+
+<Layout title="Members" description="">
+	<div id="members" class="md_contentUnit">
+		<BreadCrumbs
+      pages={[
+        {name: 'TOP', url: '/'},
+        {name: 'MEMBERS', url: '/members'},
+      ]}
+      />
+
+		<PageTitle
+				subTitle="WHO WE ARE"
+				svg="/imageFile/member_title.svg">
+				<h2 class="rubi">私たちの<br />想い</h2>
+		</PageTitle>
+
+		<div class="unitContent spaceLess pageTopCopy">
+			<Catch>
+				私たちはXINである以前に、ひとりひとりが個性溢れるクリエイター。<br>
+				ここに集まった個性のひとつひとつが<br>
+				XINを形作っています。
+			</Catch>
+		</div>
+
+		<MemberListWrapper isTop={false} />
+
+	</div>
+</Layout>

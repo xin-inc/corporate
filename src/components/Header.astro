@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+import xinLogo from '../assets/XIN_logo.svg';
+---
+
+<!-- md_header--top -->
+<header class="md_header md_header--top">
+	<h1 class="logo">
+		<a href="/" class="header--logo isSmall"></a>
+	</h1>
+</header>
+<!-- /md_header--top -->
+
+<!-- md_header--bottom -->
+<header id="header" class="md_header md_header--bottom">
+	<nav class="nav">
+		<ul class="md_tab">
+			<li class="tab"><a href="/service" class="md_btn">SERVICE</a></li>
+			<li class="tab"><a href="/works" class="md_btn">WORKS</a></li>
+			<li class="tab"><a href="/members" class="md_btn">MEMBERS</a></li>
+			<li class="tab"><a href="/contact" class="md_btn">CONTACT</a></li>
+			<li class="tab"><a href="/join-us" class="md_btn">JOIN US</a></li>
+			<li class="tab"><a href="/company" class="md_btn">COMPANY</a></li>
+		</ul>
+	</nav>
+	<button class="md_btn md_btn--menu md_linkPart js_drawerOpen" data-drawer="md_drawer--menu">
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</button>
+</header>
+<!-- /md_header--bottom -->
+
+<div class="md_floatMenu md_floatMenu--left">
+	<div class="catch">株式会社XIN（サイン）</div>
+</div>
+
+<div class="md_floatMenu md_floatMenu--right">
+	<div class="catch">Innovation Design Firm</div>
+</div>
+
+<style>
+
+</style>

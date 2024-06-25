@@ -1,0 +1,22 @@
+---
+const { page, num } = Astro.props;
+---
+
+<li property="itemListElement" typeof="ListItem">
+  <a property="item" typeof="WebPage"
+      href={page.url}>
+    <span property="name">{page.name}</span></a>
+  <meta property="position" content={num}>
+</li>
+
+<style>
+a {
+  color: #A7A7A7;
+  text-decoration: underline;
+}
+li::after {
+  content: '>';
+  padding: 0 0.5em;
+  margin: 0 0.5em:
+}
+</style>

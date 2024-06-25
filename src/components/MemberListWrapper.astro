@@ -1,0 +1,67 @@
+---
+import { Members } from '../content/Members.js';
+import MemberList from '../components/MemberList.astro';
+import MemberModal from '../components/MemberModal.astro';
+import ContentTitle from '../components/ContentTitle.astro';
+const { isTop } = Astro.props;
+
+const memberSetClass = 'memberWrap';
+
+import '../styles/css/modal.css';
+---
+
+<div class={memberSetClass}>
+  {
+    Members.map(member => (
+    <MemberList key={member.key} name={member.name} isTop={isTop} data-member-unit />
+    )
+  )}
+</div>
+<div class="memberModal md_modal md_modal--member" id="memberModal">
+  <span class="bgLayer md_linkPart js_modalX" id="memberModalClose"></span>
+  <div class="md_card md_card--modalBase">
+    <span class="closeLink md_linkPart js_modalX"></span>
+    <div class="modalBaseWrap">
+			<div class="bgArea">
+				<img src="imageFile/modal_bg.svg" alt="" class="bgImg">
+			</div>
+      {
+        Members.map(member => (
+        <MemberModal member={member} />
+        )
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  .memberSet.hidden {
+    height: 400px;
+    overflow: hidden;
+  }
+  .memberWrap {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+  }
+</style>
+
+<script>
+  import { isMemberModalOpen } from '../store/index.js';
+
+  // モーダルの表示/非表示
+  isMemberModalOpen.subscribe(open => {
+    if (open) {
+      document.getElementById(`memberModal`).classList.add('md_modal--show');
+    } else {
+      document.getElementById(`memberModal`).classList.remove('md_modal--show');
+    }
+  });
+
+  document.getElementById('memberModalClose').addEventListener('click', () => {
+    isMemberModalOpen.set(false);
+  });
+</script>

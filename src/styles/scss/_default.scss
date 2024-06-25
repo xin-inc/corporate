@@ -1,0 +1,76 @@
+/* ------------ Base ------------ */
+
+html { position: relative; max-width: 100%; background-color: #fff; overflow-x: hidden; }
+body { min-width:$w_wrap; background-color: $col_bg; overflow-x: hidden; @include fs_medium; font-family:$font_family; color:$col_txt
+	
+}
+.bodyWrap { position: relative; min-width:$w_wrap; background-color: $col_bg; overflow-x: hidden; z-index: 0;
+	&.body_fixed { position: fixed!important; width: 100%; }
+}
+
+.wrap { width: calc(100vw - 200px); max-width: 1300px; margin: 0 auto; 
+	// For SP
+	@media only screen and (max-width: $w_break_sp) { width: calc(100vw - 80px);  }
+}
+.container { margin: 0 auto; padding: 70px 0 300px; width: auto; min-height: 100vh; background: url(../../imageFile/texture_grunge.png) center repeat; background-size: 300px 300px;
+	// For tablet
+	@media only screen and (max-width: 1000px) { padding: 70px 0 220px;}
+	// For SP
+	@media only screen and (max-width: $w_break_sp) { width: 100%; padding: $w_sp_pa $w_sp_pa 180px; 
+		&--noPadding { padding: 0; }
+	}
+}
+:hover { @include transition; }
+
+a { color:$col_txt_link;
+  &:hover { color:$col_txt_hover; }
+}
+
+body { --sb-track-color: #ffffff; --sb-thumb-color: #aaa; --sb-size: 16px; scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	&::-webkit-scrollbar {
+		width: var(--sb-size) 
+	}
+	&::-webkit-scrollbar-track {
+		background: var(--sb-track-color);
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--sb-thumb-color);
+		border: 4px solid var(--sb-track-color);
+		border-radius: 10px;
+	}
+}
+
+.pageWrap {
+	padding-bottom: 100px;
+}
+
+.unitContent {
+	position: relative;
+	margin: 180px auto 0;
+	width: calc(100vw - 200px);
+	max-width: 1300px;
+	z-index: 1;
+	&.spaceLess { margin-top: 0; }
+	&.pageTopCopy {
+		.catchUnit {
+			padding-left: 60px;
+		}
+	}
+
+	.lead {
+		font-size: clamp(20px,3vw,32px); font-weight: bold; line-height: $lh_medium; letter-spacing: $ls_small;
+	}
+	.body {
+		margin-top: 1.5em;
+		font-size: clamp(16px,1.5vw,20px); line-height: $lh_medium; letter-spacing: $ls_small;
+	}
+}
+
+.breadCrumbs {
+	position: absolute;
+	top: 50px;
+	left: 40px;
+}
+
+

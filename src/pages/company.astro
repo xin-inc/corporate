@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/PageTemplate.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import PageTitle from '../components/PageTitle.astro';
+import ContentTitle from '../components/ContentTitle.astro';
+
+import '../styles/css/company.css';
+---
+
+<Layout title="About" description="">
+	<div id="about" class="md_contentUnit">
+		<BreadCrumbs
+      pages={[
+        {name: 'TOP', url: '/'},
+        {name: 'COMPANY', url: '/company'},
+      ]}
+      />
+		<PageTitle
+				title="会社概要"
+				subTitle="COMPANY"
+				svg="/imageFile/works_title.svg"
+				panel="/imageFile/company/panel_company.png">
+				<h2 class="rubi">会社概要</h2>
+		</PageTitle>
+		<div class="unitContent">
+			<ContentTitle title="ABOUT US" rubi="XINについて" isLeft={true} />
+			<div class="contentArea">
+				<div class="descriptionSet">
+					<dl class="description description--left">
+						<dt class="item">社名</dt>
+						<dd class="data">株式会社XIN（サイン）</dd>
+						<dt class="item">設立</dt>
+						<dd class="data">2022年4月1日</dd>
+						<dt class="item">事業内容</dt>
+						<dd class="data">
+							経営・サービスに関わるデザインパートナー事業<br>
+							経営デザイン、ビジネスデザイン、サービスデザイン、UI/UXデザイン、ブランディング
+						</dd>
+						<dt class="item">役員</dt>
+						<dd class="data">
+							<span class="subItem">代表取締役CEO</span><span class="subData">生越 悠介</span>
+							<span class="subItem">取締役COO</span><span class="subData">石亀 伸宏</span>
+							<span class="subItem">取締役</span><span class="subData">松﨑 克己</span>
+						</dd>
+					</dl>
+					<dl class="description description--right">
+						<dt class="item">社員数</dt>
+						<dd class="data">16名</dd>
+						<dt class="item">資本金</dt>
+						<dd class="data">3,000万円</dd>
+						<dt class="item">所在地</dt>
+						<dd class="data">
+							〒604-8134<br>
+							京都市中京区六角通東洞院西入堂之前町254<br>
+							WEST18 4F～6F（受付 6F）
+						</dd>
+					</dl>
+				</div>
+			</div>
+				
+			<div class="newsSet">
+				<ContentTitle title="NEWS" rubi="お知らせ" isLeft={true} />
+				<div class="setContent">
+					<div class="newsList">
+						<a href="news/desc01.html" class="news">
+							<div class="date">2024.03.29</div>
+							<div class="title">個人情報保護方針の公開のお知らせ</div>
+						</a>
+						<!-- <a href="news/desc01.html" class="news">
+							<div class="date">2024.03.29</div>
+							<div class="title">個人情報保護方針の公開のお知らせ</div>
+						</a> -->
+					</div>
+				</div>
+				<!-- <div class="actionSet">
+					<span class="moreLink md_linkPart js_newsToggleTrigger">
+						<span class="label">more</span>
+					</span>
+				</div> -->
+			</div>
+	
+			<div class="historySet">
+				<ContentTitle title="HISTORY" rubi="私たちの歩み" isLeft={true} />
+				<div class="setContent">
+					<div class="historyList">
+						<div class="history">
+							<div class="year">2022</div>
+							<div class="desc">
+								株式会社XIN設立。<br>
+								ホールディングス化に伴い、株式会社エイジェックスコミュニケーションズから分社化。<br>
+								株式会社エイジェックスカンパニーズを母体とするグループカンパニーへ。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">2018</div>
+							<div class="desc">
+								売上10億円を達成。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">2016</div>
+							<div class="desc">
+								社員数が100名を超える。<br>
+								事業部制への移行に伴い、クリエイティブ事業部発足。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">2015</div>
+							<div class="desc">
+								カフェプロデュース事業を開始。<br>
+								カフェ・ザ・スリーベアーズを開店。<br>
+								京都第二オフィス開設。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">2014</div>
+							<div class="desc">
+								インバウンド事業を開始／自社メディアSharingKyotoをリリース。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">2010</div>
+							<div class="desc">
+								社員数が50名を超える。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">2008</div>
+							<div class="desc">
+								売上5億円を達成。<br>
+								東京オフィス開設。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">2002</div>
+							<div class="desc">
+								株式会社エイジェックスコミュニケーションズに組織変更。
+							</div>
+						</div>
+						<div class="history">
+							<div class="year">1999</div>
+							<div class="desc">
+								有限会社エイジェックスコミュニケーションズ設立。<br>
+								Webインテグレーターとして、ビジネス、システム、クリエイティブの3つの柱で、戦略策定から構築までをワンストップで担い、数々のECサイトを成功に導く。
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="groupSet">
+				<ContentTitle title="GROUP" rubi="グループ会社" isLeft={true} />
+				<div class="setContent">
+					<div class="subTitle">株式会社XINは、世の中に新しい価値を生み出し続けるクリエイティブカンパニー「agexグループ」の一員です。</div>
+					<div class="companySet">
+						<div class="mainCompany">
+							<a href="https://agex.co.jp/" target="_blank" class="company" id="agexGroup">
+								<img src="imageFile/company/logo/agex_group.svg" alt="agexGroup" class="logoImg">
+							</a>
+						</div>
+						<div class="otherCompany">
+							<a href="https://agex-ds.com/" target="_blank" class="company"  id="DS">
+								<div class="imgCell">
+									<img src="imageFile/company/logo/agex.svg" alt="" class="logoImg">
+								</div>
+								<div class="captionCell">
+									<div class="caption">デジタル戦略<br>コンサルティング事業</div>
+								</div>
+							</a>
+							<a href="index.html" class="company" id="XIN">
+								<div class="imgCell">
+									<img src="imageFile/company/logo/xin.svg" alt="" class="logoImg" >								
+								</div>
+								<div class="captionCell">
+									<div class="caption">クリエイティブ事業</div>
+								</div>
+							</a>
+							<a href="https://sharing-kyoto.co.jp/" target="_blank" class="company" id="SK">
+								<div class="imgCell">
+									<img src="imageFile/company/logo/sharingkyoto.svg" alt="" class="logoImg">
+								</div>
+								<div class="captionCell">
+									<div class="caption">インバウンド/<br>カフェ運営事業</div>
+								</div>
+							</a>
+							<a href="https://www.fftech.co.jp/" target="_blank" class="company"  id="fft">
+								<div class="imgCell">
+									<img src="imageFile/company/logo/fft.svg" alt="" class="logoImg">
+								</div>
+								<div class="captionCell">
+									<div class="caption">観光テック事業</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</Layout>

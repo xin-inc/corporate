@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/PageTemplate.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import PageTitle from '../components/PageTitle.astro';
+import ContentTitle from '../components/ContentTitle.astro';
+import Catch from '../components/Catch.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+import '../styles/css/join-us.css';
+---
+
+<Layout title="Contact" description="">
+	<div id="contact" class="md_contentUnit">
+		<BreadCrumbs
+      pages={[
+        {name: 'TOP', url: '/'},
+        {name: 'CONTACT', url: '/contact'},
+      ]}
+      />
+
+		<PageTitle
+				subTitle="LET'S TALK"
+				svg="/imageFile/contact_title.svg"
+				panel="/imageFile/contact/panel_contact.png">
+				<h2 class="rubi">まずは<br />お話から</h2>
+		</PageTitle>
+
+		<div class="unitContent spaceLess pageTopCopy">
+			<Catch>
+				経営ビジョンやパーパスの策定、事業成長や改善戦略、新サービス立ち上げなど、<br />
+				ビジネスに関するさまざまなお悩みに、弊社デザインストラテジストが対応いたします。<br />
+				どんなプロジェクトも、はじまりは人と人との出会いから。<br />
+				まずはお話から、お気軽にお問い合わせください。
+			</Catch>
+		</div>
+
+		<ContactForm />
+
+	</div>
+</Layout>

@@ -1,0 +1,132 @@
+---
+
+const cn = 'contactForm';
+
+import '../styles/css/contactForm.css';
+---
+
+<div class={`${cn}`}>
+  <form
+    name="contact"
+    method="POST"
+    action="/contact-send"
+    data-netlify="true">
+    
+    <dl class={`${cn}Unit`}>
+      <dt class={`${cn}Unit_label`}>お問い合わせ種別</dt>
+      <dd class={`${cn}Unit_inputArea`}>
+        <ul class={`${cn}Unit_radios`}>
+          <li><label><input type="radio" name="type" value="仕事のご依頼" checked>仕事のご依頼</label></li>
+          <li><label><input type="radio" name="type" value="協業のご依頼">協業のご依頼</label></li>
+          <li><label><input type="radio" name="type" value="その他のご依頼">その他のご依頼</label></li>
+        </ul>
+      </dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='type'></dd>
+    </dl>
+    <dl class={`${cn}Unit`}>
+      <dt class={`${cn}Unit_label`}>詳しいお問い合わせ内容</dt>
+      <dd class={`${cn}Unit_inputArea`}>
+        <textarea name='contact' placeholder='例）自社が持つ既存サービスのUIデザインを全面刷新したい。' required></textarea>
+      </dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='contact'></dd>
+    </dl>
+    <dl class={`${cn}Unit`}>
+      <dt class={`${cn}Unit_label`}>御社名・部署名</dt>
+      <dd class={`${cn}Unit_inputArea`}>
+        <input type='text' name='company_name' placeholder='株式会社XIN' required>
+      </dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='company_name'></dd>
+    </dl>
+    <dl class={`${cn}Unit`}>
+      <dt class={`${cn}Unit_label`}>お名前</dt>
+      <dd class={`${cn}Unit_inputArea`}>
+        <input type='text' name='name' placeholder='姓名' required>
+      </dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='name'></dd>
+    </dl>
+    <dl class={`${cn}Unit`}>
+      <dt class={`${cn}Unit_label`}>メールアドレス</dt>
+      <dd class={`${cn}Unit_inputArea`}>
+        <input type='email' name='mail' pattern='.+@.+\..+' placeholder='contact@xin.inc' required>
+      </dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='mail'></dd>
+    </dl>
+    <dl class={`${cn}Unit`}>
+      <dt class={`${cn}Unit_label`}>電話番号</dt>
+      <dd class={`${cn}Unit_inputArea`}>
+        <input type='tel' name='tel' placeholder='090xxxxxxx' required>
+      </dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='tel'></dd>
+    </dl>
+    <dl class={`${cn}Unit`}>
+      <dt class={`${cn}Unit_label`}>個人情報の取り扱い</dt>
+      <dd class={`${cn}Unit_inputArea`}>
+        <label><input type='checkbox' name='policy' required /> <a href="" target="_blank">個人情報保護方針</a>に同意する</label>
+      </dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='policy'></dd>
+    </dl>
+    <div class={`${cn}_buttons`}>
+      <button name="confirm" id="contactConfirm" class="md_btn">次へ</button>
+      <input type="submit" value="送信する" id="contactSubmit" class="md_btn"  />
+    </div>
+  </form>
+</div>
+
+<script>
+  import { isContactConfirm } from '../store/index.js';
+
+  document.getElementById('contactConfirm').addEventListener('click', () => {
+    isContactConfirm.set(true);
+    return false;
+  });
+
+  function getInputData(name){
+    const formElements = document.getElementsByName(name);
+    const selectedData = {};
+    formElements.forEach(element => {
+      const elementType = element.type;
+      if (elementType === 'radio' && element.checked) {
+        selectedData[name] = element.value;
+      } else if (elementType === 'textarea') {
+        selectedData[name] =  element.value;
+      } else if (elementType === 'checkbox') {
+          const values = [];
+          if (element.checked) {
+            values.push(element.value);
+          }
+          selectedData[name] =  value;
+      } else if (elementType === 'text' || elementType === 'number' || elementType === 'email' || elementType === 'password') {
+        selectedData[name] = element.value;
+      }
+    });
+    return selectedData[name];
+  }
+
+  // 確認画面
+  isContactConfirm.subscribe(isConfirm => {
+    const inputUnits = document.querySelectorAll('.contactFormUnit_inputArea');
+    const confirmUnits = document.querySelectorAll('.contactFormUnit_inputConfirm');
+    const submitBtn = document.getElementById('contactSubmit');
+    const confirmBtn = document.getElementById('contactConfirm');
+    if (isConfirm) {
+      submitBtn.style.display = 'block';
+      confirmBtn.style.display = 'none';
+      inputUnits.forEach((unit) => {
+        unit.style.display = 'none';
+      });
+      confirmUnits.forEach((unit) => {
+        unit.style.display = 'block';
+        unit.innerText = getInputData(unit.dataset.area);
+      });
+    } else {
+      submitBtn.style.display = 'none';
+      confirmBtn.style.display = 'block';
+      inputUnits.forEach((unit) => {
+        unit.style.display = 'block';
+      });
+      confirmUnits.forEach((unit) => {
+        unit.style.display = 'none';
+      });
+    }
+  });
+</script>

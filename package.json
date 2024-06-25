@@ -1,0 +1,22 @@
+{
+  "name": "radiant-ring",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^2.0.4",
+    "@astrojs/rss": "^4.0.2",
+    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/svelte": "^5.5.0",
+    "astro": "^4.1.2",
+    "nanostores": "^0.10.3",
+    "svelte": "^4.2.18",
+    "swiper": "^11.1.4"
+  }
+}

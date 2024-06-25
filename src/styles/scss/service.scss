@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+/*----------------------------------------
+ Import
+----------------------------------------*/
+
+@import '_reset';
+@import '_variable';
+@import '_default';
+
+/*----------------------------------------
+ Service
+----------------------------------------*/
+
+.serviceSectionUnit {
+  margin: 60px 0 0;
+  padding: 0 60px;
+  &_title {
+    font-size: clamp(24px,2.5vw,30px);
+    font-weight: bold;
+    letter-spacing: $ls_small;
+  }
+  &_catch {
+    font-size: clamp(16px,3vw,24px);
+    line-height: $lh_small;
+    margin-top: 20px;
+    white-space: nowrap;
+  }
+  &_copy {
+    font-size: 16px;
+    line-height: $lh_small;
+    letter-spacing: $ls_small;
+    margin-top: 20px;
+  }
+}
+
+.serviceDesignUnit {
+  margin: 60px 0 0;
+  padding: 0 60px;
+  &_title {
+    font-size: clamp(16px,2.5vw,24px);
+    font-weight: bold;
+    letter-spacing: $ls_small;
+  }
+  &_rubi {
+    font-size: clamp(24px,3vw,30px);
+    font-weight: bold;
+    line-height: $lh_small;
+    margin-top: 20px;
+    white-space: nowrap;
+  }
+  &_copy {
+    font-size: 16px;
+    line-height: $lh_medium;
+    letter-spacing: $ls_small;
+    margin-top: 20px;
+  }
+}
+
+.serviceUnitWrap {
+  margin: 60px 0 0;
+  padding: 0 90px;
+}
+
+.serviceFlow {
+  margin: 80px 0 0;
+  padding: 0 90px 200px;
+  position: relative;
+  &_img {
+    width: 100%;
+  }
+  &_elem {
+    position: absolute;
+    top: 60%;
+    width: 40%;
+    &.experience {
+      left: 9.5%;
+    }
+    &.product {
+      right: 9%;
+    }
+  }
+  &_elemTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-align: center;
+    span {
+      background-color: #000;
+      color: #FFF;
+      letter-spacing: $ls_small;
+      line-height: $lh_medium;
+      padding: 0 10px;
+    }
+  }
+  &_elemRubi {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 15px;
+    letter-spacing: $ls_small;
+    text-align: center;
+  }
+  &_elemDec {
+    line-height: $lh_small;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+.serviceUnit {
+  margin: 120px 0 0;
+  position: relative;
+  &::before {
+    content: '';
+    background-color: #f4f4f4;
+    display: inline-block;
+    border-radius: 4px;
+    height: 100%;
+    left: -30px;
+    position: absolute;
+    top: 0;
+    width: 5px;
+  }
+  &_title {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: $ls_small;
+    line-height: $lh_medium;
+  }
+  &_description {
+    font-size: 16px;
+    letter-spacing: $ls_small;
+    line-height: $lh_small;
+    margin-top: 10px;
+  }
+  &_methods {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 50px 0 0;
+    width: 100%;
+  }
+}
+
+.methodUnit {
+  &_title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &_description {
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 20px 0 40px;
+  }
+}
+
+
+.serviceSubUnit {
+  margin: 60px 0 0;
+  padding: 0 60px;
+  &_title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: $ls_small;
+    line-height: $lh_medium;
+  }
+  &_wrap {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 30px 30px 0;
+    position: relative;
+    &::before {
+      content: '';
+      background-color: #f4f4f4;
+      display: inline-block;
+      border-radius: 4px;
+      height: 100%;
+      left: -30px;
+      position: absolute;
+      top: 0;
+      width: 5px;
+    }
+  }
+}
+.teamUnit {
+  &_title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &_description {
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 20px 0 40px;
+  }
+}
+
+.trialUnit {
+  margin: 60px 0 0;
+  padding: 0 60px;
+  &_title {
+    font-size: clamp(24px,3vw,30px);
+    font-weight: bold;
+    line-height: $lh_small;
+    white-space: nowrap;
+  }
+  &_wrap {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 40px 0;
+  }
+}
+.trialElement {
+  background-color: #fff;
+  padding: 20px;
+  &_title {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: $ls_small;
+    line-height: $lh_small;
+    text-align: center;
+  }
+  &_dec {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}

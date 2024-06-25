@@ -1,0 +1,9 @@
+---
+const { method } = Astro.props;
+const cn = 'methodUnit';
+---
+
+<dl class={`${cn}`}>
+  <dt class={`${cn}_title`}>{method.title}</dt>
+  <dd class={`${cn}_description`}>{method.description}</dd>
+</dl>

@@ -1,0 +1,18 @@
+---
+import ServiceMethod from '../components/ServiceMethod.astro';
+
+const { title, description, methods } = Astro.props;
+const cn = 'serviceUnit';
+---
+
+<div class={`${cn}`}>
+  <h4 class={`${cn}_title`}>{title}</h4>
+  <p class={`${cn}_description`} set:html={description}></p>
+  <div class={`${cn}_methods`}>
+    {
+      methods.map(method => (
+        <ServiceMethod method={method} />
+      )
+    )}
+  </div>
+</div>

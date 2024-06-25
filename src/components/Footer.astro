@@ -1,0 +1,113 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<nav>
+		<img src="/imageFile/groupCompany/XIN_logo2.png" alt="XIN" class="logoImg" >
+		<ul>
+			<li><a href="/">TOP</a></li>
+			<li><a href="/service">SERVICE</a></li>
+			<li><a href="/works">WORKS</a></li>
+			<li><a href="/members">MEMBERS</a></li>
+			<li><a href="/contact">CONTACT</a></li>
+			<li><a href="/join-us">JOIN US</a></li>
+			<li><a href="/company">COMPANY</a></li>
+		</ul>
+	</nav>
+	<aside class="group">
+		<p class="group_dec">株式会社XINは、世の中に新しい価値を生み出し続けるクリエイティブカンパニー「agexグループ」の一員です。</p>
+		<ul class="group_list">
+			<li>
+				<a href="https://agex.co.jp/" target="_blank" class="company" id="agexGroup">
+					<img src="/imageFile/groupCompany/agexGroup_logo.png" alt="agexGroup" class="logoImg">
+				</a>
+			</li>
+			<li>
+				<a href="https://agex-ds.com/" target="_blank" class="company" id="DS">
+					<img src="/imageFile/groupCompany/DS_logo.png" alt="" class="logoImg">
+				</a>
+			</li>
+			<li>
+				<a href="https://sharing-kyoto.co.jp/" target="_blank" class="company" id="SK">
+					<img src="/imageFile/groupCompany/SK_logo.png" alt="" class="logoImg">
+				</a>
+			</li>
+			<li>
+				<a href="https://www.fftech.co.jp/" target="_blank" class="company"  id="fft">
+					<img src="/imageFile/groupCompany/fft_logo.png" alt="" class="logoImg">
+				</a>
+			</li>
+		</ul>
+	</aside>
+	<address class="copyright">©XIN&nbsp;inc.</address>
+</footer>
+
+<style>
+	footer {
+		background-color: #000;
+		color: $col_txt_gray;
+		margin: 180px 0 0;
+		padding: 170px 0 85px;
+		width: 100%; 
+	}
+	footer nav {
+		border-bottom: 1px solid #CCC;
+		margin: 0 auto;
+		text-align: center;
+		width: 1320px;
+	}
+	footer nav a {
+		color: #fff;
+	}
+	footer nav .logoImg {
+		width: 230px;
+	}
+	footer nav ul {
+		display: flex;
+		justify-content: space-around;
+		margin: 120px auto 80px;
+		width: 1100px;
+	}
+	.group_dec {
+		color: #FFF;
+		font-size: 16px;
+		margin-top: 110px;
+		text-align: center;
+		position: relative;
+	}
+	.group_dec::before {
+		content: '';
+		display: inline-block;
+		width: 300px;
+		height: 38px;
+		background: url(/imageFile/footer_agex.svg) no-repeat center;
+		position: absolute;
+		top: -50px;
+		left: 270px;
+		rotate: -8deg;
+	}
+	.group_list {
+		align-items: center;
+		display: flex;
+		justify-content: space-around;
+		margin: 70px auto 100px;
+		width: 1100px;
+	}
+	#agexGroup img { width: 140px; }
+	#DS img{ width: 160px; }
+	#SK img{ width: 190px; }
+	#fft img{ width: 150px; } 
+	@media only screen and (max-width: $w_break_sp){
+    #agexGroup img {width: 60%;}
+    #DS img {width: 60%;}
+    #XIN img {width: 50%;}
+    #SK img {width: 70%;}
+    #fft img {width: 60%;}
+  }
+	.copyright {
+		color: #fff;
+		font-size: 14px;
+		text-align: center;
+	}
+</style>

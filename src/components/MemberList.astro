@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+const { key, name, isTop } = Astro.props;
+const imgPath = `/imageFile/member/member_${key}.svg`;
+const mainClass = isTop ? 'md_linkPart' : '';
+const unitId = `memberUnit-${key}`;
+---
+
+<div
+  id={unitId}
+  class:list={["memberUnit", "js_modalOpen", mainClass]}
+  data-key={key}>
+  <div class="slide slide--{key}">
+    <div class="imgSet">
+      <Image src={imgPath} alt={name} width={422} height={500} class="memberImg" />
+      <p class="md_btn md_btn--more">MORE</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .memberUnit {
+    position: relative;
+    width: 100%;
+  }
+  .memberUnit .memberImg {
+    width: 100%;
+  }
+  .memberUnit .md_btn {
+    border: 4px solid #000; 
+    border-radius: 50%;
+    bottom: 0;
+    font-size: 14px;
+    height: 90px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 90px;
+  }
+</style>
+
+<script>
+  import { isMemberModalOpen, currentMember } from '../store/index.js';
+
+  function openMemberModal(key) {
+    console.log('Click');
+    isMemberModalOpen.set(true);
+    currentMember.set(key);
+  }
+
+  const units = document.querySelectorAll('.memberUnit');
+  units.forEach((unit) => {
+    unit.addEventListener('click', () => {
+      openMemberModal(unit.dataset.key);
+    });
+  });
+</script>

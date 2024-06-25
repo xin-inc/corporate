@@ -1,0 +1,441 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import PageTitle from '../components/PageTitle.astro';
+import MemberListWrapper from '../components/MemberListWrapper.astro';
+import Footer from '../components/Footer.astro';
+
+import MemberListTop from '../components/MemberListTop.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import '../styles/css/index.css';
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+
+		<!-- md_contentUnit--panel -->
+		<div id="top" class="md_contentUnit md_contentUnit--panel">
+			<div class="bgImgSet">
+				<div class="bgImgSection bgImgSection--left">
+					<img src="imageFile/bg_material/bg_star.svg" alt="" class="bgImg  bgImg--star">
+					<img src="imageFile/bg_material/bg_window.svg" alt="" class="bgImg bgImg--window">
+					<img src="imageFile/bg_material/bg_cross.svg" alt="" class="bgImg  bgImg--cross">
+				</div>
+				<div class="bgImgSection bgImgSection--right">
+					<img src="imageFile/bg_material/bg_circle.svg" alt="" class="bgImg bgImg--circle">
+					<img src="imageFile/bg_material/bg_square.svg" alt="" class="bgImg bgImg--square">
+					<img src="imageFile/bg_material/bg_triangle.svg" alt="" class="bgImg bgImg--triangle">
+					<img src="imageFile/bg_material/bg_ellipse.svg" alt="" class="bgImg bgImg--ellipse">
+				</div>
+			</div>
+			<div class="contentArea">
+				<div class="contentSet">
+					<div class="catchSet catchSet--leftTop js_fadeInReveal"><span class="catch">あなたの隣に、<br>デザインを。</span></div>
+					<div class="imgSet imgSet--center js_animeReveal01"><img src="imageFile/panel_catch.svg" alt="panel"></div>
+					<div class="copySet js_slideInReveal">
+						<div class="copy"><span class="text">We are an Innovation Design Firm</span></div><!--
+						--><div class="copy"><span class="text">with Creativity and Strategy.</span></div>
+					</div>
+					<div class="catchSet catchSet--rightBottom js_fadeInReveal"><span class="catch">世界にもっと、<br>デザインを。</span></div>
+					<div class="scrollAnnouce">SCROLL</div>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--panel -->
+
+		<!-- md_contentUnit--about -->
+		<div class="md_contentUnit md_contentUnit--category md_contentUnit--about js_animeReveal02">
+			<div class="bgImgSet">
+				<div class="bgImgSection bgImgSection--left js_animeReveal02">
+					<img src="imageFile/bg_material/bg_star.svg" alt="" class="bgImg bgImg--star">
+					<img src="imageFile/bg_material/bg_triangle.svg" alt="" class="bgImg bgImg--triangle">
+				</div>
+				<div class="bgImgSection bgImgSection--right js_animeReveal02">
+					<img src="imageFile/bg_material/bg_small_circle.svg" alt="" class="bgImg bgImg--circle">
+					<img src="imageFile/bg_material/bg_square.svg" alt="" class="bgImg bgImg--square">
+					<img src="imageFile/bg_material/bg_window.svg" alt="" class="bgImg bgImg--window">
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<div class="contentSet">
+						<p class="copyCell">
+							世界は日々変わり続けている。<br><br>
+							私たちはみんな、<br class="spShow">大きなうねりの中にいる。<br><br>
+
+							信じてきたものが覆り、<br>
+							進むべき道を見失うことさえある。<br><br>
+
+							だけど、<br>
+							絶対に信じられるものがある。<br><br>
+
+							それは、<br class="spShow">想いが世界を作るということ。<br><br>
+
+
+							美しい意志こそが、<br class="spShow">人々の心を動かし、<br>
+							新たな世界を形作るということ。<br><br>
+
+							デザインは、<br>
+							その意志を形にする武器になる。<br><br>
+
+							挑戦したい。あなたとともに。<br>
+							意志の火を灯し、大きくすることを。<br>
+							その優しい光で、<br class="spShow">世界を明るく照らすことを。<br>
+							見果てぬ夢で、<br class="spShow">世界を革新していくことを。<br><br>
+
+							だから、<br><br>
+
+							<span class="accent">
+								あなたの隣に<br>
+								デザインを。<br><br>
+								世界にもっと、<br>
+								デザインを。
+							</span>
+						</p>
+						<div class="imgCell">
+							<img src="imageFile/about_catch.png" alt="" class="catchImg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--about -->
+
+		<!-- md_contentUnit--mission -->
+		<div class="md_contentUnit md_contentUnit--mission js_animeReveal03">
+			<div class="unitTitle">
+				<div class="titleSet">
+					<div class="title">MISSION</div>
+					<h2 class="rubi rubi--left">私たちの使命</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<div class="contentSet">
+						<div class="imgCell fadeInUpTrigger">
+							<img src="imageFile/mission_img.svg" alt="あらゆる場と人にデザインをインストールする。">
+						</div>
+						<div class="descCell">
+							<div class="title">HELLO DESIGN</div>
+							<h3 class="catch">
+								あらゆる場と人に<br class="spHide">デザインをインストールする。
+							</h3>
+							<p class="copy">
+								私たちの仕事は、モノやコトのデザインだけでは終わりません。<br>
+								プロジェクトを通して関わった人々の心に、クリエイティブの火を灯すこと。<br>
+								そして、その火がその先も未来を照らす光になること。<br>
+								それが私たちの仕事であり、慶びです。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--mission -->
+
+		<!-- md_contentUnit--vision -->
+		<div class="md_contentUnit md_contentUnit--vision js_animeReveal04">
+			<div class="unitTitle">
+				<div class="titleSet">
+					<div class="title">VISION</div>
+					<h2 class="rubi rubi--right">私たちが目指すセカイ</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<div class="contentSet">
+						<div class="imgCell">
+							<img src="imageFile/vision_img.svg" alt="世界をクリエイティビティで満たし、美しい体験の連鎖をつくる。">
+						</div>
+						<div class="descCell">
+							<div class="title">HELLO FRONTIER</div>
+							<h3 class="catch">
+								世界をクリエイティビティで満たし、<br class="spHide">
+								美しい体験の連鎖をつくる。
+							</h3>
+							<p class="copy">
+								心が込められた誠実なデザインと仕事は、触れた人を幸せにする。<br>
+								胸の内に宿る愛とクリエイティビティを沸き立たせる。<br>
+								そして、その体験が新たに美しい体験を生み出し、新たな幸せへと繋がる。<br>
+								そんな、正の連鎖が連綿と続いていくセカイを目指して。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--vision -->
+
+		<!-- md_contentUnit--service -->
+		<div id="service" class="md_contentUnit md_contentUnit--category md_contentUnit--service js_box js_animeReveal05">
+			<div class="unitTitle unitTitle--category">
+				<div class="titleSet">
+					<div class="subTitle">WHAT WE DO</div>
+					<div class="title">
+						<img src="imageFile/service_title.svg" alt="service" class="titleImg">
+						<img src="imageFile/service_title.svg" alt="service" class="titleImg">
+					</div>
+					<h2 class="rubi">私たちに<br>できること</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<p class="catchSet">
+						私たちは “Innovation Design Firm”。<br>
+						ただ「つくる」だけではなく「変革する」ことを第一義に、<br class="spHide">
+						デザイン経営領域からDX領域まで幅広くご支援します。
+					</p>
+				</div>
+				<div class="serviceArea">
+					<p class="catchSet">
+						経営とビジネスの旅路に寄り添う<br class="spShow">伴走者のように。<br class="spHide">
+						想いと成果にフルコミットでお力になります。
+					</p>
+					<div class="imgSet">
+						<picture>
+							<source srcset="imageFile/top/serviceFlow.svg" media="(min-width: 800px)" class="catchImg">
+							<img src="imageFile/service_catch_sp.svg" alt="デザインパートナーサービス" class="catchImg--sp">
+						</picture>
+					</div>
+				</div>
+				<div class="moreArea">
+					<a href="/service" class="md_btn md_btn--big md_btn--contact">サービスの詳細へ</a>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--service -->
+
+		<!-- md_contentUnit--work -->
+		<div id="works" class="md_contentUnit md_contentUnit--category md_contentUnit--works js_box js_animeReveal06">
+			<div class="unitTitle unitTitle--category">
+				<div class="titleSet">
+					<div class="subTitle">WHAT WE DESIGNED</div>
+					<div class="title">
+						<img src="imageFile/works_title.svg" alt="works" class="titleImg">
+						<img src="imageFile/works_title.svg" alt="works" class="titleImg">
+					</div>
+					<h2 class="rubi">
+						私たちが<br>
+						してきたこと
+					</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<p class="catchSet">
+						私たちが得意とするのは、「体験」のデザイン。<br>
+						強みであるWebプロダクトのデザインを軸に、<br>
+						企業やサービスの価値向上にコミットし続けてきました。<br>
+						ここではその事例のほんの一部をご紹介します。
+					</p>
+				</div>
+				<div class="worksArea">
+					<div class="worksSet js_animeReveal06">
+						<span class="linkArea md_linkPart js_modalOpen" data-modal="md_modal--work1">
+							<div class="borderSection borderSection--top"></div>
+							<div class="linkAreaWrap">
+								<div class="label">CASE<span class="bold">1</span></div>
+								<p class="title">
+									新規事業の未来構想を見える化<br class="spHide"><span class="sp--period"></span>目指すべきかたちを定義し、事業化をブースト
+								</p>
+								<p class="desc">
+									クライアントは、某大手インフラ企業。<br class="spHide">新規事業の立ち上げに際して、<span class="bold">経営層のビジョンが実務を担う部門に伝えられていないことが課題。</span>
+								</p>
+								<div class="imgSection">
+									<img src="imageFile/works_catch001.svg" alt="case1" class="worksCatchImg">
+								</div>
+							</div>
+							<div class="borderSection borderSection--bottom">
+								<div class="btnSide">
+									<p class="md_btn md_btn--more">MORE</p>
+								</div>
+							</div>
+						</span>
+					</div>
+					<div class="worksSet js_animeReveal06">
+						<span class="linkArea md_linkPart js_modalOpen" data-modal="md_modal--work2">
+							<div class="borderSection borderSection--top"></div>
+							<div class="linkAreaWrap">
+								<div class="label">CASE<span class="bold">2</span></div>
+								<p class="title">
+									あらゆる可能性を<br class="spShow">最速で実現<br>デザインスプリントで<br class="spShow">サービスの理想を追求
+								</p>
+								<p class="desc">
+									某大手BtoBtoCサービス運営企業の新規事業立ち上げチーム。<br class="spHide">新サービスを立ち上げたいが、<span class="bold">未知の領域でイメージが湧かず行き詰っていた。</span>
+								</p>
+								<div class="imgSection">
+									<img src="imageFile/works_catch002.svg" alt="case2" class="worksCatchImg">
+								</div>
+							</div>
+							<div class="borderSection borderSection--bottom">
+								<div class="btnSide">
+									<p class="md_btn md_btn--more">MORE</p>
+								</div>
+							</div>
+						</span>
+					</div>
+				</div>
+				<div class="moreArea">
+					<a href="/works" class="md_btn md_btn--big md_btn--contact">事例一覧へ</a>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--work -->
+
+		<!-- md_contentUnit--member -->
+		<MemberListTop />
+		<!-- /md_contentUnit--member -->
+
+		<!-- md_contentUnit--value -->
+		<div class="md_contentUnit md_contentUnit--value js_animeReveal08">
+			<div class="unitTitle">
+				<div class="titleSet">
+					<div class="title">VALUE</div>
+					<h2 class="rubi rubi--left">私たちの価値基準</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<div class="valueSet">
+						<div class="value">
+							<p class="title">Go Visionary</p>
+							<p class="catch">未だ見ぬ理想を想い、創る</p>
+						</div>
+						<div class="value">
+							<p class="title">Make Sincerely</p>
+							<p class="catch">モノづくりに真摯に、心を込めて</p>
+						</div>
+						<div class="value">
+							<p class="title">Be Lovely</p>
+							<p class="catch">愛に溢れ、魅力に満ちた人間であれ</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--value -->
+
+		<!-- md_contentUnit--contact -->
+		<div id="contact" class="md_contentUnit md_contentUnit--category md_contentUnit--contact js_animeReveal09">
+			<div class="unitTitle unitTitle--category">
+				<div class="titleSet">
+					<div class="subTitle">LET'S TALK</div>
+					<div class="title">
+						<img src="imageFile/contact_title.svg" alt="contact" class="titleImg">
+						<img src="imageFile/contact_title.svg" alt="contact" class="titleImg">
+					</div>
+					<h2 class="rubi">
+						まずは<br>
+						お話から
+					</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<div class="contactSet">
+						<div class="imgCell">
+							<img src="imageFile/contact_catch.svg" alt="" class="contactCatch">
+						</div>
+						<div class="catchSet">
+							経営ビジョンやパーパスの策定、事業成長や改善戦略、新サービス立ち上げなど、<br>
+							ビジネスに関するさまざまなお悩みに、弊社デザインストラテジストが対応いたします。<br><br>
+							どんなプロジェクトも、はじまりは人と人との出会いから。<br class="spHide">
+							まずはお話から、お気軽にお問い合わせください。
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<div class="clientProblemWrap">
+						<p class="clientProblem_catch">こんなお悩みはありませんか？</p>
+						<div class="clientProblem_inner">
+							<dl class="clientProblem">
+								<dt class="clientProblem_target">自社サービスをお持ちの方</dt>
+								<dd class="clientProblem_problems">
+									<ul class="clientProblem_list">
+										<li class="clientProblem_elem">グロース施策だけでは成長に限界が来ており、大きな変革が必要</li>
+										<li class="clientProblem_elem">インハウスデザイナーはいるが、通常業務が忙しく対応に手が回らない</li>
+										<li class="clientProblem_elem">部門ごとに課題が分散しており、組織を横断しての対応が必要...</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="clientProblem">
+								<dt class="clientProblem_target">サービスを育てたい<br />スタートアップの方</dt>
+								<dd class="clientProblem_problems">
+									<ul class="clientProblem_list">
+										<li class="clientProblem_elem">インハウスデザイナーがおらず、目の前の開発が進まない...</li>
+										<li class="clientProblem_elem">インハウスデザイナーはいるが、経験や知見が不足しており対応が難しい...</li>
+										<li class="clientProblem_elem">サービスデザインの知見が少なく、プロジェクトを推進できない....</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="clientProblem">
+								<dt class="clientProblem_target">コンサル会社 / 開発会社の方</dt>
+								<dd class="clientProblem_problems">
+									<ul class="clientProblem_list">
+										<li class="clientProblem_elem">社内にデザイナーがおらず、ニーズに応えられない...</li>
+										<li class="clientProblem_elem">エンジニア観点だけでなく、UX/UI観点を加えた提案をしたい...</li>
+										<li class="clientProblem_elem">システムとの連携を前提にしたデザインができるデザイナーがいない..</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="actionSet">
+						<p class="clientProblem_btnCatch">ご興味を持たれましたら、ぜひ一度お話させてください。<br />
+							オンラインにて無料でご相談を受け付けています。</p>
+						<a href="/contact" class="md_btn md_btn--big md_btn--contact">お問い合わせフォーム</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /md_contentUnit--contact -->
+
+		<!-- md_contentUnit--join -->
+		<div id="join" class="md_contentUnit md_contentUnit--category md_contentUnit--join js_animeReveal10">
+			<div class="unitTitle unitTitle--category">
+				<div class="titleSet">
+					<div class="subTitle">DESIGN WITH US</div>
+					<div class="title">
+						<img src="imageFile/join_title.svg" alt="join us" class="titleImg">
+						<img src="imageFile/join_title.svg" alt="join us" class="titleImg">
+					</div>
+					<h2 class="rubi">
+						運命の出会い<br>
+						かもしれません
+					</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<p class="catchSet">
+						XINでは、一緒に未来を描いていける仲間を<br class="spShow">強く求めています。<br>
+						各々のケイパビリティを掛け合わせ、<br class="spShow">セカイに新しい価値を生み出し続けるために。<br>
+						XINというフィールドで、<br class="spShow">あなたも輝きを放ってみませんか。
+					</p>
+					<div class="joinSet">
+						<div class="imgSection">
+							<img src="imageFile/member/all_members.png" alt="" class="joinCatch">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="actionSet">
+				<a href="/join-us" target="_blank" class="md_btn md_btn--big md_btn--contact">採用情報へ</a>
+			</div>
+		</div>
+		<!-- /md_contentUnit--join -->
+
+		<Footer />
+	</body>
+</html>

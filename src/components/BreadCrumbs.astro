@@ -1,0 +1,28 @@
+---
+import BreadCrumbWithLink from '../components/BreadCrumbWithLink.astro';
+const { pages } = Astro.props;
+const currentPage = pages.at(-1);
+---
+
+<ol class="breadCrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+  {
+    pages
+      .slice(0, -1)
+      .map((page, index) => (
+        <BreadCrumbWithLink page={page} num={index + 1} />
+      ))
+  }
+  <li property="itemListElement" typeof="ListItem">
+    <span property="name">{currentPage.name}</span>
+    <meta property="position" content={pages.length}>
+  </li>
+</ol>
+
+<style>
+.breadCrumbs {
+  display: flex;
+  font-size: 15px;
+  gap: 10px;
+  margin-top: 100px;
+}
+</style>

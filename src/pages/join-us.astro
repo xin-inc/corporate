@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/PageTemplate.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import PageTitle from '../components/PageTitle.astro';
+import ContentTitle from '../components/ContentTitle.astro';
+import StoryUnit from '../components/StoryUnit.astro';
+import Catch from '../components/Catch.astro';
+
+import '../styles/css/join-us.css';
+
+import { STORY_LIST } from '../content/Story.js';
+---
+
+<Layout title="About" description="">
+	<div id="about" class="md_contentUnit pageWrap">
+		<BreadCrumbs
+      pages={[
+        {name: 'TOP', url: '/'},
+        {name: 'JOIN US', url: '/join-us'},
+      ]}
+      />
+
+		<PageTitle
+				title="運命の出会いかもしれません"
+				subTitle="WORK WITH US"
+				svg="/imageFile/join_title.svg"
+				panel="/imageFile/join-us/panel_join-us.png">
+				<h2 class="rubi">運命の出会い<br />かもしれません</h2>
+		</PageTitle>
+
+		<div class="unitContent spaceLess pageTopCopy">
+			<Catch>
+				XINでは、一緒に未来を描いていける仲間を<br class="spShow">強く求めています。<br>
+				各々のケイパビリティを掛け合わせ、<br class="spShow">セカイに新しい価値を生み出し続けるために。<br>
+				XINというフィールドで、<br class="spShow">あなたも輝きを放ってみませんか。
+			</Catch>
+		</div>
+
+		<div class="unitContent">
+			<ContentTitle title="TOP MESSAGE" rubi="トップメッセージ" isLeft={true} />
+			<div class="topMessage">
+				<div class="imgCell">
+					<img src="/imageFile/join-us/ogose.svg" alt="XIN CEO 生越" class="contactCatch">
+				</div>
+				<div class="descCell">
+					<p class="lead">
+						XINでは、一緒に未来を描いていける仲間を
+						強く求めています。
+					</p>
+					<p class="body">
+						昨今、世界は驚くほど近くなりました。<br>
+						場所や距離を飛び越えて瞬時に繋がることができる、<br>
+						このニューノーマルの時代。<br><br>
+
+						"想い"のマッチングが何より重要と考えていますので、<br>
+						ご興味を持たれましたら、ぜひ一度お話させてください。<br>
+						オンラインにて無料でご相談を受け付けています。
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="unitContent">
+			<ContentTitle title="IDEAL CANDIDATE" rubi="求める人物像" isLeft={false} />
+			<Catch>XINでは、一緒に未来を描いていける仲間を強く求めています。</Catch>
+			<div class="staffImage">
+				<dl class="staffImage_elem">
+					<dt class="staffImage_lead">こだわる<br />工夫する</dt>
+					<dd class="staffImage_dec">個性のあるアイデアにこだわり抜き、<br />
+						誰も取り組まないことに没頭する。</dd>
+				</dl>
+				<dl class="staffImage_elem">
+					<dt class="staffImage_lead">楽しむ<br />面白がる</dt>
+					<dd class="staffImage_dec">個性のあるアイデアにこだわり抜き、<br />
+						誰も取り組まないことに没頭する。</dd>
+				</dl>
+				<dl class="staffImage_elem">
+					<dt class="staffImage_lead">誠実である<br />チームで協業していく</dt>
+					<dd class="staffImage_dec">個性のあるアイデアにこだわり抜き、<br />
+						誰も取り組まないことに没頭する。</dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="md_contentUnit md_contentUnit md_contentUnit--career md_contentUnit--career--new js_animeReveal11">
+			<ContentTitle title="NEW GRADUATES" rubi="新卒採用" isLeft={true} />
+			<div class="unitContent links">
+				<div class="contentArea">
+					<div class="actionSet">
+						<a href="https://www.wantedly.com/companies/company_6613626" class="md_btn md_btn--big md_btn--career md_btn--wantedly">
+							<img src="imageFile/logo_wantedly.svg" alt="wantedly" class="careerLogo careerLogo--norm">
+							<img src="imageFile/logo_wantedly_white.svg" alt="wantedly" class="careerLogo careerLogo--white">
+						</a>
+						<!-- <a href="https://job.mynavi.jp/24/pc/search/corp263144/outline.html" class="md_btn md_btn--big md_btn--career md_btn--wantedly">
+							<img src="imageFile/logo_mynavi.svg" alt="mynavi" class="careerLogo careerLogo--norm">
+							<img src="imageFile/logo_mynavi_white.svg" alt="mynavi" class="careerLogo careerLogo--white">
+						</a> -->
+						<a href="https://offerbox.jp/" class="md_btn md_btn--big md_btn--career md_btn--wantedly">
+							<img src="imageFile/logo_offerbox.svg" alt="offerbox" class="careerLogo careerLogo--norm">
+							<img src="imageFile/logo_offerbox_white.svg" alt="offerbox" class="careerLogo careerLogo--white">
+						</a>
+						<a href="https://www.onecareer.jp/companies/93382" class="md_btn md_btn--big md_btn--career md_btn--wantedly">
+							<img src="imageFile/logo_oneCareer.svg" alt="oneCareer" class="careerLogo careerLogo--norm">
+							<img src="imageFile/logo_oneCareer_white.svg" alt="oneCareer" class="careerLogo careerLogo--white">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="md_contentUnit md_contentUnit md_contentUnit--career md_contentUnit--career--middle js_animeReveal12">
+			<ContentTitle title="CAREER" rubi="キャリア採用" isLeft={true} />
+			<div class="unitContent links">
+				<div class="contentArea">
+					<div class="actionSet">
+						<a href="https://www.wantedly.com/companies/company_6613626" class="md_btn md_btn--big md_btn--career md_btn--wantedly">
+							<img src="imageFile/logo_wantedly.svg" alt="wantedly" class="careerLogo careerLogo--norm">
+							<img src="imageFile/logo_wantedly_white.svg" alt="wantedly" class="careerLogo careerLogo--white">
+						</a>
+						<a href="https://en-ambi.com/agency/a-5154/" class="md_btn md_btn--big md_btn--career md_btn--wantedly">
+							<img src="imageFile/logo_ambi.svg" alt="ambi" class="careerLogo careerLogo--norm careerLogo--ambi">
+							<img src="imageFile/logo_ambi_white.svg" alt="ambi" class="careerLogo careerLogo--white careerLogo--ambi">
+						</a>
+						<a href="https://en-gage.net/xin_jobs/?via_work_page=3659456" class="md_btn md_btn--big md_btn--career md_btn--wantedly">
+							<img src="imageFile/logo_engage.svg" alt="engage" class="careerLogo careerLogo--norm careerLogo--engage">
+							<img src="imageFile/logo_engage_white.svg" alt="engage" class="careerLogo careerLogo--white careerLogo--engage">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="unitContent">
+			<ContentTitle title="STORY" rubi="記事一覧" isLeft={true} />
+			<div class="storyWrap">
+				{
+					STORY_LIST.filter((story, index) => index < 3).map(story => (
+						<StoryUnit
+							thumnail={story.thumnail}
+							title={story.title}
+							url={story.url} />
+					)
+				)}
+			</div>
+		</div>
+
+	</div>
+</Layout>

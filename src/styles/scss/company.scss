@@ -1,0 +1,326 @@
+@charset "utf-8";
+
+/*----------------------------------------
+ Import
+----------------------------------------*/
+
+@import '_reset';
+@import '_variable';
+@import '_default';
+
+/*----------------------------------------
+ About
+----------------------------------------*/
+
+.contentArea { margin: 130px auto 0; padding: 0 40px;  max-width: 1300px; width: calc(100vw - 200px); 
+  .descriptionSet { display: flex;
+    .description { display: flex; flex-wrap: wrap;  width: 50%; height: fit-content;
+      .item, .data { font-size: clamp(16px,1.3vw,20px) ; line-height: $lh_medium; }
+      .item { margin-bottom: 50px; width: 120px; }
+      .data { margin-bottom: 50px;  width: calc(100% - 120px);
+        .subItem, .subData { display: inline-block; }
+        .subItem { width: 145px; }
+        .subData { width: calc(100% - 145px);
+          &:before { content: "："; }
+        }
+      }
+      &--left {margin-right: 80px;}
+    }
+  }
+  // For tablet
+  @media only screen and (max-width: 1000px) { margin: 60px auto 0;
+    .descriptionSet { flex-wrap: wrap;
+      .description { width: 80%; min-width: 400px; margin: 0 auto;
+        .item, .data { font-size: clamp(16px,1.3vw,20px); }
+        .item { margin-bottom: 36px; width: 100px; }
+        .data { margin-bottom: 36px;  width: calc(100% - 100px);
+          .subItem, .subData { display: inline-block; }
+          .subItem { width: 65px; }
+          .subData { width: calc(100% - 65px);
+            &:before { content: "："; }
+          }
+        }
+        &--left {margin-right: auto;}
+      }
+    }
+    .newsSet { margin-top: 80px;
+      .setTitle {
+        .titleSet { position: relative;
+          .title { padding-left: .5em; font-size: clamp(45px,8vw,75px); text-align: center;}
+          .rubi { left: 0; right: 0; margin: auto; width: fit-content; font-size: 24px;  }
+        }
+      }
+      .setContent { margin: 40px auto 0; padding-left: 0; width: 80%; min-width: 400px;
+        .newsList {
+          .news { display: flex; flex-direction: column; padding: 0;
+            .date { width: 100%; font-size: 20px; }
+            .title { padding-left: 0; width: calc(100% - 80px); font-size: 20px; margin-top: 10px; }
+            & + .news { margin-top: 16px; padding-top: 16px; }
+          }
+        }
+      }
+      .actionSet { margin-top: 40px; 
+        .moreLink { 
+          .label { font-size: 20px;
+            &:after { font-size: 30px; }
+          }
+        }
+      }
+    }
+    .historySet { margin-top: 80px;
+      .setTitle {
+        .titleSet { position: relative;
+          .title { padding-left: .5em; font-size: clamp(45px,8vw,75px); text-align: center;}
+          .rubi { left: 0; right: 0; margin: auto; width: fit-content; font-size: 24px;  }
+        }
+      }
+      .setContent { margin: 40px auto 0; padding-left: 0; width: 80%; min-width: 400px;
+        .historyList {
+          .history { 
+            .year { width: 80px; font-size: 26px; }
+            .desc { padding-left: 20px; width: calc(100% - 80px); font-size: 18px; }
+            & + .history { margin-top: 20px; }
+          }
+        }
+      }
+      .actionSet { margin-top: 40px; 
+        .moreLink { 
+          .label { font-size: 20px;
+            &:after { font-size: 30px; }
+          }
+        }
+      }
+    }
+    .groupSet { margin-top: 80px;
+      .setTitle {
+        .titleSet { position: relative;
+          .title { padding-left: .5em; font-size: clamp(45px,8vw,75px); text-align: center;}
+          .rubi { left: 0; right: 0; margin: auto; width: fit-content; font-size: 24px;  }
+        }
+      }
+      .setContent { margin: 40px auto 0; padding-left: 0; width: 80%; 
+        .subTitle { padding-left: 0; color: #c1c1c1; font-size: 20px; line-height: $lh_small; }
+        .companySet { display: flex; flex-direction: column; margin-top: 30px;
+          .mainCompany { height: 100%;
+            .company { height: 100%;
+              &#agexGroup { img {width: 100%;} }
+            }
+          }
+          .otherCompany { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;  
+            .company { border-left: none;
+              & + .company { border-left: none; }
+            }
+          }
+        }
+      }
+    }
+  }
+  // For SP
+  @media only screen and (max-width: $w_break_sp) { width: calc(100vw - 80px);  margin: 15px auto 0;
+    .descriptionSet { 
+      .description { width: 100%; min-width: auto; margin: 0 auto;
+        .item, .data { font-size: clamp(12px,2.8vw,16px); }
+        .item { margin-bottom: 18px; width: 24%; }
+        .data { margin-bottom: 18px;  width:76%;
+          .subItem, .subData { display: block; }
+          .subItem { width: 100%;
+            &:after { content: "："; }
+            & + .subData { margin-top: 9px; }
+          }
+          .subData { width: 100%;
+            &:before { content: none; }
+            & + .subItem { margin-top: 18px; }
+          }
+        }
+      }
+    }
+    .newsSet { margin-top: 80px;
+      .setTitle {
+        .titleSet { position: relative;
+          .title { padding: 0 ; font-size: 40px; white-space: nowrap; } 
+          .rubi { font-size: 18px; }
+        }
+      }
+      .setContent { margin-top: 16px; padding-left: 0px; width: 100%; min-width: auto;
+        .newsList {
+          .news { flex-direction: column; padding-top: 16px ;
+            .date { padding-top: 0; width: auto; font-size: clamp(12px,2.8vw,16px);  }
+            .title { margin-top: 8px; padding-left: 0; width: 76%; font-size: clamp(12px,2.8vw,16px); }
+            & + .news { border-top: 1px solid #323232; }
+          }
+        }
+      }
+      .actionSet { margin-top: 40px; text-align: center;
+        .moreLink { 
+          .label { font-size: 16px; 
+            &:after {margin-top: 4px; font-size: 20px; }
+          }
+        }
+      }
+    }
+    .historySet { margin-top: 80px;
+      .setTitle {
+        .titleSet { position: relative;
+          .title { padding:0 ; font-size: 40px; white-space: nowrap; } 
+          .rubi { font-size: 18px; }
+        }
+      }
+      .setContent { margin-top: 16px;  width: 100%; min-width: auto;
+        .historyList {
+          .history { 
+            .year { padding-top: 0; width: 24%; font-size: clamp(16px,4.6vw,26px);  }
+            .desc { padding-left: 0; width: 76%; font-size: clamp(12px,2.8vw,16px); }
+            & + .history { margin-top: 20px; }
+          }
+        }
+      }
+      .actionSet { margin-top: 40px; text-align: center;
+        .moreLink { 
+          .label { font-size: 16px; 
+            &:after {margin-top: 4px; font-size: 20px; }
+          }
+        }
+      }
+    }
+    .groupSet { display: flex; flex-direction: column; margin-top: 80px;
+      .setTitle {
+        .titleSet { position: relative;
+          .title { padding:0 ; font-size: 40px; white-space: nowrap; } 
+          .rubi { font-size: 18px; }
+        }
+      }
+      .setContent { margin-top: 16px; padding-left: 0; width: 100%;
+        .subTitle { padding-left: 0; font-size: clamp(12px,2.8vw,16px); line-height: $lh_medium; }
+        .companySet { display: flex; flex-direction: column; margin-top: 10px;
+          .mainCompany { 
+            .company { text-align: center; padding: 16px; height: 100%;
+              &#agexGroup { img {width: 60%;} }
+              &#DS { img {width: 60%;} }
+              &#XIN { img {width: 50%;} }
+              &#SK { img {width: 70%;} }
+              &#fft { img {width: 60%;} }
+            }
+           }
+          .otherCompany { display: flex; flex-direction: row; flex-wrap: wrap; 
+            .company { text-align: center; padding: 0; width: 50%; height: 100px; border-left: none; 
+              .imgCell { height: 40px;
+                .logoImg { width: 70%; }
+              }
+              .captionCell { 
+                .caption { text-align: center; font-size: 10px; line-height: normal;}
+              }
+              & + .company { border-left: none; }
+            }
+          } 
+        }
+      }
+      
+    }		
+  }	
+}
+
+.newsSet { margin-top: 80px;
+  .setContent { margin-top: 40px; padding-left: 30px;
+    .newsList {
+      .news { display: flex; padding: 40px 20px 40px 0px; color: $col_txt_link_black;
+        .date, .title { }
+        .date { display: inline-block; padding-top: 10px; width: 135px; font-size: 20px; font-weight: 500; letter-spacing: .1em; font-style: italic; }
+        .title { padding-left: 160px; width: calc(100% - 80px); font-size: 20px; line-height: $lh_medium; }
+        & + .news { border-top: 2px solid #323232; }
+        &:hover { opacity: $col_opacity; }
+      }
+      
+      &--hide { position: relative; height: 0; overflow: hidden; @include transition;
+        &.active { margin-top: 20px; height: auto; overflow: visible; @include transition; }
+      }
+    }
+  }
+  .actionSet { margin-top: 40px; text-align: center; 
+    .moreLink { display: inline-block;
+      .label { font-size: 20px; font-weight: 600;
+        &:after { content: "\ea18"; @include icon; display: block; margin-top: 5px; font-size: 30px; }
+      }
+      &:hover { opacity: $col_opacity; }
+      &--back {
+        .label {
+          &:after { transform: scale(1,-1); }
+        }
+      }
+    }
+  }
+}
+.historySet { margin-top: 80px;
+  .setContent { margin-top: 40px; padding-left: 30px;
+    .historyList {
+      .history { display: flex;
+        .year, .desc { }
+        .year { display: inline-block; padding-top: 5px; width: 80px; font-size: 20px; font-weight: 500; letter-spacing: .1em; font-style: italic; }
+        .desc { padding-left: 30px; width: calc(100% - 80px); font-size: 16px; line-height: $lh_medium; }
+        & + .history { margin-top: 20px; }
+      }
+      &--hide { position: relative; height: 0; overflow: hidden; @include transition;
+        &.active { margin-top: 20px; height: auto; overflow: visible; @include transition; }
+      }
+    }
+  }
+  /*
+  .actionSet { margin-top: 40px; text-align: center;
+    .moreLink { display: inline-block;
+      .label { font-size: 20px; font-weight: 600; color: $col_txt_gray;
+        &:after { content: "\ea18"; @include icon; display: block; margin-top: 5px; font-size: 30px; }
+      }
+      &:hover { opacity: $col_opacity; }
+      &--back {
+        .label {
+          &:after { transform: scale(1,-1); }
+        }
+      }
+    }
+  }
+  */
+}
+.groupSet { margin-top: 80px;
+  .setContent { margin-top: 40px; padding-left: 30px;
+    .subTitle { font-size: 20px; }
+    .companySet { display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 100px;
+      .mainCompany { 
+        .company { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; width: 224px; height: 150px; text-align: center;
+          .imgCell { display: flex; justify-content: center; align-items: center; height: 66px;
+            .logoImg { width: 70%; }
+          }
+          .captionCell { display: flex; align-items: center; height: 44px;
+            .caption { text-align: center; font-size: 14px; line-height: normal;}
+          }	
+          &#agexGroup { img{ width: 90%; } }
+        }
+      }
+      .otherCompany { display: flex; flex-direction: row;
+        .company { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; width: 224px; height: 150px; text-align: center; border-left: 1px solid rgba($color: #fff, $alpha: 0.2); 
+          .imgCell { display: flex; justify-content: center; align-items: center; height: 66px;
+            .logoImg { width: 70%; }
+          }
+          .captionCell { display: flex; align-items: center; height: 44px;
+            .caption { text-align: center; font-size: 14px; line-height: normal; color: $col_txt_link_black; }
+          }
+          &#DS { img{ width: 82%; } }
+          &#XIN { img{ width: 64%; } }
+          &#SK { img{ width: 88%; } }
+          &#fft { img{ width: 76%; } } 
+
+          @media only screen and (max-width: $w_break_sp){
+            &#agexGroup { img {width: 60%;} }
+            &#DS { img {width: 60%;} }
+            &#XIN { img {width: 50%;} }
+            &#SK { img {width: 70%;} }
+            &#fft { img {width: 60%;} }
+          }
+          
+        }
+      }
+      
+
+
+    }
+  }
+  
+}

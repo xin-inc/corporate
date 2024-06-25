@@ -1,0 +1,15 @@
+---
+import Swiper from '../components/Swiper.astro';
+const { members } = Astro.props;
+
+const memberSlides = members.map(member => (
+  {
+    image: `/imageFile/member/member_${member.key}.svg`,
+    alt: member.name,
+    key: member.key
+  }
+));
+
+---
+
+<Swiper slides={memberSlides} />

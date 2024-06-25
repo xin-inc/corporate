@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/PageTemplate.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import PageTitle from '../components/PageTitle.astro';
+import ContentTitle from '../components/ContentTitle.astro';
+import Catch from '../components/Catch.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+import '../styles/css/join-us.css';
+---
+
+<Layout title="Contact" description="">
+	<div id="contact" class="md_contentUnit">
+		<BreadCrumbs
+      pages={[
+        {name: 'TOP', url: '/'},
+        {name: 'CONTACT', url: '/contact'},
+      ]}
+      />
+
+		<PageTitle
+				subTitle="THANK YOU"
+				svg="/imageFile/contact_title.svg">
+				<h2 class="rubi">ありがとうございます！</h2>
+		</PageTitle>
+
+		<div class="unitContent spaceLess pageTopCopy">
+			<Catch>
+				お問い合わせいただきまして、ありがとうございます。<br />
+				内容確認させていただきます！
+			</Catch>
+		</div>
+
+
+	</div>
+</Layout>

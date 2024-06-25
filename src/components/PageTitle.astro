@@ -1,0 +1,26 @@
+---
+const { subTitle, svg, panel } = Astro.props;
+const imgPath = `imageFile/member/member_{$key}.svg`;
+
+import '../styles/css/pageTitle.css';
+
+const isPanel = panel != '';
+---
+
+
+<div class="pageTitle pageTitle--category">
+  <div class="titleSet">
+    <div class="subTitle">{subTitle}</div>
+    <div class="title">
+      <img src={svg} alt="service" class="titleImg">
+      <img src={svg} alt="service" class="titleImg">
+    </div>
+    <slot />
+  </div>
+  { isPanel && <img src={panel} class="panelImg" /> }
+</div>
+
+
+<style>
+
+</style>

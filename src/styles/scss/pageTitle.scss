@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*----------------------------------------
+ Import
+----------------------------------------*/
+
+@import '_reset';
+@import '_variable';
+
+/*----------------------------------------
+ pageTitle
+----------------------------------------*/
+.pageTitle { position: relative; margin: 70px 0 20px; padding: 210px 40px 0px;
+  .titleSet { position: relative; width: 100%;
+    &:before { content: none; }
+    .subTitle { position: relative; display: inline-block; padding: 0 15px; height: 36px; line-height: 36px; background-color: #000; font-size: 20px; font-weight: bold; letter-spacing: $ls_small; color: #fff; z-index: 1; }
+    .title { position: absolute;  display: flex; top: calc(50% - 5px); left: 50%; width: 100vw; height: 250px; overflow: hidden; transform: translate(-50%,-50%); z-index: 0;
+      .titleImg { width: auto; height: 100%; max-width: inherit; padding-left: 400px;
+        &:first-child { animation: loop 50s -25s linear infinite; }
+        &:last-child { animation: loop2 50s linear infinite; }
+      }
+    }
+    .rubi { position: relative; top: 0; left: 0; margin-top: 20px; font-size: 80px; font-weight: bold; line-height: $lh_small; transform: none; }
+  }
+  .panelImg { position: absolute; top: 0; right: 0; width: 40%; }
+}
+// For tablet
+@media only screen and (max-width: 1000px) {
+  .pageTitle {
+    .titleSet {
+      .subTitle {padding: 0 12px; height: 28px; line-height: 28px; font-size: 15px;  }
+      .title { top: calc(50% + 20px); height: 170px; }
+      .rubi {margin-top: 15px; font-size: 54px; }
+    }
+  }
+  .unitContent { margin-top: 90px;
+    .contentArea {
+      .catchSet { padding-left: 0; font-size: 16px; }
+    }
+  }
+
+}
+// For SP
+@media only screen and (max-width: $w_break_sp) {
+  .pageTitle {
+    .titleSet {
+      .subTitle {padding: 0 8px; height: 20px; line-height: 20px; font-size: 10px; }
+      .title { top: calc(50% + 15px); height: 90px;
+        .titleImg { padding-left: 200px; }
+      }
+      .rubi { margin-top: 10px; font-size: 28px; }
+    }
+  }
+  .unitContent { margin-top: 50px;
+    .contentArea {
+      .catchSet {font-size: 13px; letter-spacing: 0; }
+    }
+  } 
+  
+}

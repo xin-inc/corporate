@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@font-face { 
+	font-family: 'icomoon'; font-weight: normal; font-style: normal; 
+	src:  url('../font/icomoon.eot?ftcn80');
+	src:  url('../font/icomoon.eot?ftcn80#iefix') format('embedded-opentype'),
+	url('../font/icomoon.ttf?ftcn80') format('truetype'),
+	url('../font/icomoon.woff?ftcn80') format('woff'),
+	url('../font/icomoon.svg?ftcn80#icomoon') format('svg');
+}
+[class^="icon-"], [class*=" icon-"] { font-family: 'icomoon' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+// pxtovw($px)
+$viewport: 1920;
+@function pxtovw($num, $width: $viewport) {
+@return (1vw * $num / $width * 100);
+}
+
+// px表示に戻す（編集用）
+// @function pxtovw($num, $width: $viewport) {
+// @return (1px * $num);
+// }
+ 
+
+/* --------------------------------------------------
+ Variable & Mixin 
+-------------------------------------------------- */
+
+/* ------------ Color ------------ */
+
+/* Main */
+$col_main: #978dfe;
+$col_black: #000;
+$col_bg: #eaeaea;
+$col_sdw: #000;
+
+/* Text */
+$col_txt: $col_black;
+$col_txt_link: #52a0ea; 
+$col_txt_link_black: #323232; 
+$col_txt_hover: #f90; 
+$col_txt_gray: #c1c1c1;
+$col_txt_blueGray: #89a;
+$col_txt_disabled: #bbb; 
+$col_txt_placeholder: #ccc;
+$col_txt_point: #f90; 
+
+/* Background */
+$col_bg_gray: #f3f3f3; 
+$col_bg_blackLayer: rgba(0,0,0, .7); 
+$col_bg_whiteLayer: rgba(255,255,255, .7); 
+$col_bg_old: #f0f0f0; 
+$col_bg_disabled: #dfdfdf; 
+$col_bg_snackBar: #323232; 
+
+/* Button */
+$col_btn: $col_main;
+$col_sdw_btn: rgba($col_btn, .5);
+
+/* Border */
+$col_border: #eee; 
+$col_border_bg: darken($col_bg, 5%); 
+$col_border_btn: #ccc; 
+
+/* Status */
+$col_status_new: #ff4081; 
+$col_sdw_status_new: rgba($col_status_new, .5); 
+
+$col_status_error: #f44; 
+$col_bg_status_error: #ffecec; 
+$col_sdw_status_error: rgba($col_status_error, .5); 
+
+$col_status_clean: #00bfa5; 
+$col_bg_status_clean: #eafff6; 
+
+$col_status_warning: #ffa000; 
+$col_bg_status_warning: #fffde7; 
+
+/* Gradation */
+$col_grad_main: linear-gradient(to right, $col_main 0%, lighten($col_main, 10%) 100%); 
+
+/* Opacity */
+$col_opacity: .7; 
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: pxtovw(1280);
+$w_break_tablet: $w_wrap; 
+$w_break_sp: 600px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_centeringElementSP: 90%; 
+
+/* Height */
+$h_header: 72px; 
+$h_header_sp: 60px; 
+$h_btn: 50px; 
+$h_btn_big: 100px; 
+$h_btn_small: 30px; 
+$h_form: 40px;
+
+/* Margin */
+$w_ma_bigger:    80px; $w_ma_big:    50px; $w_ma:    25px; $w_ma_small:    15px; $w_ma_smaller:    10px; // PC 
+$w_sp_ma_bigger: 50px; $w_sp_ma_big: 30px; $w_sp_ma: 15px; $w_sp_ma_small: 10px; $w_sp_ma_smaller: 7px; // SP
+@mixin w_mt_bigger { margin-top: $w_ma_bigger;      @media only screen and (max-width: $w_break_sp) { margin-top:    $w_sp_ma_bigger; }}
+@mixin w_mt_big { margin-top: $w_ma_big;            @media only screen and (max-width: $w_break_sp) { margin-top:    $w_sp_ma_big; }}
+@mixin w_mt { margin-top: $w_ma;                    @media only screen and (max-width: $w_break_sp) { margin-top:    $w_sp_ma; }}
+@mixin w_mt_small { margin-top: $w_ma_small;        @media only screen and (max-width: $w_break_sp) { margin-top:    $w_sp_ma_small; }}
+@mixin w_mt_smaller { margin-top: $w_ma_smaller;    @media only screen and (max-width: $w_break_sp) { margin-top:    $w_sp_ma_smaller; }}
+@mixin w_mb_bigger { margin-bottom: $w_ma_bigger;   @media only screen and (max-width: $w_break_sp) { margin-bottom: $w_sp_ma_bigger; }}
+@mixin w_mb_big { margin-bottom: $w_ma_big;         @media only screen and (max-width: $w_break_sp) { margin-bottom: $w_sp_ma_big; }}
+@mixin w_mb { margin-bottom: $w_ma;                 @media only screen and (max-width: $w_break_sp) { margin-bottom: $w_sp_ma; }}
+@mixin w_mb_small { margin-bottom: $w_ma_small;     @media only screen and (max-width: $w_break_sp) { margin-bottom: $w_sp_ma_small; }}
+@mixin w_mb_smaller { margin-bottom: $w_ma_smaller; @media only screen and (max-width: $w_break_sp) { margin-bottom: $w_sp_ma_smaller; }}
+@mixin w_ml_bigger { margin-left: $w_ma_bigger;     @media only screen and (max-width: $w_break_sp) { margin-left:   $w_sp_ma_bigger; }}
+@mixin w_ml_big { margin-left: $w_ma_big;           @media only screen and (max-width: $w_break_sp) { margin-left:   $w_sp_ma_big; }}
+@mixin w_ml { margin-left: $w_ma;                   @media only screen and (max-width: $w_break_sp) { margin-left:   $w_sp_ma; }}
+@mixin w_ml_small { margin-left: $w_ma_small;       @media only screen and (max-width: $w_break_sp) { margin-left:   $w_sp_ma_small; }}
+@mixin w_ml_smaller { margin-left: $w_ma_smaller;   @media only screen and (max-width: $w_break_sp) { margin-left:   $w_sp_ma_smaller; }}
+@mixin w_mr_bigger { margin-right: $w_ma_bigger;    @media only screen and (max-width: $w_break_sp) { margin-right:  $w_sp_ma_bigger; }}
+@mixin w_mr_big { margin-right: $w_ma_big;          @media only screen and (max-width: $w_break_sp) { margin-right:  $w_sp_ma_big; }}
+@mixin w_mr { margin-right: $w_ma;                  @media only screen and (max-width: $w_break_sp) { margin-right:  $w_sp_ma; }}
+@mixin w_mr_small { margin-right: $w_ma_small;      @media only screen and (max-width: $w_break_sp) { margin-right:  $w_sp_ma_small; }}
+@mixin w_mr_smaller { margin-right: $w_ma_smaller;  @media only screen and (max-width: $w_break_sp) { margin-right:  $w_sp_ma_smaller; }}
+
+/* Padding */
+$w_pa_bigger:    80px; $w_pa_big:    50px; $w_pa:    25px; $w_pa_small:    15px; $w_pa_smaller:    10px; // PC 
+$w_sp_pa_bigger: 50px; $w_sp_pa_big: 30px; $w_sp_pa: 15px; $w_sp_pa_small: 10px; $w_sp_pa_smaller: 7px; // SP
+@mixin w_pa_bigger { padding: $w_pa_bigger;          @media only screen and (max-width: $w_break_sp) { padding:        $w_sp_pa_bigger; }}
+@mixin w_pa_big { padding: $w_pa_big;                @media only screen and (max-width: $w_break_sp) { padding:        $w_sp_pa_big; }}
+@mixin w_pa { padding: $w_pa;                        @media only screen and (max-width: $w_break_sp) { padding:        $w_sp_pa; }}
+@mixin w_pa_small { padding: $w_pa_small;            @media only screen and (max-width: $w_break_sp) { padding:        $w_sp_pa_small; }}
+@mixin w_pa_smaller { padding: $w_pa_smaller;        @media only screen and (max-width: $w_break_sp) { padding:        $w_sp_pa_smaller; }}
+@mixin w_pt_bigger { padding-top: $w_pa_bigger;      @media only screen and (max-width: $w_break_sp) { padding-top:    $w_sp_pa_bigger; }}
+@mixin w_pt_big { padding-top: $w_pa_big;            @media only screen and (max-width: $w_break_sp) { padding-top:    $w_sp_pa_big; }}
+@mixin w_pt { padding-top: $w_pa;                    @media only screen and (max-width: $w_break_sp) { padding-top:    $w_sp_pa; }}
+@mixin w_pt_small { padding-top: $w_pa_small; 	     @media only screen and (max-width: $w_break_sp) { padding-top:    $w_sp_pa_small; }}
+@mixin w_pt_smaller { padding-top: $w_pa_smaller;    @media only screen and (max-width: $w_break_sp) { padding-top:    $w_sp_pa_smaller; }}
+@mixin w_pb_bigger { padding-bottom: $w_pa_bigger;   @media only screen and (max-width: $w_break_sp) { padding-bottom: $w_sp_pa_bigger; }}
+@mixin w_pb_big { padding-bottom: $w_pa_big;         @media only screen and (max-width: $w_break_sp) { padding-bottom: $w_sp_pa_big; }}
+@mixin w_pb { padding-bottom: $w_pa;                 @media only screen and (max-width: $w_break_sp) { padding-bottom: $w_sp_pa; }}
+@mixin w_pb_small { padding-bottom: $w_pa_small;     @media only screen and (max-width: $w_break_sp) { padding-bottom: $w_sp_pa_small; }}
+@mixin w_pb_smaller { padding-bottom: $w_pa_smaller; @media only screen and (max-width: $w_break_sp) { padding-bottom: $w_sp_pa_smaller; }}
+@mixin w_pl_bigger { padding-left: $w_pa_bigger;     @media only screen and (max-width: $w_break_sp) { padding-left:   $w_sp_pa_bigger; }}
+@mixin w_pl_big { padding-left: $w_pa_big;           @media only screen and (max-width: $w_break_sp) { padding-left:   $w_sp_pa_big; }}
+@mixin w_pl { padding-left: $w_pa;                   @media only screen and (max-width: $w_break_sp) { padding-left:   $w_sp_pa; }}
+@mixin w_pl_small { padding-left: $w_pa_small;       @media only screen and (max-width: $w_break_sp) { padding-left:   $w_sp_pa_small; }}
+@mixin w_pl_smaller { padding-left: $w_pa_smaller;   @media only screen and (max-width: $w_break_sp) { padding-left:   $w_sp_pa_smaller; }}
+@mixin w_pr_bigger { padding-right: $w_pa_bigger;    @media only screen and (max-width: $w_break_sp) { padding-right:  $w_sp_pa_bigger; }}
+@mixin w_pr_big { padding-right: $w_pa_big;          @media only screen and (max-width: $w_break_sp) { padding-right:  $w_sp_pa_big; }}
+@mixin w_pr { padding-right: $w_pa;                  @media only screen and (max-width: $w_break_sp) { padding-right:  $w_sp_pa; }}
+@mixin w_pr_small { padding-right: $w_pa_small;      @media only screen and (max-width: $w_break_sp) { padding-right:  $w_sp_pa_small; }}
+@mixin w_pr_smaller { padding-right: $w_pa_smaller;  @media only screen and (max-width: $w_break_sp) { padding-right:  $w_sp_pa_smaller; }}
+
+/* Border Radius */
+$r_big: 8px; 
+$r_medium: 6px; 
+$r_small: 4px; 
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; $fs_sp_biggest:  20px; 
+$fs_bigger:   24px; $fs_sp_bigger:   18px; 
+$fs_big:      28px; $fs_sp_big:      20px; 
+$fs_medium:   20px; $fs_sp_medium:   16px; 
+$fs_small:    14px; $fs_sp_small:    12px; 
+$fs_smaller:  12px; $fs_sp_smaller:  10px; 
+$fs_smallest: 10px; $fs_sp_smallest:  9px; 
+@mixin fs_biggest  { font-size: $fs_biggest;  @media only screen and (max-width: $w_break_sp) { font-size: $fs_sp_biggest; }}
+@mixin fs_bigger   { font-size: $fs_bigger;   @media only screen and (max-width: $w_break_sp) { font-size: $fs_sp_bigger; }}
+@mixin fs_big      { font-size: $fs_big;      @media only screen and (max-width: $w_break_sp) { font-size: $fs_sp_big; }}
+@mixin fs_medium   { font-size: $fs_medium;   @media only screen and (max-width: $w_break_sp) { font-size: $fs_sp_medium; }}
+@mixin fs_small    { font-size: $fs_small;    @media only screen and (max-width: $w_break_sp) { font-size: $fs_sp_small; }}
+@mixin fs_smaller  { font-size: $fs_smaller;  @media only screen and (max-width: $w_break_sp) { font-size: $fs_sp_smaller; }}
+@mixin fs_smallest { font-size: $fs_smallest; @media only screen and (max-width: $w_break_sp) { font-size: $fs_sp_smallest; }}
+
+/* Lineheight */
+$lh_big: 2.5; 
+$lh_medium: 2; 
+$lh_small: 1.25; 
+
+/* Letterspacing */
+$ls_medium: 0.5em;
+$ls_small: 0.2em;
+
+/* Adjust */
+@mixin kinsoku { word-break: normal; word-wrap: break-word; }
+@mixin mojidume { font-feature-settings: "palt"; }
+@mixin lineClamp($num) { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: $num; }
+
+
+/* ------------ Layout ------------ */
+
+// lot = layout, hor = horizon, ver = vertical
+@mixin lot_flex { display: flex; } 
+@mixin lot_flexWrap { display: flex; flex-flow: row wrap; justify-content: space-between; }
+@mixin lot_horC { justify-content: center; } 
+@mixin lot_horL { justify-content: flex-start; }
+@mixin lot_horR { justify-content: flex-end; }
+@mixin lot_verT { align-items: flex-start; }
+@mixin lot_verC { align-items: center; }
+@mixin lot_verB { align-items: flex-end; }
+@mixin lot_verReverse { flex-direction: column-reverse; }
+
+// Stickyを使う際はIE対策をしよう（polifill）
+@mixin lot_sticky { position: sticky; top: 0; }
+@mixin lot_stickyB { position: sticky; bottom: 0; }
+
+/* Br */
+br { 
+	&.spShow { display: none; }
+	&.spHide { display: block; }
+	@media only screen and (max-width: $w_break_sp) { 
+		&.spShow { display: block;
+			&.sp--period { position: relative;
+				&:before { content: "。"; }
+			}
+		}
+		&.spHide { display: none; }
+	}
+}
+
+.sp--period { display: none;
+	@media only screen and (max-width: $w_break_sp) { position: relative;
+		&:before { content: "。"; }
+	}
+}
+.sp--comma { display: none;
+	@media only screen and (max-width: $w_break_sp) { position: relative;
+		&:before { content: "、"; }
+	}
+}
+
+
+/* ------------ Shadow ------------ */
+
+$sdw: 0 5px 10px -5px; 
+$sdw_small: 0 2px 4px -2px; 
+$sdw_btn: 0 10px 20px -5px; 
+@mixin bs_small($col_sdw)     { box-shadow: 0  1px  3px     rgba($col_sdw, .05), 0 1px 10px     rgba($col_sdw, .02); }
+@mixin bs($col_sdw)           { box-shadow: 0  8px 13px 2px rgba($col_sdw, .05), 0 3px 12px 2px rgba($col_sdw, .02), 0 5px  5px -3px rgba($col_sdw, .01); }
+@mixin bs_big($col_sdw)       { box-shadow: 0 16px 25px 2px rgba($col_sdw, .05), 0 6px 24px 5px rgba($col_sdw, .02), 0 8px 10px -7px rgba($col_sdw, .01); }
+
+@mixin bs_btn_small($col_btn) { box-shadow: 0  2px  4px     rgba($col_btn, .15), 0 1px  3px     rgba($col_btn, .1),  0 2px  3px -1px rgba($col_btn, .3); }
+@mixin bs_btn($col_btn)       { box-shadow: 0  5px 10px 2px rgba($col_btn, .15), 0 2px  6px 2px rgba($col_btn, .1),  0 4px  5px -2px rgba($col_btn, .3); }
+@mixin bs_btn_big($col_btn)   { box-shadow: 0 10px 20px 2px rgba($col_btn, .15), 0 5px 15px 5px rgba($col_btn, .1),  0 8px 10px -6px rgba($col_btn, .3); }
+
+
+/* ------------ Others ------------ */
+
+/* Icon */
+@mixin icon { position: relative; display: inline-block; font-family: 'icomoon'; font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; vertical-align: middle; }
+@mixin icon_arrow { @include icon; content: "\e930"; position: absolute; right: 5px; top: calc(50% - 15px); height: 30px; line-height: 30px; font-size: 22px; }
+
+/* Other */
+@mixin transition { transition: all 0.2s ease-out 0s }
+@mixin notBtn { height: auto; line-height: 1; padding: 0; background: none; color: inherit; box-shadow: none; border-radius: 0;
+	&:hover { box-shadow: none; }
+}
+@mixin smoothScroll { -webkit-overflow-scrolling: touch; }
+@mixin mustIcon { display: inline-block; height: 18px; line-height: 18px; margin-left: 10px; padding: 0 8px; font-size: 13px; color: #fff; border-radius: $r_small; }
+
+/* animation */
+@keyframes objectAnime {
+	0% { opacity: 0; margin-top: -70px; }
+	70% { margin-top: 10px; }
+	100% { opacity: 1; margin-top: 0; }
+}
+
+@keyframes modal_fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes an_spin {
+	0%, 100% { transform: translate(0) }
+	25% { transform: translate(160%) }
+	50% { transform: translate(160%, 160%) }
+	75% { transform: translate(0, 160%) }
+}
+@keyframes loop {
+	0% {transform: translateX(100%);}
+	to {transform: translateX(-100%);}
+}
+@keyframes loop2 {
+	0% {transform: translateX(0);}
+	to {transform: translateX(-200%);}
+}
+
+$font_family : 'Montserrat', "游ゴシック", "Yu Gothic";

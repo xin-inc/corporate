@@ -1,0 +1,10 @@
+---
+const { thumnail, title, url } = Astro.props;
+---
+
+<div class="storyUnit">
+  <a href={url} target="_blank">
+    <img src={thumnail} class="storyUnit_img" />
+    <p class="storyUnit_title">{title}</p>
+  </a>
+</div>

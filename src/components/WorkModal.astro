@@ -1,0 +1,13 @@
+---
+const { num } = Astro.props; 
+---
+
+<div class="md_modal md_modal--work md_modal--work1">
+	<a href="../works" class="bgLayer md_linkPart js_modalX"></a>
+	<div class="md_card md_card--modalBase">
+		<a href="../works" class="closeLink md_linkPart"></a>
+		<div class="cardContent">
+      <slot />
+    </div>
+	</div>
+</div>
