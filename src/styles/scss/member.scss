@@ -13,5 +13,29 @@
 ----------------------------------------*/
 
 .memberWrap {
-  padding: 60px;
+  padding: 60px 0;
+}
+
+.memberUnit {
+  position: relative;
+  width: 100%;
+  &:hover > .slide > .imgSet > .md_btn--more{ color: #fff;  background-color:#000; transition: background-color .8s ease-in; 
+    &::after{ width: 100%; opacity: 1; }
+  }
+
+}
+.memberUnit .memberImg {
+  width: 100%;
+}
+.memberUnit .md_btn {
+  border: 4px solid #000; 
+  border-radius: 50%;
+  bottom: 15%;
+  font-size: 14px;
+  height: 90px;
+  position: absolute;
+  right: 12%;
+  text-align: center;
+  width: 90px;
+  &::after { content: '';  position: absolute; z-index: -1; bottom: 0; left: 0; width: 0; height:100%; background-color:#000; transition:all .5s; opacity: 0;}
 }

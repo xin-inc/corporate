@@ -4,6 +4,7 @@ import BreadCrumbs from '../components/BreadCrumbs.astro';
 import PageTitle from '../components/PageTitle.astro';
 import ContentTitle from '../components/ContentTitle.astro';
 import Catch from '../components/Catch.astro';
+import ContactInfo from '../components/ContactInfo.astro';
 
 import MemberListWrapper from '../components/MemberListWrapper.astro';
 
@@ -34,6 +35,8 @@ import '../styles/css/member.css';
 		</div>
 
 		<MemberListWrapper isTop={false} />
+
+		<ContactInfo isRecruitLink={true} />
 
 	</div>
 </Layout>

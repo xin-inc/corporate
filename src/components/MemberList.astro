@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 const { key, name, isTop } = Astro.props;
-const imgPath = `/imageFile/member/member_${key}.svg`;
+const imgPath = `/imageFile/member_img/${key}.svg`;
 const mainClass = isTop ? 'md_linkPart' : '';
 const unitId = `memberUnit-${key}`;
 ---
@@ -17,27 +17,6 @@ const unitId = `memberUnit-${key}`;
     </div>
   </div>
 </div>
-
-<style>
-  .memberUnit {
-    position: relative;
-    width: 100%;
-  }
-  .memberUnit .memberImg {
-    width: 100%;
-  }
-  .memberUnit .md_btn {
-    border: 4px solid #000; 
-    border-radius: 50%;
-    bottom: 0;
-    font-size: 14px;
-    height: 90px;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    width: 90px;
-  }
-</style>
 
 <script>
   import { isMemberModalOpen, currentMember } from '../store/index.js';
