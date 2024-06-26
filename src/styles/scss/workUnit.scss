@@ -10,7 +10,8 @@
 /*----------------------------------------
  works
 ----------------------------------------*/
-.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; margin: 200px 0 100px; padding: 0;
+.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; margin: 200px 0 350px; padding: 0;
+  &.isTop { margin-bottom: 50px; }
   .worksSet { position: relative;
     &:before { display: none; content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 60%; height: 60%; background-size: contain; background-position: center; background-repeat: no-repeat; transform: translate(-50%,-50%); z-index: -1; }
     .linkArea { position: relative; display: block; padding: 60px 40px; color: #000; transform: skew(8deg);
@@ -66,10 +67,10 @@
     }
     &:nth-child(2n) { margin-top: 100px;
       .linkArea{ transform: skew(-8deg);
-        .borderSection { 
-          &:before { display: block; top: 25px; left: auto; right: 0; width: 150px; }
-          &:after { display: block; top: 25px; left: auto; right: 0; height: 40%; }
-          &--bottom {
+        .borderSection { transform: skew(16deg);
+          &:before { display: block; top: 30px; left: auto; right: 0; width: 150px; }
+          &:after { display: block; top: 30px; left: auto; right: 0; height: 40%; }
+          &--bottom { transform: skew(0);
             &:before { display: block; top: 100%; left: 40%; width: 50%; transform: translateY(-100%); }
             &:after { display: none; top: 60px; height: calc(100% - 60px); left: 100%; transform: translateX(-100%); }
           }
