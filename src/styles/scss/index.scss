@@ -139,7 +139,7 @@
 				.catchSet { padding-left: 60px; font-size: 20px; letter-spacing: $ls_small; line-height: $lh_medium; }
 			}
 		}
-		&:nth-of-type(2n) {
+		&:nth-of-type(2n+1) {
 			.unitTitle { justify-content: flex-end;
 				.titleSet { display: flex; flex-direction: column; align-items: flex-end;
 					.title {
@@ -1503,7 +1503,7 @@
 
   &_catch {
     text-align: center; font-weight: bold;
-    font-size: clamp(32px,3vw,44px); white-space: nowrap; line-height: $lh_medium;
+    font-size: clamp(32px,3vw,44px); white-space: nowrap; line-height: $lh_medium; letter-spacing: $ls_small;
   }
   &_btnCatch {
     text-align: center; margin-bottom: 20px;
@@ -1513,7 +1513,7 @@
   &_inner {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5%;
+    gap: 2%;
     margin-top: 30px;
   }
 
@@ -1521,7 +1521,6 @@
     align-items: center;
     display: flex;
     gap: 10px;
-    font-weight: bold;
     &::before {
       content: '';
       display: inline-block;
@@ -1530,6 +1529,16 @@
       background: url(/imageFile/top/contact_icon1.svg) no-repeat left center;
       background-size: 100% auto;
     }
+		p {
+			letter-spacing: $ls_small;
+			font-weight: bold;
+			font-size: 16px;
+			span {
+				font-size: 14px;
+				line-height: $lh_medium;
+				padding: 5px 0;
+			}
+		}
   }
   &_problems {
     margin: 20px 0 0;
@@ -1552,6 +1561,22 @@
 			margin-top: 4px;
     }
   }
+
+	&:nth-child(2) {
+		.clientProblem_target {
+			&::before {
+				background-image: url(/imageFile/top/contact_icon2.svg);
+			}
+		}
+	}
+	&:nth-child(3) {
+		.clientProblem_target {
+			&::before {
+				background-image: url(/imageFile/top/contact_icon3.svg);
+			}
+		}
+	}
+
 	// For SP
 	@media only screen and (max-width: $w_break_sp) { 
 		padding: 20px;
@@ -1569,6 +1594,11 @@
 		&_elem {
 			font-size: 14px;
 		}
+	}
+}
+.md_contentUnit.md_contentUnit--contact .unitContent .contentArea .clientProblemWrap {
+	.actionSet {
+		margin-top: 140px;
 	}
 }
 

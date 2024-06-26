@@ -68,22 +68,6 @@ export const Members = [
     ],
   },
   {
-    key: 'tawa',
-    name: '田和 幸子',
-    role: 'Staff',
-    message: '自分らしく',
-    copy: `ファッション業界で販売や広報などの業務に長く携わった後、仕事と育児の両立を目指して事務職に転職。\n\n
-
-						個性的で優秀なXINメンバーから、日々多くのことを学び、娘からはいつも新しい発見をもらっています。\n\n
-
-						刺激を受けることはたくさんあっても、惑わされることはなくなった今日このごろです。`,
-    tags: [
-      '靴',
-      'ミシン',
-      '犬派',
-    ],
-  },
-  {
     key: 'maeta',
     name: '前田 凛々子',
     role: 'Designer',
@@ -117,7 +101,7 @@ export const Members = [
   },
   {
     key: 'uchida',
-    name: '内田',
+    name: '内田 美菜子',
     role: 'Designer',
     message: '毎日が挑戦だ',
     copy: `元々は理学療法士として、病院や高齢者施設に勤務。\n
@@ -133,7 +117,7 @@ export const Members = [
   },
   {
     key: 'isoda',
-    name: '磯田',
+    name: '磯田 萌乃',
     role: 'Designer',
     message: '素直に、楽しく！',
     copy: `短大で服飾を学んだ後、美大に編入。\n
@@ -155,7 +139,7 @@ export const Members = [
   // 本人の意思により非表示
   {
     key: 'ishizawa',
-    name: '石澤',
+    name: '石澤 魁人',
     role: 'Designer',
     message: 'まっすぐ',
     copy: `関東某所、海の近くでのほほんと暮らしていくつもりが、いつの間にか京都でデザイナーになって早１年。
@@ -171,7 +155,7 @@ export const Members = [
   */
   {
     key: 'ubukata',
-    name: '生方',
+    name: '生方 もとか',
     role: 'Designer',
     message: '心に挑む',
     copy: `通常、人の心は目に見えませんが、仮説を持って挑むことで間接的に可視化することや、働きかけることができます。そんなところに面白さを感じ、大学では心理学を専攻していました。
@@ -188,7 +172,7 @@ export const Members = [
   // 本人の意思により非表示
   {
     key: 'nakamura',
-    name: '中村',
+    name: '中村 日捺子',
     role: 'Designer',
     message: 'ごきげんに生きる',
     copy: `学生時代は書道・アート・デザイン・建築と、さまざまなクリエイティブに夢中になっていました。
@@ -204,4 +188,20 @@ export const Members = [
     ],
   },
   */
+  {
+    key: 'tawa',
+    name: '田和 幸子',
+    role: 'Staff',
+    message: '自分らしく',
+    copy: `ファッション業界で販売や広報などの業務に長く携わった後、仕事と育児の両立を目指して事務職に転職。\n\n
+
+						個性的で優秀なXINメンバーから、日々多くのことを学び、娘からはいつも新しい発見をもらっています。\n\n
+
+						刺激を受けることはたくさんあっても、惑わされることはなくなった今日このごろです。`,
+    tags: [
+      '靴',
+      'ミシン',
+      '犬派',
+    ],
+  },
 ];

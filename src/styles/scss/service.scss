@@ -98,6 +98,7 @@
     font-size: clamp(32px,3vw,44px);
     font-weight: bold;
     line-height: $lh_small;
+    letter-spacing: $ls_small;
     margin-top: 20px;
     white-space: nowrap;
   }
@@ -151,7 +152,7 @@
   }
   &_elem {
     position: absolute;
-    top: 55%;
+    top: 51%;
     width: 40%;
     &.experience {
       left: 5.25%;
@@ -163,7 +164,6 @@
   &_elemTitle {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
     text-align: center;
     span {
       background-color: #000;
@@ -179,13 +179,15 @@
     font-size: clamp(32px,3vw,44px);
     font-weight: bold;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 20px;
     letter-spacing: $ls_small;
     text-align: center;
   }
   &_elemDec {
-    line-height: $lh_small;
-    margin-top: 15px;
+    font-size: 14px;
+    line-height: $lh_medium;
+    letter-spacing: $ls_small;
+    margin-top: 20px;
     text-align: center;
   }
   // For SP
@@ -208,7 +210,7 @@
   &_description {
     font-size: 16px;
     letter-spacing: $ls_small;
-    line-height: $lh_small;
+    line-height: $lh_medium;
     margin-top: 10px;
     padding: 0 40px;
     &.isRight { text-align: right; }
@@ -356,7 +358,6 @@
   &_description {
     font-size: clamp(14px,2.5vw,16px);
     line-height: 1.6;
-    line-height: 1.6;
     text-align: justify;
     padding: 20px 0 40px;
   }
@@ -462,6 +463,7 @@
   &_title {
     font-size: clamp(32px,3vw,44px);
     font-weight: bold;
+    letter-spacing: $ls_small;
     line-height: $lh_small;
     white-space: nowrap;
     text-align: center;
@@ -489,7 +491,7 @@
   background-color: #fff;
   padding: 20px;
   &_title {
-    font-size: clamp(16px,2.5vw,24px);
+    font-size: clamp(14px,2.5vw,18px);
     font-weight: bold;
     letter-spacing: $ls_small;
     line-height: $lh_small;

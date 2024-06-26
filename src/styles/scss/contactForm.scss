@@ -12,8 +12,9 @@
  contact
 ----------------------------------------*/
 .contactForm {
+  box-sizing: border-box;
   padding: 120px 180px;
-  margin: 50px 60px;
+  margin: 50px auto;
   width: 100%;
   background-color: #FFF;
   &_buttons {
@@ -41,6 +42,7 @@
   }
 }
 .contactFormUnit {
+  font-size: 16px;
   margin: 10px 0 0;
   width: 100%;
   &_label {
@@ -63,10 +65,12 @@
       cursor: pointer;
       display: flex;
       gap: 5px;
+      font-size: 16px;
     }
   }
   // For SP
   @media only screen and (max-width: $w_break_sp) {
+    font-size: 14px;
     &_label {
       font-size: 14px;
     }
@@ -75,6 +79,9 @@
     }
     &_radios {
       flex-flow: column;
+      label {
+        font-size: 14px;
+      }
     }
   }
 }

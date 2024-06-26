@@ -51,7 +51,7 @@ body { --sb-track-color: #ffffff; --sb-thumb-color: #aaa; --sb-size: 16px; scrol
 	width: calc(100vw - 200px);
 	max-width: 1300px;
 	z-index: 1;
-	&.spaceLess { margin-top: 0; }
+	&.spaceLess { margin-top: 140px; }
 	&.pageTopCopy {
 		.catchUnit {
 			padding-left: 60px;
@@ -66,6 +66,7 @@ body { --sb-track-color: #ffffff; --sb-thumb-color: #aaa; --sb-size: 16px; scrol
 		font-size: clamp(16px,1.5vw,20px); line-height: $lh_medium; letter-spacing: $ls_small;
 	}
 	.catchUnit {
+		color: $col_txt_body;
 		font-size: 20px;
     letter-spacing: 0.2em;
     line-height: 2;

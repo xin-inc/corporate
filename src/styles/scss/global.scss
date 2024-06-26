@@ -863,7 +863,7 @@ textarea { position: relative; height: $h_form; padding: 0; background-color: tr
 		@media only screen and (max-width: $w_break_sp) {margin-top: 120px; }
  	}
 	& + &--category { margin-top: 320px; }
-	&.md_contentUnit--category {
+	/*&.md_contentUnit--category {
 		.unitTitle {
 			.titleSet { position: relative; width: 100%;
 				&:before { content: none; }
@@ -946,5 +946,5 @@ textarea { position: relative; height: $h_form; padding: 0; background-color: tr
 			} 
 			
 		}
-	}
+	}*/
 }

@@ -25,6 +25,13 @@
   }
 }
 
+.unitContent--ideal {
+  .catchUnit { 
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
 .md_contentUnit--join {
   &:before { top: calc(100% - 150px); right: inherit; left: 50%; width: 100vw; min-width: 1700px; background-image: url(../../imageFile/join_bg.svg); transform: translate(-50%,-50%); }
   .unitContent {
@@ -117,7 +124,7 @@
 
 .staffImage {
   display: grid;
-  gap: 5%;
+  gap: 3%;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 100px;
   padding-left: 40px;
@@ -161,14 +168,14 @@
     }
   }
   &_lead {
-    font-size: clamp(20px,3vw,32px); font-weight: bold; line-height: $lh_small; letter-spacing: $ls_small;
+    font-size: clamp(16px,2.5vw,24px); font-weight: bold; line-height: $lh_small; letter-spacing: $ls_small;
     white-space: nowrap;
   }
   &_dec {
-    font-size: clamp(16px,3vw,20px);
+    font-size: clamp(14px,2.5vw,16px);
     font-weight: normal;
     margin-top: 1em;
-    line-height: $lh_medium;
+    line-height: 1.6;
   }
   // For SP
   @media only screen and (max-width: $w_break_sp) {
@@ -230,17 +237,19 @@
 }
 .storyUnit {
   background-color: #FFF;
-  padding: 36px;
+  padding: 0;
   width: 100%;
   &_img {
     width: 100%;
   }
   &_title {
     color: $col_txt;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
+    line-height: $lh_small;
+    letter-spacing: $ls_small;
     margin-top: 10px;
-    padding: 10px 0;
+    padding: 20px;
   }
   // For SP
   @media only screen and (max-width: $w_break_sp) {

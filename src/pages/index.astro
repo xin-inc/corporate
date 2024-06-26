@@ -17,21 +17,21 @@ import '../styles/css/index.css';
 import '../styles/css/workUnit.css';
 ---
 
-<Layout title="top" description="">
+<Layout title="top" description="" isTop={true}>
 
 		<!-- md_contentUnit--panel -->
 		<div id="top" class="md_contentUnit md_contentUnit--panel">
 			<div class="bgImgSet">
 				<div class="bgImgSection bgImgSection--left">
-					<img src="/imageFile/bg_material/bg_star.svg" alt="" class="bgImg  bgImg--star bgImg--anime">
-					<img src="/imageFile/bg_material/bg_window.svg" alt="" class="bgImg bgImg--window bgImg--anime">
-					<img src="/imageFile/bg_material/bg_cross.svg" alt="" class="bgImg  bgImg--cross bgImg--anime">
+					<img src="/imageFile/bg_material/bg_star.svg" alt="" class="bgImg  bgImg--star">
+					<img src="/imageFile/bg_material/bg_window.svg" alt="" class="bgImg bgImg--window">
+					<img src="/imageFile/bg_material/bg_cross.svg" alt="" class="bgImg  bgImg--cross">
 				</div>
 				<div class="bgImgSection bgImgSection--right">
-					<img src="/imageFile/bg_material/bg_circle.svg" alt="" class="bgImg bgImg--circle bgImg--anime">
-					<img src="/imageFile/bg_material/bg_square.svg" alt="" class="bgImg bgImg--square bgImg--anime">
-					<img src="/imageFile/bg_material/bg_triangle.svg" alt="" class="bgImg bgImg--triangle bgImg--anime">
-					<img src="/imageFile/bg_material/bg_ellipse.svg" alt="" class="bgImg bgImg--ellipse bgImg--anime">
+					<img src="/imageFile/bg_material/bg_circle.svg" alt="" class="bgImg bgImg--circle">
+					<img src="/imageFile/bg_material/bg_square.svg" alt="" class="bgImg bgImg--square">
+					<img src="/imageFile/bg_material/bg_triangle.svg" alt="" class="bgImg bgImg--triangle">
+					<img src="/imageFile/bg_material/bg_ellipse.svg" alt="" class="bgImg bgImg--ellipse">
 				</div>
 			</div>
 			<div class="contentArea">
@@ -337,7 +337,12 @@ import '../styles/css/workUnit.css';
 						<p class="clientProblem_catch">こんなお悩みはありませんか？</p>
 						<div class="clientProblem_inner">
 							<dl class="clientProblem">
-								<dt class="clientProblem_target">自社サービスをお持ちの方</dt>
+								<dt class="clientProblem_target">
+									<p>
+										<span>自社サービスをお持ちの</span><br />
+										事業会社様
+									</p>
+								</dt>
 								<dd class="clientProblem_problems">
 									<ul class="clientProblem_list">
 										<li class="clientProblem_elem">グロース施策だけでは成長に限界が来ており、大きな変革が必要...</li>
@@ -347,7 +352,12 @@ import '../styles/css/workUnit.css';
 								</dd>
 							</dl>
 							<dl class="clientProblem">
-								<dt class="clientProblem_target">サービスを育てたい<br />スタートアップの方</dt>
+								<dt class="clientProblem_target">
+									<p>
+										<span>サービスを育てていきたい</span><br />
+										スタートアップ企業様
+									</p>
+								</dt>
 								<dd class="clientProblem_problems">
 									<ul class="clientProblem_list">
 										<li class="clientProblem_elem">インハウスデザイナーがおらず、目の前の開発が進まない...</li>
@@ -357,7 +367,12 @@ import '../styles/css/workUnit.css';
 								</dd>
 							</dl>
 							<dl class="clientProblem">
-								<dt class="clientProblem_target">コンサル会社 / 開発会社の方</dt>
+								<dt class="clientProblem_target">
+									<p>
+										<span>協業パートナーをお探しの</span><br />
+										コンサルティング/開発会社様
+									</p>
+								</dt>
 								<dd class="clientProblem_problems">
 									<ul class="clientProblem_list">
 										<li class="clientProblem_elem">社内にデザイナーがおらず、ニーズに応えられない...</li>
@@ -367,12 +382,12 @@ import '../styles/css/workUnit.css';
 								</dd>
 							</dl>
 						</div>
-					</div>
 
-					<div class="actionSet">
-						<p class="clientProblem_btnCatch">ご興味を持たれましたら、ぜひ一度お話させてください。<br />
-							オンラインにて無料でご相談を受け付けています。</p>
-						<a href="/contact" class="md_btn md_btn--big md_btn--contact">お問い合わせフォーム</a>
+						<div class="actionSet">
+							<p class="clientProblem_btnCatch">ご興味を持たれましたら、ぜひ一度お話させてください。<br />
+								オンラインにて無料でご相談を受け付けています。</p>
+							<a href="/contact" class="md_btn md_btn--big md_btn--contact">お問い合わせフォーム</a>
+						</div>
 					</div>
 				</div>
 			</div>
