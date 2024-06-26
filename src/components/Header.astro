@@ -3,12 +3,14 @@ import { Image } from 'astro:assets';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import xinLogo from '../assets/XIN_logo.svg';
+
+const { isTop = false } = Astro.props;
 ---
 
 <!-- md_header--top -->
-<header class="md_header md_header--top">
+<header class:list={['md_header', {'md_header--top': isTop}]}>
 	<h1 class="logo">
-		<a href="/" class="header--logo isSmall"></a>
+		<a href="/" class:list={['header--logo', { 'isSmall': !isTop }]}></a>
 	</h1>
 </header>
 <!-- /md_header--top -->
@@ -17,6 +19,7 @@ import xinLogo from '../assets/XIN_logo.svg';
 <header id="header" class="md_header md_header--bottom">
 	<nav class="nav">
 		<ul class="md_tab">
+			<li class="tab"><a href="/" class="md_btn">TOP</a></li>
 			<li class="tab"><a href="/service" class="md_btn">SERVICE</a></li>
 			<li class="tab"><a href="/works" class="md_btn">WORKS</a></li>
 			<li class="tab"><a href="/members" class="md_btn">MEMBERS</a></li>
