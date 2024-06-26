@@ -1,7 +1,7 @@
 /* ------------ Base ------------ */
 
 html { position: relative; max-width: 100%; background-color: #fff; overflow-x: hidden; }
-body { min-width:$w_wrap; background-color: $col_bg; overflow-x: hidden; @include fs_medium; font-family:$font_family; color:$col_txt
+body { min-width:$w_wrap; background-color: $col_bg; overflow-x: hidden; @include fs_medium; font-family: $font_family; font-weight: 300; color:$col_txt;
 	
 }
 .bodyWrap { position: relative; min-width:$w_wrap; background-color: $col_bg; overflow-x: hidden; z-index: 0;
