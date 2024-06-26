@@ -4,7 +4,7 @@ const { members } = Astro.props;
 
 const memberSlides = members.map(member => (
   {
-    image: `/imageFile/member/member_${member.key}.svg`,
+    image: `/imageFile/member_img/${member.key}.svg`,
     alt: member.name,
     key: member.key
   }
@@ -12,4 +12,4 @@ const memberSlides = members.map(member => (
 
 ---
 
-<Swiper slides={memberSlides} />
+<Swiper slides={memberSlides} isNavigationBtn={true} />

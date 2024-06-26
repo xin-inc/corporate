@@ -271,3 +271,19 @@
   }
 }
 /* Slide styles end */
+
+.swiper-button-next, 
+.swiper-button-prev {
+  border: 5px solid #000;
+  border-radius: 50%;
+  background-color: #FFF;
+  padding: 30px 30px;
+  --swiper-navigation-size: 30px;
+  --swiper-navigation-sides-offset: 100px;
+  --swiper-navigation-color: #000;
+  --swiper-theme-color: #000;
+}
+.swiper-button::after {
+  color: #000;
+  margin-left: 1px;
+}
