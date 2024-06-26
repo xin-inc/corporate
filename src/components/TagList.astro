@@ -1,0 +1,12 @@
+---
+const { tags } = Astro.props;
+---
+
+
+<ul class="tagList">
+  {
+    tags.map(tag => (
+      <li>#{tag}</li>
+    )) 
+  }
+</ul>

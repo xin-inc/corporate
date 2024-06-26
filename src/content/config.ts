@@ -34,6 +34,7 @@ const workCollection = defineCollection({
 		title: z.string(),
 		desc: z.string(),
 		num: z.number().optional(),
+		tags: z.array(z.string()),
 	}),
 });
 

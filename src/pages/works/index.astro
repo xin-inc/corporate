@@ -8,11 +8,10 @@ import WorkUnit from '../../components/WorkUnit.astro';
 import ContactInfo from '../../components/ContactInfo.astro';
 
 import { getCollection } from 'astro:content';
+const works = (await getCollection('works'));
 
 import '../../styles/css/works.css';
 import '../../styles/css/workUnit.css';
-
-const works = (await getCollection('works'));
 ---
 
 <Layout title="Works" description="">
@@ -47,7 +46,8 @@ const works = (await getCollection('works'));
           title={work.data.title}
           desc={work.data.desc}
           num={work.data.num}
-          slug={work.slug} />
+          slug={work.slug}
+          tags={work.data.tags} />
       ))
     }
     </div>
