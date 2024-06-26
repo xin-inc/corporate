@@ -82,7 +82,8 @@ footer.footer {
     background: url(/imageFile/footer_agex.svg) no-repeat center;
     position: absolute;
     top: -50px;
-    left: 270px;
+    left: 50%;
+    margin-left: -550px;
     rotate: -8deg;
   }
   // For SP
@@ -95,6 +96,7 @@ footer.footer {
       width: 240px;
       left: 50%;
       top: -80px;
+      margin-left: 0;
       background-size: contain;
       transform: translateX(-50%);
     }
