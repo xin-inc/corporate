@@ -13,11 +13,6 @@
 ----------------------------------------*/
 .swiper-wrapper {
   width: 100%;
-  max-height: 600px;
-  // For SP
-  @media only screen and (max-width: $w_break_sp) { 
-    gap: 20px;
-  }
 }
 
 .swiper-slide {
@@ -272,7 +267,7 @@
   background-color: #FFF;
   padding: 30px 30px;
   --swiper-navigation-size: 30px;
-  --swiper-navigation-sides-offset: 100px;
+  --swiper-navigation-sides-offset: 40px;
   --swiper-navigation-color: #000;
   --swiper-theme-color: #000;
 }
