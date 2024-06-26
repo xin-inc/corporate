@@ -30,7 +30,7 @@
   // For tablet
   @media only screen and (max-width: 1000px) { padding: 0 ;
     .titleSet { position: relative;
-      &:before {left: 0;}
+      &:before { left: 0; } 
       .title { font-size: 75px; }
       .rubi { position: absolute; top: 50%;  font-size: 22px; font-weight: bold; letter-spacing: $ls_small; transform: translateY(-50%); 
         &--left { left: 30px; }
@@ -38,5 +38,29 @@
       }
     }
     & + .unitContent { margin-top: 140px; }
+    &--right {
+      .titleSet {
+        &:before { left: auto; right: 0px; }
+        .rubi { right: 45px; }
+      }
+    }
+  }
+  // For SP
+  @media only screen and (max-width: $w_break_sp) {
+    padding: 0;
+    .titleSet {
+      &:before { content: ""; position: absolute; top: 50%; left: 0; display: inline-block; width: 1000px; height: 3px; background-color: #000; transform: translateX(-100%); }
+      .title { font-size: 46px; }
+      .rubi { position: absolute; top: 50%; left: 15px;  font-size: 15px; font-weight: bold; letter-spacing: $ls_small; transform: translateY(-50%); 
+        &--left { left: 15px; }
+        &--right { right: 15px; }
+      }
+    }
+    &--right {
+      .titleSet {
+        &:before { left: auto; right: 0px; transform: translateX(100%); }
+        .rubi { left: auto; right: 15px; }
+      }
+    }
   }
 }

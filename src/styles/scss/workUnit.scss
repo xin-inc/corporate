@@ -10,9 +10,9 @@
 /*----------------------------------------
  works
 ----------------------------------------*/
-.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 5%; margin-top: 200px; padding: 0;
+.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; margin: 200px 0 100px; padding: 0;
   .worksSet { position: relative;
-    &:before { display: none; content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 50vw; height: 730px; background-size: contain; background-position: center; background-repeat: no-repeat; transform: translate(-50%,-50%); z-index: -1; }
+    &:before { display: none; content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 60%; height: 60%; background-size: contain; background-position: center; background-repeat: no-repeat; transform: translate(-50%,-50%); z-index: -1; }
     .linkArea { position: relative; display: block; padding: 60px 40px; color: #000; transform: skew(8deg);
       .borderSection { position: absolute; top:0; right: 0; width: 100%; height: 100%; z-index: 0;
         &:before, &:after { content: ""; position: absolute; top: 0; left: 0; display: inline-block; height: 8px; background-color: #000; }
@@ -34,8 +34,16 @@
         }
       }
       .linkAreaWrap { position: relative; transform: skew(-8deg); z-index: 1;
-        .label { position: absolute; top: -17%; left: -6%; font-size: clamp(22px,2vw,30px); font-weight: bold; font-style: italic; letter-spacing: $ls_small; transform: translate(-50%,-50%);
+        .label { display: flex; align-items: baseline; position: absolute; top: -45%; left: -10%; font-size: clamp(22px,2vw,30px); font-weight: bold; font-style: italic; letter-spacing: $ls_small; transform: translate(0, 0); white-space: nowrap;
           .bold { padding-left: pxtovw(10); font-size:  clamp(50px,4vw,70px); font-weight: bold; font-style: italic; }
+        }
+        .tagList {
+          display: flex; font-size: 13px; gap: 5px; height: 24px; margin-left: 10px; transform: translateY(-4px); flex-wrap: nowrap;
+          li {
+            background-color: #000;
+            color: #fff;
+            padding: 5px;
+          }
         }
         .title { font-size: clamp(16px,2.5vw,28px); font-weight: bold; line-height: $lh_medium; letter-spacing: $ls_small; }
         .desc { width: 80%; margin-top: pxtovw(40); font-size: 20px; line-height: $lh_medium;
@@ -55,14 +63,13 @@
         }
       }
     }
-    & + .worksSet { margin-top: 150px; }
-    &:nth-child(2n) {
+    &:nth-child(2n) { margin-top: 100px;
       .linkArea{ transform: skew(-8deg);
         .borderSection { 
-          &:before { display: block; left: auto; right: 0; width: calc(100% - 250px); }
-          &:after { display: block; top: 0; left: auto; right: 0; height: 40%; }
+          &:before { display: block; top: 25px; left: auto; right: 0; width: 150px; }
+          &:after { display: block; top: 25px; left: auto; right: 0; height: 40%; }
           &--bottom {
-            &:before { display: block; left: 40%; width: 50%; transform: translateY(-100%); }
+            &:before { display: block; top: 100%; left: 40%; width: 50%; transform: translateY(-100%); }
             &:after { display: none; top: 60px; height: calc(100% - 60px); left: 100%; transform: translateX(-100%); }
           }
           .btnSide { transform: skew(8deg) translate(0%, 50%); right: 0; }
@@ -75,7 +82,7 @@
       }
     }
     &:first-child { z-index: 3;
-      &:before { top: calc(50% + 30px); left: -200px; width: 60vw; min-width: 900px; background-image: url(../../imageFile/work_bg_01.svg); }
+      &:before { top: calc(50% + 30px); width: 60%; background-image: url(../../imageFile/work_bg_01.svg); }
       .linkAreaWrap {
         .imgSection { 
           .worksCatchImg { width: pxtovw(120); min-width: 100px; }
@@ -83,7 +90,7 @@
       }
     }
     &:nth-child(2) { z-index: 2;
-      &:before { top: calc(50% + 10px); left: 820px; width: 110vw; min-width: 1800px; background-image: url(../../imageFile/work_bg_02.svg); }
+      &:before { top: calc(50% + 10px); width: 110vw; min-width: 1800px; background-image: url(../../imageFile/work_bg_02.svg); }
       .linkAreaWrap {
         .imgSection {
           .worksCatchImg { width: pxtovw(260); min-width: 100px; }
@@ -91,7 +98,7 @@
       }
     }
     &:nth-child(3) { z-index: 1;
-      &:before { top: calc(50% - 20px); left: 500px; width: 140vw; height: 770px; min-width: 1800px; background-image: url(../../imageFile/work_bg_03.svg); }
+      &:before { top: calc(50% - 20px); width: 140%; background-image: url(../../imageFile/work_bg_03.svg); }
       .linkAreaWrap {
         .imgSection { 
           .worksCatchImg { width: pxtovw(170); min-width: 130px; }

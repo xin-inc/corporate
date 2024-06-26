@@ -38,13 +38,13 @@ footer.footer {
   }
   // For SP
 	@media only screen and (max-width: $w_break_sp) { 
-    margin: 100px 0 0;
-    padding: 60px 0 60px;
+    margin: 80px 0 0;
+    padding: 50px 0 60px;
     nav {
       padding: 60px 0 0;
       width: 100%;
       .logoImg {
-        width: 200px;
+        width: 160px;
       }
       ul {
         flex-wrap: wrap;

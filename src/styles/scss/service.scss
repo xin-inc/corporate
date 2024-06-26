@@ -20,6 +20,17 @@
 .serviceSectionUnit {
   margin: 60px 0 0;
   padding: 0 60px;
+  &.partnerSection {
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: -85%; left: 50%; 
+      z-index: -1;
+      width: 100vw; height: 190%; background: url(/imageFile/service/bg_partner.svg) no-repeat center;
+      background-size: contain; transform: translateX(-50%);
+    }
+  }
   &_title {
     font-size: clamp(24px,2.5vw,30px);
     font-weight: bold;
@@ -50,7 +61,24 @@
     margin-top: 20px;
     .partnerSection & { text-align: center; }
   }
+  & + .serviceSubUnit { margin-top: 200px; }
 
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    padding: 0;
+    &_title {
+      font-size: 20px;
+    }
+    &_bigCatch {
+      font-size: 24px;
+    }
+    &_catch {
+      font-size: 16px;
+    }
+    &_copy {
+      font-size: 14px;
+    }
+  }
 }
 
 .serviceDesignUnit {
@@ -78,6 +106,30 @@
     line-height: $lh_medium;
     letter-spacing: $ls_small;
     margin-top: 20px;
+  }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    &_title {
+      font-size: 14px;
+      padding: 0 5px;
+    }
+    &_rubi {
+      font-size: 24px;
+    }
+    &_copy {
+      font-size: 16px;
+      text-align: justify;
+      br {
+        display: none;
+      }
+    }
+    .catchUnit {
+      font-size: 20px;
+      text-align: justify;
+      br {
+        display: none;
+      }
+    }
   }
 }
 
@@ -136,10 +188,16 @@
     margin-top: 15px;
     text-align: center;
   }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    &_elem {
+      display: none;
+    }
+  }
 }
 
 .serviceUnit {
-  margin: 160px 0 0;
+  margin: 80px 0 0;
   position: relative;
   &_title {
     font-size: 32px;
@@ -183,6 +241,23 @@
       }
     }
   }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    padding: 0;
+    &_title {
+      font-size: 20px;
+    }
+    &_description {
+      font-size: 14px;
+      padding: 0;
+    }
+    &_methods {
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin: 50px 0 0;
+      padding: 0;
+    }
+  }
 }
 
 .methodUnit {
@@ -198,6 +273,17 @@
     line-height: 1.6;
     text-align: justify;
     padding: 30px 0 40px;
+  }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    &_title {
+      font-size: 14px;
+      height: auto;
+    }
+    &_description {
+      font-size: 12px;
+      padding: 20px 0 40px;
+    }
   }
 }
 
@@ -224,6 +310,18 @@
     grid-template-columns: 1fr 1fr;
     margin: 150px 30px 0;
     position: relative;
+  }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    &_title {
+      font-size: 16px;
+    }
+    &_wrap,
+    &_wrap2 {
+      gap: 40px;
+      grid-template-columns: 1fr;
+      margin: 50px 0 0;
+    }
   }
 }
 .teamUnit {
@@ -262,6 +360,16 @@
     text-align: justify;
     padding: 20px 0 40px;
   }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    &_title {
+      font-size: 16px;
+    }
+    &_description {
+      font-size: 14px;
+      padding: 10px 0 20px;
+    }
+  }
 }
 
 .assignUnit {
@@ -296,6 +404,19 @@
   &_problem {
     margin-top: 50px;
   }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    &_title {
+      font-size: 16px;
+    }
+    &_description {
+      font-size: 14px;
+      padding: 10px 0 20px;
+    }
+    &_problem {
+      margin-top: 20px;
+    }
+  }
 }
 
 .problemUnit {
@@ -318,6 +439,21 @@
       }
     }
   }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    &_label { font-size: 14px; }
+    &_problems {
+      width: 100%;
+      li {
+        font-size: 12px;
+        margin-top: 10px;
+        &::before {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
 }
 
 .trialUnit {
@@ -335,6 +471,18 @@
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 40px 0;
+  }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    padding: 0;
+    &_title {
+      font-size: 20px;
+    }
+    &_wrap {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 .trialElement {
@@ -356,5 +504,16 @@
   &_dec {
     font-size: 14px;
     margin-top: 20px;
+  }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    padding: 10px;
+    &_title {
+      font-size: 14px;
+    }
+    &_dec {
+      font-size: 12px;
+      margin-top: 10px;
+    }
   }
 }

@@ -21,6 +21,17 @@
     justify-content: center;
     margin-top: 30px 0;
   }
+  // For SP
+  @media only screen and (max-width: $w_break_sp) {
+    padding: 20px;
+    margin: 20px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &_buttons {
+      margin-top: 50px;
+    }
+  }
 }
 .contactFormUnit {
   margin: 25px 0 0;
@@ -40,6 +51,18 @@
   &_radios {
     display: flex;
     gap: 10px;
+  }
+  // For SP
+  @media only screen and (max-width: $w_break_sp) {
+    &_label {
+      font-size: 14px;
+    }
+    &_inputArea {
+      padding: 15px 0 20px;
+    }
+    &_radios {
+      flex-flow: column;
+    }
   }
 }
 

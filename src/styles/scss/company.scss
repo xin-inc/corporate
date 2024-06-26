@@ -116,7 +116,7 @@
     }
   }
   // For SP
-  @media only screen and (max-width: $w_break_sp) { width: calc(100vw - 80px);  margin: 15px auto 0;
+  @media only screen and (max-width: $w_break_sp) { width: calc(100vw - 80px);  margin: 15px auto 0; padding: 0;
     .descriptionSet { 
       .description { width: 100%; min-width: auto; margin: 0 auto;
         .item, .data { font-size: clamp(12px,2.8vw,16px); }
@@ -134,88 +134,7 @@
         }
       }
     }
-    .newsSet { margin-top: 80px;
-      .setTitle {
-        .titleSet { position: relative;
-          .title { padding: 0 ; font-size: 40px; white-space: nowrap; } 
-          .rubi { font-size: 18px; }
-        }
-      }
-      .setContent { margin-top: 16px; padding-left: 0px; width: 100%; min-width: auto;
-        .newsList {
-          .news { flex-direction: column; padding-top: 16px ;
-            .date { padding-top: 0; width: auto; font-size: clamp(12px,2.8vw,16px);  }
-            .title { margin-top: 8px; padding-left: 0; width: 76%; font-size: clamp(12px,2.8vw,16px); }
-            & + .news { border-top: 1px solid #323232; }
-          }
-        }
-      }
-      .actionSet { margin-top: 40px; text-align: center;
-        .moreLink { 
-          .label { font-size: 16px; 
-            &:after {margin-top: 4px; font-size: 20px; }
-          }
-        }
-      }
-    }
-    .historySet { margin-top: 80px;
-      .setTitle {
-        .titleSet { position: relative;
-          .title { padding:0 ; font-size: 40px; white-space: nowrap; } 
-          .rubi { font-size: 18px; }
-        }
-      }
-      .setContent { margin-top: 16px;  width: 100%; min-width: auto;
-        .historyList {
-          .history { 
-            .year { padding-top: 0; width: 24%; font-size: clamp(16px,4.6vw,26px);  }
-            .desc { padding-left: 0; width: 76%; font-size: clamp(12px,2.8vw,16px); }
-            & + .history { margin-top: 20px; }
-          }
-        }
-      }
-      .actionSet { margin-top: 40px; text-align: center;
-        .moreLink { 
-          .label { font-size: 16px; 
-            &:after {margin-top: 4px; font-size: 20px; }
-          }
-        }
-      }
-    }
-    .groupSet { display: flex; flex-direction: column; margin-top: 80px;
-      .setTitle {
-        .titleSet { position: relative;
-          .title { padding:0 ; font-size: 40px; white-space: nowrap; } 
-          .rubi { font-size: 18px; }
-        }
-      }
-      .setContent { margin-top: 16px; padding-left: 0; width: 100%;
-        .subTitle { padding-left: 0; font-size: clamp(12px,2.8vw,16px); line-height: $lh_medium; }
-        .companySet { display: flex; flex-direction: column; margin-top: 10px;
-          .mainCompany { 
-            .company { text-align: center; padding: 16px; height: 100%;
-              &#agexGroup { img {width: 60%;} }
-              &#DS { img {width: 60%;} }
-              &#XIN { img {width: 50%;} }
-              &#SK { img {width: 70%;} }
-              &#fft { img {width: 60%;} }
-            }
-           }
-          .otherCompany { display: flex; flex-direction: row; flex-wrap: wrap; 
-            .company { text-align: center; padding: 0; width: 50%; height: 100px; border-left: none; 
-              .imgCell { height: 40px;
-                .logoImg { width: 70%; }
-              }
-              .captionCell { 
-                .caption { text-align: center; font-size: 10px; line-height: normal;}
-              }
-              & + .company { border-left: none; }
-            }
-          } 
-        }
-      }
-      
-    }		
+
   }	
 }
 
@@ -244,6 +163,32 @@
       &--back {
         .label {
           &:after { transform: scale(1,-1); }
+        }
+      }
+    }
+  }
+  // For SP
+  @media only screen and (max-width: $w_break_sp) {
+    margin-top: 80px;
+    .setTitle {
+      .titleSet { position: relative;
+        .title { padding: 0 ; font-size: 40px; white-space: nowrap; } 
+        .rubi { font-size: 18px; }
+      }
+    }
+    .setContent { margin-top: 16px; padding-left: 0px; width: 100%; min-width: auto;
+      .newsList {
+        .news { flex-direction: column; padding-top: 16px ;
+          .date { padding-top: 0; width: auto; font-size: clamp(12px,2.8vw,16px);  }
+          .title { margin-top: 8px; padding-left: 0; width: 76%; font-size: clamp(12px,2.8vw,16px); }
+          & + .news { border-top: 1px solid #323232; }
+        }
+      }
+    }
+    .actionSet { margin-top: 40px; text-align: center;
+      .moreLink { 
+        .label { font-size: 16px; 
+          &:after {margin-top: 4px; font-size: 20px; }
         }
       }
     }
@@ -278,6 +223,32 @@
     }
   }
   */
+  // For SP
+  @media only screen and (max-width: $w_break_sp) {
+    margin-top: 80px;
+    .setTitle {
+      .titleSet { position: relative;
+        .title { padding:0 ; font-size: 40px; white-space: nowrap; } 
+        .rubi { font-size: 18px; }
+      }
+    }
+    .setContent { margin-top: 16px;  width: 100%; min-width: auto; padding-left: 0;
+      .historyList {
+        .history { 
+          .year { padding-top: 0; width: 24%; font-size: clamp(16px,4.6vw,26px);  }
+          .desc { padding-left: 0; width: 76%; font-size: clamp(12px,2.8vw,16px); }
+          & + .history { margin-top: 20px; }
+        }
+      }
+    }
+    .actionSet { margin-top: 40px; text-align: center;
+      .moreLink { 
+        .label { font-size: 16px; 
+          &:after {margin-top: 4px; font-size: 20px; }
+        }
+      }
+    }
+  }
 }
 .groupSet { margin-top: 80px;
   .setContent { margin-top: 40px; padding-left: 30px;
@@ -322,5 +293,39 @@
 
     }
   }
-  
+  // For SP
+  @media only screen and (max-width: $w_break_sp) {
+    display: flex; flex-direction: column; margin-top: 80px;
+    .setTitle {
+      .titleSet { position: relative;
+        .title { padding:0 ; font-size: 40px; white-space: nowrap; } 
+        .rubi { font-size: 18px; }
+      }
+    }
+    .setContent { margin-top: 16px; padding-left: 0; width: 100%;
+      .subTitle { padding-left: 0; font-size: clamp(12px,2.8vw,16px); line-height: $lh_medium; }
+      .companySet { display: flex; flex-direction: column; margin-top: 10px;
+        .mainCompany { 
+          .company { text-align: center; padding: 16px; height: 100%;
+            &#agexGroup { img {width: 60%;} }
+            &#DS { img {width: 60%;} }
+            &#XIN { img {width: 50%;} }
+            &#SK { img {width: 70%;} }
+            &#fft { img {width: 60%;} }
+          }
+          }
+        .otherCompany { display: flex; flex-direction: row; flex-wrap: wrap; 
+          .company { text-align: center; padding: 0; width: 50%; height: 100px; border-left: none; 
+            .imgCell { height: 40px;
+              .logoImg { width: 70%; }
+            }
+            .captionCell { 
+              .caption { text-align: center; font-size: 10px; line-height: normal;}
+            }
+            & + .company { border-left: none; }
+          }
+        } 
+      }
+    }
+  }
 }
