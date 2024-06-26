@@ -378,15 +378,15 @@
     content: '';
     display: inline-block;
     position: absolute;
-    top: -130px; left: -40%; 
+    top: -40%; left: -60%; 
     z-index: -1;
-    width: 170%; height: 170%; background: url(/imageFile/service/bg_assign1.svg) no-repeat center;
+    width: 156%; height: 156%; background: url(/imageFile/service/bg_assign1.svg) no-repeat center;
     background-size: contain;
   }
   &:nth-child(2) {
     &:before {
-      left: -25%; 
-      width: 150%; height: 150%;
+      top: -40%; left: -15%; 
+      width: 159%; height: 159%;
       background-image: url(/imageFile/service/bg_assign2.svg);
     }
   }
@@ -493,16 +493,24 @@
     font-weight: bold;
     letter-spacing: $ls_small;
     line-height: $lh_small;
+    padding-top: 10px;
     text-align: center;
     .material-symbols-rounded {
-      font-size: 40px;
+      font-size: 45px;
       display: block;
       margin-bottom: 15px;
       text-align: center;
     }
+    .katakana {
+      font-feature-settings: "palt";
+      font-weight: bold;
+    }
   }
   &_dec {
-    font-size: 14px;
+    color: $col_txt_body;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: $lh_small;
     margin-top: 20px;
   }
   // For SP
