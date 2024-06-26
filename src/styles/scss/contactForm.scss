@@ -21,6 +21,13 @@
     justify-content: center;
     margin-top: 30px 0;
   }
+  &_step {
+    margin: 0 0 120px;
+    text-align: center;
+    img {
+      width: 498px;
+    }
+  }
   // For SP
   @media only screen and (max-width: $w_break_sp) {
     padding: 20px;
@@ -34,7 +41,7 @@
   }
 }
 .contactFormUnit {
-  margin: 25px 0 0;
+  margin: 10px 0 0;
   width: 100%;
   &_label {
     font-size: 16px;
@@ -50,7 +57,13 @@
   }
   &_radios {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    label {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      gap: 5px;
+    }
   }
   // For SP
   @media only screen and (max-width: $w_break_sp) {
@@ -78,4 +91,31 @@ input[type="tel"] {
 }
 textarea {
   height: 6em;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  height: 32px;
+  width: 32px;
+  background-color: #F3F3F3;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    transition: all 200ms;
+  }
+  &:checked {
+    &::before {
+      background-color: rgba(0,0,0,1);
+    }
+  }
 }
