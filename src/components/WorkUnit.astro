@@ -6,7 +6,7 @@ const { title, desc, num, slug, tags } = Astro.props;
 
 
 <div class="worksSet js_animeReveal06">
-  <a href={`works/${slug}`} class="linkArea md_linkPart">
+  <a href={`/works/${slug}`} class="linkArea md_linkPart">
     <div class="borderSection borderSection--top"></div>
     <div class="linkAreaWrap">
       <div class="label">
@@ -17,7 +17,7 @@ const { title, desc, num, slug, tags } = Astro.props;
       </div>
       <p class="title" set:html={title}></p>
       <div class="imgSection">
-        <img src={`imageFile/works_catch00${num}.svg`} alt={`case${num}`} class="worksCatchImg">
+        <img src={`/imageFile/works_catch00${num}.svg`} alt={`case${num}`} class="worksCatchImg">
       </div>
     </div>
     <div class="borderSection borderSection--bottom">
