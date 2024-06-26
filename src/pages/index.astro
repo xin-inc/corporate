@@ -1,21 +1,20 @@
 ---
 import Layout from '../layouts/PageTemplate.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import PageTitle from '../components/PageTitle.astro';
-import MemberListWrapper from '../components/MemberListWrapper.astro';
-import Footer from '../components/Footer.astro';
-
+import WorkUnit from '../components/WorkUnit.astro';
 import MemberListTop from '../components/MemberListTop.astro';
 
 
-// お知らせの取得
 import { getCollection } from 'astro:content';
+// お知らせの取得
 const posts = (await getCollection('news')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+// 事例の取得（先頭から2件取得）
+const works = (await getCollection('works'))
+								.filter((work, index) => index < 2);
 
 import '../styles/css/index.css';
+import '../styles/css/workUnit.css';
 ---
 
 <Layout title="top" description="">
@@ -251,44 +250,16 @@ import '../styles/css/index.css';
 					</p>
 				</div>
 				<div class="worksArea">
-					<div class="worksSet js_animeReveal06">
-						<span class="linkArea md_linkPart js_modalOpen" data-modal="md_modal--work1">
-							<div class="borderSection borderSection--top"></div>
-							<div class="linkAreaWrap">
-								<div class="label">CASE<span class="bold">1</span></div>
-								<p class="title">
-									新規事業の未来構想を見える化<br class="spHide"><span class="sp--period"></span>目指すべきかたちを定義し、事業化をブースト
-								</p>
-								<div class="imgSection">
-									<img src="imageFile/works_catch001.svg" alt="case1" class="worksCatchImg">
-								</div>
-							</div>
-							<div class="borderSection borderSection--bottom">
-								<div class="btnSide">
-									<p class="md_btn md_btn--more">MORE</p>
-								</div>
-							</div>
-						</span>
-					</div>
-					<div class="worksSet js_animeReveal06">
-						<span class="linkArea md_linkPart js_modalOpen" data-modal="md_modal--work2">
-							<div class="borderSection borderSection--top"></div>
-							<div class="linkAreaWrap">
-								<div class="label">CASE<span class="bold">2</span></div>
-								<p class="title">
-									あらゆる可能性を<br class="spShow">最速で実現<br>デザインスプリントで<br class="spShow">サービスの理想を追求
-								</p>
-								<div class="imgSection">
-									<img src="imageFile/works_catch002.svg" alt="case2" class="worksCatchImg">
-								</div>
-							</div>
-							<div class="borderSection borderSection--bottom">
-								<div class="btnSide">
-									<p class="md_btn md_btn--more">MORE</p>
-								</div>
-							</div>
-						</span>
-					</div>
+					{
+						works.map((work) => (
+							<WorkUnit
+								title={work.data.title}
+								desc={work.data.desc}
+								num={work.data.num}
+								slug={work.slug}
+								tags={work.data.tags} />
+						))
+					}
 				</div>
 				<div class="moreArea">
 					<a href="/works" class="md_btn md_btn--big md_btn--contact">事例一覧へ</a>
