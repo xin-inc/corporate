@@ -123,7 +123,7 @@ import '../styles/css/modal.css';
     <span class="closeLink md_linkPart js_modalX"></span>
     <div class="modalBaseWrap">
 			<div class="bgArea">
-				<img src="imageFile/modal_bg.svg" alt="" class="bgImg">
+				<img src="/imageFile/modal_bg.svg" alt="" class="bgImg">
 			</div>
       {
         Members.map(member => (
