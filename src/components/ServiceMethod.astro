@@ -6,4 +6,6 @@ const cn = 'methodUnit';
 <dl class={`${cn}`}>
   <dt class={`${cn}_title`}>{method.title}</dt>
   <dd class={`${cn}_description`}>{method.description}</dd>
+  { method.icon && <dd class={`${cn}_icon`}><span class="material-symbols-rounded">
+    {method.icon}</span></dd> }
 </dl>
