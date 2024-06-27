@@ -75,12 +75,30 @@ import '../styles/css/contactForm.css';
 </div>
 
 <script is:inline>
-  import { isContactConfirm } from '../store/index.js';
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  document.getElementById('contactConfirm').addEventListener('click', () => {
-    isContactConfirm.set(true);
-    return false;
-  });
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    console.log(formData);
+    /*
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
+      */
+  };
+
+  document
+    .querySelector("form")
+    .addEventListener("submit", handleSubmit);
+
+  document
+    .querySelector("#contactConfirm")
+    .addEventListener("click", handleSubmit);
 
   function getInputData(name){
     const formElements = document.getElementsByName(name);
@@ -103,32 +121,4 @@ import '../styles/css/contactForm.css';
     });
     return selectedData[name];
   }
-
-  // 確認画面
-  isContactConfirm.subscribe(isConfirm => {
-    const inputUnits = document.querySelectorAll('.contactFormUnit_inputArea');
-    const confirmUnits = document.querySelectorAll('.contactFormUnit_inputConfirm');
-    const submitBtn = document.getElementById('contactSubmit');
-    const confirmBtn = document.getElementById('contactConfirm');
-    if (isConfirm) {
-      submitBtn.style.display = 'block';
-      confirmBtn.style.display = 'none';
-      inputUnits.forEach((unit) => {
-        unit.style.display = 'none';
-      });
-      confirmUnits.forEach((unit) => {
-        unit.style.display = 'block';
-        unit.innerText = getInputData(unit.dataset.area);
-      });
-    } else {
-      submitBtn.style.display = 'none';
-      confirmBtn.style.display = 'block';
-      inputUnits.forEach((unit) => {
-        unit.style.display = 'block';
-      });
-      confirmUnits.forEach((unit) => {
-        unit.style.display = 'none';
-      });
-    }
-  });
 </script>
