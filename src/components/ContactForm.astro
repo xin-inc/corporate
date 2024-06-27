@@ -98,7 +98,9 @@ import '../styles/css/contactForm.css';
 
   document
     .querySelector("#contactConfirm")
-    .addEventListener("click", handleSubmit);
+    .addEventListener("click", () => {
+      getInputData('contact');
+    });
 
   function getInputData(name){
     const formElements = document.getElementsByName(name);
