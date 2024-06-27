@@ -26,6 +26,7 @@ $(function(){
     });
   }); 
 
+  var animeOption = {origin: 'bottom',duration: 1600,interval: 400,scale: 1,distance: '40px',reset: false,viewFactor: 0.15,}
   ScrollReveal().reveal('.js_animeReveal', animeOption );
   ScrollReveal().reveal('.js_animeReveal01', animeOption );
   ScrollReveal().reveal('.js_animeReveal02', animeOption );
