@@ -35,7 +35,10 @@
         }
       }
       .linkAreaWrap { position: relative; transform: skew(-8deg); z-index: 1;
-        .label { display: flex; align-items: baseline; position: absolute; top: -45%; left: -10%; font-size: clamp(22px,2vw,30px); font-weight: bold; font-style: italic; letter-spacing: $ls_small; transform: translate(0, 0); white-space: nowrap;
+        .linkAreaTop {
+          display: flex; align-items: baseline; position: absolute; top: -45%; left: -10%; transform: translate(0, 0); white-space: nowrap;
+        }
+        .label { font-size: clamp(22px,2vw,30px); font-weight: bold; font-style: italic; letter-spacing: $ls_small; white-space: nowrap;
           .bold { padding-left: pxtovw(10); font-size:  clamp(50px,4vw,70px); font-weight: bold; font-style: italic; }
         }
         .tagList {
@@ -88,13 +91,69 @@
     }
     &:first-child { z-index: 3;
     }
-    &:nth-child(2) { z-index: 2;
+    &:nth-child(2n) { z-index: 2;
       &:before { top: calc(50% + 30px); width: 220%; height: 130%; background-image: url(/imageFile/works/bg_work2.svg); }
       .linkAreaWrap {
       }
     }
     &:nth-child(3) { z-index: 1;
       .linkAreaWrap {
+      }
+    }
+  }
+   // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    grid-template-columns: 1fr; gap: 5%; margin: 50px 0 100px;
+    .worksSet { 
+      .linkArea { 
+        padding: 80px 40px 40px;
+        .borderSection {
+          &:before, &:after { height: 4px; }
+          &:after { width: 4px; height: calc(100% - 60px); }
+          &--top {
+            &:before { display: none; }
+          }								
+          &--bottom {
+            &:before { top: 100% ; left: 0; width: 70%; }
+            &:after { display: none; top: 0; height: 40%; left: 100%; }
+          }
+        }
+        .linkAreaWrap {
+          .linkAreaTop {
+            top: -90%;
+            left: -20%;
+            flex-flow: column;
+            gap: 10px;
+          }
+          .label {
+            font-size: clamp(14px,2vw,22px);
+            .bold { font-size: clamp(30px,4vw,50px); }
+          }
+          .tagList {
+            font-size: 11px; gap: 5px; height: 20px; margin-left: 0;
+            li {
+              padding: 3px;
+            }
+          }
+          .title {
+            font-size: clamp(16px,2.7vw,28px);
+            line-height: $lh_medium;
+          }
+        }
+      }
+      &:nth-child(2n+1) { 
+        &:before { top: 50%; width: 170%; height: 190%; }
+      }
+      &:nth-child(2n) {  margin-top: 30px;
+        &:before { top: calc(50% + 30px); width: 190%; height: 100%; }
+        .linkArea {
+          .linkAreaWrap {
+            .linkAreaTop {
+              top: -72%;
+              left: -10%;
+            }
+          }
+        }
       }
     }
   }

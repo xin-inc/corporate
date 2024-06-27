@@ -9,8 +9,10 @@ const { title, desc, num, slug, tags } = Astro.props;
   <a href={`/works/${slug}`} class="linkArea md_linkPart">
     <div class="borderSection borderSection--top"></div>
     <div class="linkAreaWrap">
-      <div class="label">
-        CASE<span class="bold">{num}</span>
+      <div class="linkAreaTop">
+        <div class="label">
+          CASE<span class="bold">{num}</span>
+        </div>
         {
           tags.length > 0 && <TagList tags={tags} />
         }
