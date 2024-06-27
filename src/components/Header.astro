@@ -10,7 +10,7 @@ const { isTop = false } = Astro.props;
 <!-- md_header--top -->
 <header class:list={['md_header', {'md_header--top': isTop}]}>
 	<h1 class="logo">
-		<a href="/" class:list={['header--logo', { 'isSmall': !isTop }]}></a>
+		<a href="/" class:list={['header--logo', { 'isSmall': !isTop, 'isTop': isTop }]}></a>
 	</h1>
 </header>
 <!-- /md_header--top -->
