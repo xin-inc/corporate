@@ -56,9 +56,9 @@ import '../styles/css/contactForm.css';
     <dl class={`${cn}Unit`}>
       <dt class={`${cn}Unit_label`}>電話番号</dt>
       <dd class={`${cn}Unit_inputArea`}>
-        <input type='tel' name='tel' placeholder='090xxxxxxx' required>
+        <input type='text' name='phone' placeholder='090xxxxxxx' required>
       </dd>
-      <dd class={`${cn}Unit_inputConfirm`} data-area='tel'></dd>
+      <dd class={`${cn}Unit_inputConfirm`} data-area='phone'></dd>
     </dl>
     <dl class={`${cn}Unit`}>
       <dt class={`${cn}Unit_label`}>個人情報の取り扱い</dt>
@@ -81,7 +81,7 @@ import '../styles/css/contactForm.css';
     const myForm = event.target;
     const formData = new FormData(myForm);
     console.log(formData);
-    /*
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -89,7 +89,7 @@ import '../styles/css/contactForm.css';
     })
       .then(() => console.log("Form successfully submitted"))
       .catch((error) => alert(error));
-      */
+
   };
 
   document
@@ -99,7 +99,9 @@ import '../styles/css/contactForm.css';
   document
     .querySelector("#contactConfirm")
     .addEventListener("click", () => {
+      console.log('click');
       getInputData('contact');
+      manageDisplay(true);
     });
 
   function getInputData(name){
@@ -117,10 +119,45 @@ import '../styles/css/contactForm.css';
             values.push(element.value);
           }
           selectedData[name] =  value;
-      } else if (elementType === 'text' || elementType === 'number' || elementType === 'email' || elementType === 'password') {
+      } else if (elementType === 'text' || elementType === 'tel' || elementType === 'number' || elementType === 'email' || elementType === 'password') {
         selectedData[name] = element.value;
       }
     });
     return selectedData[name];
+  }
+
+  function manageDisplay(isConfirm){
+    const inputUnits = document.querySelectorAll('.contactFormUnit_inputArea');
+    const confirmUnits = document.querySelectorAll('.contactFormUnit_inputConfirm');
+    const submitBtn = document.querySelector('#contactSubmit');
+    const confirmBtn = document.querySelector('#contactConfirm');
+    if (isConfirm) {
+      let isEmptyError = false;
+      confirmUnits.forEach((unit) => {
+        unit.style.display = 'block';
+        const data = getInputData(unit.dataset.area);
+        if(data){
+          unit.innerText = data;
+        } else {
+          isEmptyError = true; 
+        }
+      });
+      if(!isEmptyError){
+        submitBtn.style.display = 'block';
+        confirmBtn.style.display = 'none';
+        inputUnits.forEach((unit) => {
+          unit.style.display = 'none';
+        });
+        return true;
+      }
+    }
+    submitBtn.style.display = 'none';
+    confirmBtn.style.display = 'block';
+    inputUnits.forEach((unit) => {
+      unit.style.display = 'block';
+    });
+    confirmUnits.forEach((unit) => {
+      unit.style.display = 'none';
+    });
   }
 </script>
