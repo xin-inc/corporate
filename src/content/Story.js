@@ -4,12 +4,12 @@
  */
 export const STORY_LIST = [
   {
-    thumnail: 'https://images.wantedly.com/i/st1q1Qm?w=660&h=280',
+    thumnail: '/imageFile/join-us/story/event_report.jpg',
     title: 'イベントレポートまとめ - 最近のXIN -',
     url: 'https://www.wantedly.com/companies/company_6613626/post_articles/882633',
   },
   {
-    thumnail: 'https://images.wantedly.com/i/st1q1Qm?w=660&h=280',
+    thumnail: '/imageFile/join-us/story/event_report.jpg',
     title: 'Figmaを導入した話 - 最近のXIN -',
     url: 'https://www.wantedly.com/companies/company_6613626/post_articles/879712',
   },
@@ -24,7 +24,7 @@ export const STORY_LIST = [
     url: 'https://www.wantedly.com/companies/company_6613626/post_articles/547871',
   },
   {
-    thumnail: 'https://images.wantedly.com/i/st1q1Qm?w=660&h=280',
+    thumnail: '/imageFile/join-us/story/event_report.jpg',
     title: 'イベントレポートまとめ - 最近のXIN -',
     url: 'https://www.wantedly.com/companies/company_6613626/post_articles/882633',
   },
