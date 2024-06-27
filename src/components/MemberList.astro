@@ -2,17 +2,16 @@
 import { Image } from 'astro:assets';
 const { key, name, isTop } = Astro.props;
 const imgPath = `/imageFile/member_img/${key}.svg`;
-const mainClass = isTop ? 'md_linkPart' : '';
 const unitId = `memberUnit-${key}`;
 ---
 
 <div
   id={unitId}
-  class:list={["memberUnit", "js_modalOpen", mainClass]}
+  class:list={["memberUnit", "js_modalOpen", {'md_linkPart': isTop}]}
   data-key={key}>
   <div class="slide slide--{key}">
     <div class="imgSet">
-      <Image src={imgPath} alt={name} width={422} height={500} class="memberImg" />
+      <Image src={imgPath} alt={name} width={500} height={500} class="memberImg" />
       <p class="md_btn md_btn--more">MORE</p>
     </div>
   </div>

@@ -10,7 +10,7 @@ const memberSetClass = 'memberWrap';
 import '../styles/css/modal.css';
 ---
 
-<div class={memberSetClass}>
+<div class:list={['memberWrap', {'js_slick': isTop}]}>
   {
     Members.map(member => (
     <MemberList key={member.key} name={member.name} isTop={isTop} data-member-unit />

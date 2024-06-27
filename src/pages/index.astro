@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/PageTemplate.astro';
 import WorkUnit from '../components/WorkUnit.astro';
-import MemberListTop from '../components/MemberListTop.astro';
+import MemberListWrapper from '../components/MemberListWrapper.astro';
 
 
 import { getCollection } from 'astro:content';
@@ -269,7 +269,36 @@ import '../styles/css/workUnit.css';
 		<!-- /md_contentUnit--work -->
 
 		<!-- md_contentUnit--member -->
-		<MemberListTop />
+		<div id="members" class="md_contentUnit md_contentUnit--category md_contentUnit--member js_animeReveal07">
+			<div class="unitTitle unitTitle--category">
+				<div class="titleSet">
+					<div class="subTitle">WHO WE ARE</div>
+					<div class="title">
+						<img src="/imageFile/member_title.svg" alt="member" class="titleImg">
+						<img src="/imageFile/member_title.svg" alt="member" class="titleImg">
+					</div>
+					<h2 class="rubi">
+						私たちの<br>
+						想い
+					</h2>
+				</div>
+			</div>
+			<div class="unitContent">
+				<div class="contentArea">
+					<p class="catchSet">
+						私たちはXINである以前に、ひとりひとりが個性溢れるクリエイター。<br>
+						ここに集まった個性のひとつひとつが<br>
+						XINを形作っています。
+					</p>
+				</div>
+			</div>
+			<MemberListWrapper isTop={true} />
+			<div class="unitContent">
+				<div class="moreArea">
+					<a href="/members" class="md_btn md_btn--big md_btn--contact">メンバー一覧へ</a>
+				</div>
+			</div>
+		</div>
 		<!-- /md_contentUnit--member -->
 
 		<!-- md_contentUnit--value -->
@@ -431,3 +460,18 @@ import '../styles/css/workUnit.css';
 		<!-- /md_contentUnit--join -->
 
 </Layout>
+
+<script is:inline>
+$(function(){
+	$('.js_slick').slick({
+		arrows: true,
+		autoplay: false,
+		centerMode: true,
+		centerPadding: '40px',
+		slidesToShow: 1,
+		variableWidth: true,
+		autoplaySpeed: 5000,
+		speed: 600,
+	});
+});
+</script>
