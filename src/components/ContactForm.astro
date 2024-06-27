@@ -7,12 +7,14 @@ import '../styles/css/contactForm.css';
 
 <div class={`${cn}`}>
   <form
+    class="contact--step1"
     name="contact"
     method="POST"
     action="/contact-send"
     data-netlify="true">
     
     <p class={`${cn}_step`}><img src="/imageFile/contact/step1.svg" /></p>
+    <p class={`${cn}_step2`}><img src="/imageFile/contact/step2.svg" /></p>
 
     <dl class={`${cn}Unit`}>
       <dt class={`${cn}Unit_label`}>お問い合わせ種別</dt>
@@ -63,7 +65,7 @@ import '../styles/css/contactForm.css';
     <dl class={`${cn}Unit`}>
       <dt class={`${cn}Unit_label`}>個人情報の取り扱い</dt>
       <dd class={`${cn}Unit_inputArea`}>
-        <label><input type='checkbox' name='policy' required /> <a href="" target="_blank">個人情報保護方針</a>に同意する</label>
+        <label><input type='checkbox' name='policy' value="個人情報保護方針に同意する" required /> <a href="" target="_blank">個人情報保護方針</a>に同意する</label>
       </dd>
       <dd class={`${cn}Unit_inputConfirm`} data-area='policy'></dd>
     </dl>
@@ -80,14 +82,15 @@ import '../styles/css/contactForm.css';
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    console.log(formData);
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log("Form successfully submitted"))
+      .then(() => {
+        location.href = '/contact-send';
+      })
       .catch((error) => alert(error));
 
   };
@@ -118,7 +121,7 @@ import '../styles/css/contactForm.css';
           if (element.checked) {
             values.push(element.value);
           }
-          selectedData[name] =  value;
+          selectedData[name] =  values;
       } else if (elementType === 'text' || elementType === 'tel' || elementType === 'number' || elementType === 'email' || elementType === 'password') {
         selectedData[name] = element.value;
       }
@@ -127,10 +130,10 @@ import '../styles/css/contactForm.css';
   }
 
   function manageDisplay(isConfirm){
+    const form = document.querySelector("form");
     const inputUnits = document.querySelectorAll('.contactFormUnit_inputArea');
     const confirmUnits = document.querySelectorAll('.contactFormUnit_inputConfirm');
-    const submitBtn = document.querySelector('#contactSubmit');
-    const confirmBtn = document.querySelector('#contactConfirm');
+
     if (isConfirm) {
       let isEmptyError = false;
       confirmUnits.forEach((unit) => {
@@ -143,21 +146,13 @@ import '../styles/css/contactForm.css';
         }
       });
       if(!isEmptyError){
-        submitBtn.style.display = 'block';
-        confirmBtn.style.display = 'none';
-        inputUnits.forEach((unit) => {
-          unit.style.display = 'none';
-        });
+        console.log('notError');
+        form.classList.add("contact--step2");
+        form.classList.remove("contact--step1");
         return true;
       }
     }
-    submitBtn.style.display = 'none';
-    confirmBtn.style.display = 'block';
-    inputUnits.forEach((unit) => {
-      unit.style.display = 'block';
-    });
-    confirmUnits.forEach((unit) => {
-      unit.style.display = 'none';
-    });
+    form.classList.add("contact--step1");
+    form.classList.remove("contact--step2");
   }
 </script>
