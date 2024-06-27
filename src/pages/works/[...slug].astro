@@ -21,7 +21,7 @@ const work = Astro.props;
 const { Content } = await work.render();
 ---
 
-<Layout title="Works" description="">
+<Layout title="Works" description="" isTop={false} isFixed={true}>
 	<div id="works" class="md_contentUnit">
 		<BreadCrumbs
       pages={[

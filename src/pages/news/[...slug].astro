@@ -1,6 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { formatDate } from '../../assets/formatDate';
+
 import NewsPost from '../../layouts/NewsPost.astro';
+// import NewsPost from '../../layouts/NewsPost.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('news');
@@ -13,8 +16,15 @@ type Props = CollectionEntry<'news'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+const publishDate = formatDate(post.data.pubDate);
 ---
 
-<NewsPost {...post.data}>
-	<Content />
+<NewsPost>
+	<div class="contentArea">
+			<div class="title">{post.data.title}</div>
+			<div class="date">{publishDate}</div>
+	<div class="content">
+		<Content />
+	</div>
+	</div>
 </NewsPost>

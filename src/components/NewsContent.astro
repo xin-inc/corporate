@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+type Props = CollectionEntry<'news'>['data'];
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<div class="contentArea">
+  <div class="title">{title}</div>
+  <div class="date">{pubDate}</div>
+  <div class="content">
+  <Content />
+  </div>
+</div>
