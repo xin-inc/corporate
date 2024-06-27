@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/PageTemplate.astro';
 import WorkUnit from '../components/WorkUnit.astro';
-import MemberListWrapper from '../components/MemberListWrapper.astro';
-
+import MemberListTop from '../components/MemberListTop.astro';
+import MemberTopModal from '../components/MemberTopModal.astro';
+import WorkModal from '../components/WorkModal.astro';
 
 import { getCollection } from 'astro:content';
 // お知らせの取得
@@ -10,8 +11,8 @@ const posts = (await getCollection('news')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 // 事例の取得（先頭から2件取得）
-const works = (await getCollection('works'))
-								.filter((work, index) => index < 2);
+import { Cases } from '../content/Cases.js';
+const works = Cases.filter((work, index) => index < 2);
 
 import '../styles/css/index.css';
 import '../styles/css/workUnit.css';
@@ -253,11 +254,10 @@ import '../styles/css/workUnit.css';
 					{
 						works.map((work) => (
 							<WorkUnit
-								title={work.data.title}
-								desc={work.data.desc}
-								num={work.data.num}
-								slug={work.slug}
-								tags={work.data.tags} />
+								title={work.title}
+								num={work.num}
+								slug={work.key}
+								tags={work.tags} />
 						))
 					}
 				</div>
@@ -292,7 +292,7 @@ import '../styles/css/workUnit.css';
 					</p>
 				</div>
 			</div>
-			<MemberListWrapper isTop={true} />
+			<MemberListTop />
 			<div class="unitContent">
 				<div class="moreArea">
 					<a href="/members" class="md_btn md_btn--big md_btn--contact">メンバー一覧へ</a>
@@ -459,7 +459,8 @@ import '../styles/css/workUnit.css';
 		</div>
 		<!-- /md_contentUnit--join -->
 
-</Layout>
+		<MemberTopModal />
+		<WorkModal cases={works} />
 
 <script is:inline>
 $(function(){

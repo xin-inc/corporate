@@ -15,15 +15,12 @@
 /*----------------------------------------
  modal
 ----------------------------------------*/
-.md_modal { @include lot_flex; @include lot_horC; @include lot_verC; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 99; display: flex;
+.md_modal { @include lot_flex; @include lot_horC; @include lot_verC; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 99; display: none;
 	&--show { @include lot_flex; animation-name: modal_fadeIn; animation-duration: 0.5s;animation-timing-function: ease-out; }
 	.bgLayer { position: fixed; display: block; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-color: $col_bg_blackLayer; }
 	.md_card--modalBase { position: relative; display: block; width: $w_centeringElement; background-color: transparent; box-shadow: none; z-index: 2; 
 		.closeLink { position: absolute; top: 0; right: 0; @include lot_flex; @include lot_horC; @include lot_verC; width: 40px; height: 40px; color: $col_txt_gray; 
-			&:before { @include icon; content: "\ea12"; font-size: 20px; }
-			.md_btn { width: 30px; height: 30px; background-color: transparent; 
-				&:after { @include icon; content: "\ea12"; position: absolute; left: -1px; top: -1px; width: 30px; height: 30px; line-height: 30px; font-size: 14px; text-align: center; }
-			}
+			&:before { content: "close"; font-family: 'Material Symbols Rounded'; font-size: 32px; }
 		}
 		.cardTitle { position: relative; padding-right: 40px; 
 			.closeLink { top: calc(50% - 20px); color: #fff; }
@@ -42,7 +39,6 @@
 .md_modal {
 	.md_card--modalBase { position: relative; width: calc(100% - 140px - 100px); height: calc(100vh - 140px - 100px); background: url(/imageFile/texture_grunge.png) center repeat; overflow: hidden;		
 		.closeLink {position: fixed; top: 120px; right: 120px; width: 56px; height: 56px; background-color: #000; z-index: 101;
-			&:before { content: "\ea19";  font-size: 32px; color: #fff; font-weight: bold; }
 		}
 		// For tablet
 		@media only screen and (max-width: 1000px) {width: calc(100% - 100px - 100px); height: calc(100vh - 100px - 100px); 

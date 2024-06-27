@@ -1,0 +1,59 @@
+---
+import { Cases } from '../content/Cases.js';
+
+import Layout from '../layouts/PageTemplate.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import PageTitle from '../components/PageTitle.astro';
+import Catch from '../components/Catch.astro';
+import WorkUnit from '../components/WorkUnit.astro';
+import WorkModal from '../components/WorkModal.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+
+
+import '../styles/css/works.css';
+import '../styles/css/workUnit.css';
+---
+
+<Layout title="Works" description="">
+	<div id="works" class="md_contentUnit">
+		<BreadCrumbs
+      pages={[
+        {name: 'TOP', url: '/'},
+        {name: 'WORKS', url: '/works'},
+      ]}
+      />
+
+  <PageTitle
+      subTitle="WHAT WE DESIGNED"
+      svg="/imageFile/works_title.svg"
+      panel="/imageFile/works/panel_works.png">
+      <h2 class="rubi">私たちが<br />してきたこと</h2>
+  </PageTitle>
+
+  <div class="unitContent spaceLess pageTopCopy">
+    <Catch>
+      私たちが得意とするのは、「体験」のデザイン。<br>
+      強みであるWebプロダクトのデザインを軸に、<br>
+      企業やサービスの価値向上にコミットし続けてきました。<br>
+      ここではその事例のほんの一部をご紹介します。
+    </Catch>
+  </div>
+
+	<div class="worksArea">
+  {
+    Cases.map((Case) => (
+      <WorkUnit
+        title={Case.title}
+        num={Case.num}
+        slug={Case.key}
+        tags={Case.tags} />
+    ))
+  }
+  </div>
+
+  <WorkModal cases={Cases} />
+
+	<ContactInfo />
+
+	</div>
+</Layout>

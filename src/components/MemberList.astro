@@ -9,7 +9,7 @@ const unitId = `memberUnit-${key}`;
   id={unitId}
   class:list={["memberUnit", "js_modalOpen", {'md_linkPart': isTop}]}
   data-key={key}>
-  <div class="slide slide--{key}">
+  <div class="slide">
     <div class="imgSet">
       <Image src={imgPath} alt={name} width={500} height={500} class="memberImg" />
       <p class="md_btn md_btn--more">MORE</p>
@@ -21,7 +21,7 @@ const unitId = `memberUnit-${key}`;
   import { isMemberModalOpen, currentMember } from '../store/index.js';
 
   function openMemberModal(key) {
-    console.log('Click');
+    console.log(key);
     isMemberModalOpen.set(true);
     currentMember.set(key);
   }
@@ -29,6 +29,7 @@ const unitId = `memberUnit-${key}`;
   const units = document.querySelectorAll('.memberUnit');
   units.forEach((unit) => {
     unit.addEventListener('click', () => {
+      console.log('click modal');
       openMemberModal(unit.dataset.key);
     });
   });

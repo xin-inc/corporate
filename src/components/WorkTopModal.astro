@@ -1,0 +1,18 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+import WorkInlineModal from '../components/WorkInlineModal.astro';
+
+import '../styles/css/works.css';
+
+const works = (await getCollection('works'))
+                .filter((work, index) => index < 2);
+---
+
+<div>
+{
+  works.map(work => {
+    <WorkInlineModal slug={work.slug} />
+  })
+}
+</div>

@@ -1,12 +1,12 @@
 ---
 import TagList from '../components/TagList.astro';
 
-const { title, desc, num, slug, tags } = Astro.props;
+const { title, num, slug, tags } = Astro.props;
 ---
 
 
-<div class="worksSet js_animeReveal06">
-  <a href={`/works/${slug}`} class="linkArea md_linkPart">
+<div class="worksSet js_animeReveal06" data-key={slug}>
+  <div class="linkArea md_linkPart">
     <div class="borderSection borderSection--top"></div>
     <div class="linkAreaWrap">
       <div class="linkAreaTop">
@@ -27,7 +27,23 @@ const { title, desc, num, slug, tags } = Astro.props;
         <p class="md_btn md_btn--more">MORE</p>
       </div>
     </div>
-  </a>
+  </div>
 </div>
 
 
+<script>
+  import { currentWork, isWorksModalOpen } from '../store/index.js';
+
+  function openWorkModal(key) {
+    isWorksModalOpen.set(true);
+    currentWork.set(key);
+  }
+
+  const units = document.querySelectorAll('.worksSet');
+  units.forEach((unit) => {
+    unit.addEventListener('click', () => {
+      openWorkModal(unit.dataset.key);
+      return false;
+    });
+  });
+</script>

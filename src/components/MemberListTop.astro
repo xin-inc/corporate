@@ -1,44 +1,15 @@
 ---
 import { Members } from '../content/Members.js';
 import MemberList from '../components/MemberList.astro';
-import MemberModal from '../components/MemberModal.astro';
-import ContentTitle from '../components/ContentTitle.astro';
-import SwiperMembers from './SwiperMembers.astro';
 
 const memberSetClass = 'memberSet js_slick hidden';
 
-import '../styles/css/modal.css';
 ---
 
-<div id="members" class="md_contentUnit md_contentUnit--category md_contentUnit--member js_animeReveal07">
-  <div class="unitTitle unitTitle--category">
-    <div class="titleSet">
-      <div class="subTitle">WHO WE ARE</div>
-      <div class="title">
-        <img src="/imageFile/member_title.svg" alt="member" class="titleImg">
-        <img src="/imageFile/member_title.svg" alt="member" class="titleImg">
-      </div>
-      <h2 class="rubi">
-        私たちの<br>
-        想い
-      </h2>
-    </div>
-  </div>
-  <div class="unitContent">
-    <div class="contentArea">
-      <p class="catchSet">
-        私たちはXINである以前に、ひとりひとりが個性溢れるクリエイター。<br>
-        ここに集まった個性のひとつひとつが<br>
-        XINを形作っています。
-      </p>
-    </div>
-  </div>
-  <div class="memberSwiper">
-    <SwiperMembers members={Members} />
-  </div>
-  <div class="unitContent">
-    <div class="moreArea">
-      <a href="/members" class="md_btn md_btn--big md_btn--contact">メンバー一覧へ</a>
-    </div>
-  </div>
+<div class:list={['memberWrap', 'js_slick']}>
+  {
+    Members.map(member => (
+    <MemberList key={member.key} name={member.name} isTop={true} data-member-unit />
+    )
+  )}
 </div>

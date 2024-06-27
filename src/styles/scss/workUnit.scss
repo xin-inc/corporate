@@ -10,7 +10,7 @@
 /*----------------------------------------
  works
 ----------------------------------------*/
-.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; margin: 200px 0 350px; padding: 0;
+.worksArea { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; margin: 200px 0 350px; padding: 0; cursor: pointer;
   &.isTop { margin-bottom: 50px; }
   .worksSet { position: relative;
     &:before { display: none; content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 60%; height: 60%; background-size: contain; background-position: center; background-repeat: no-repeat; transform: translate(-50%,-50%); z-index: -1; }

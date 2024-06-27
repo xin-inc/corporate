@@ -53,4 +53,5 @@ $(function(){
   var animeOption4 = {origin: 'bottom',delay:1000,duration: 1600,interval: 400,scale: 1,distance: '80px',reset: false,viewFactor: 0.15,}
   ScrollReveal().reveal('.js_fadeIvReveal_bgImg', animeOption4 );
 
+
 });

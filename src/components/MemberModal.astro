@@ -6,7 +6,7 @@ const modalId = `modal_${member.key}`;
 <div class="cardContent" id={modalId}>
 	<div class="contentArea">
 		<div class="messageSet">
-			<img src={`imageFile/member/member_message_${member.key}.png`} alt={member.message} class="messageImg">
+			<img src={`/imageFile/member/member_message_${member.key}.png`} alt={member.message} class="messageImg">
 		</div>
 		<p class="copySet">{member.copy}</p>
 		<div class="nameSet">
@@ -17,11 +17,11 @@ const modalId = `modal_${member.key}`;
 	<div class="imgArea">
 		<div class="imgSet">
 			<div class="illust">
-				<img src={`imageFile/member/member_simple_${member.key}.svg`} alt={member.name} class="illustImg">
+				<img src={`/imageFile/member/member_simple_${member.key}.svg`} alt={member.name} class="illustImg">
 			</div>
 			<picture>
-				<source srcset={`imageFile/member/member_name_${member.key}_pc.svg`} media="(min-width: 1000px)" class="nameLine">
-				<img src={`imageFile/member/member_name_${member.key}_sp.svg`} alt={member.name} class="nameLine">
+				<source srcset={`/imageFile/member/member_name_${member.key}_pc.svg`} media="(min-width: 1000px)" class="nameLine">
+				<img src={`/imageFile/member/member_name_${member.key}_sp.svg`} alt={member.name} class="nameLine">
 			</picture>
 			<div class="tagSection">
 				{
@@ -41,12 +41,14 @@ const modalId = `modal_${member.key}`;
   }
 </style>
 
+
 <script>
   import { currentMember } from '../store/index.js';
 
   // Listen to changes in the store, and show/hide the dialog accordingly
   currentMember.subscribe(member => {
 		const cards = document.querySelectorAll(`.cardContent`);
+		console.log(member, 'currentMember');
 		cards.forEach((card) => {
 			if(card.id == `modal_${member}`){
 				card.style.display = 'block';

@@ -1,22 +1,10 @@
 ---
 import { Members } from '../content/Members.js';
-import MemberList from '../components/MemberList.astro';
 import MemberModal from '../components/MemberModal.astro';
-import ContentTitle from '../components/ContentTitle.astro';
-const { isTop } = Astro.props;
-
-const memberSetClass = 'memberWrap';
 
 import '../styles/css/modal.css';
 ---
 
-<div class:list={['memberWrap', {'js_slick': isTop}]}>
-  {
-    Members.map(member => (
-    <MemberList key={member.key} name={member.name} isTop={isTop} data-member-unit />
-    )
-  )}
-</div>
 <div class="memberModal md_modal md_modal--member" id="memberModal">
   <span class="bgLayer md_linkPart js_modalX" id="memberModalClose"></span>
   <div class="md_card md_card--modalBase">

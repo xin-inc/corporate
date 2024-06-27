@@ -903,7 +903,7 @@
 .md_modal {
 	.md_card--modalBase { position: relative; width: calc(100% - 140px - 100px); height: calc(100vh - 140px - 100px); background: url(../../imageFile/texture_grunge.png) center repeat; overflow: hidden;		
 		.closeLink {position: fixed; top: 120px; right: 120px; width: 56px; height: 56px; background-color: #000; z-index: 101;
-			&:before { content: "\ea19";  font-size: 32px; color: #fff; font-weight: bold; }
+			// &:before { content: "\ea19";  font-size: 32px; color: #fff; font-weight: bold; }
 		}
 		// For tablet
 		@media only screen and (max-width: 1000px) {width: calc(100% - 100px - 100px); height: calc(100vh - 100px - 100px); 

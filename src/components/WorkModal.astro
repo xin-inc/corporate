@@ -1,13 +1,64 @@
 ---
-const { num } = Astro.props; 
+const { cases } = Astro.props; 
 ---
 
-<div class="md_modal md_modal--work md_modal--work1">
-	<a href="../works" class="bgLayer md_linkPart js_modalX"></a>
+<div class="md_modal md_modal--work md_modal--work1" id="worksModal">
+	<span class="bgLayer md_linkPart js_modalX" id="workModalClose"></span>
 	<div class="md_card md_card--modalBase">
-		<a href="../works" class="closeLink md_linkPart"></a>
-		<div class="cardContent">
-      <slot />
-    </div>
+		<span class="closeLink md_linkPart js_modalX" id="workModalCloseBtn"></span>
+		{
+			cases.map(data => (
+				<div class="cardContent" id={`workModal_${data.key}`} set:html={data.html} />
+			))
+		}
 	</div>
 </div>
+
+<style>
+  .cardContent {
+    display: none;
+  }
+</style>
+
+
+<script>
+  import { currentWork, isWorksModalOpen } from '../store/index.js';
+
+	const bodyWrap = document.querySelector('.bodyWrap');
+  let scrollPos;
+
+  // モーダルの表示/非表示
+  isWorksModalOpen.subscribe(open => {
+    if (open) {
+      scrollPos = window.scrollY;
+      bodyWrap.classList.add('body_fixed');
+      bodyWrap.style.top = scrollPos * (-1);
+      document.getElementById(`worksModal`).classList.add('md_modal--show');
+    } else {
+      bodyWrap.classList.remove('body_fixed');
+      document.documentElement.scrollTop = scrollPos;
+      bodyWrap.style.top = 0;
+      document.getElementById(`worksModal`).classList.remove('md_modal--show');
+    }
+  });
+
+  document.querySelector('#workModalClose').addEventListener('click', () => {
+    isWorksModalOpen.set(false);
+  });
+  document.querySelector('#workModalCloseBtn').addEventListener('click', () => {
+    console.log('close click');
+    isWorksModalOpen.set(false);
+  });
+
+  // どのモーダルを表示させるか
+  currentWork.subscribe(work => {
+		const cards = document.querySelectorAll(`.cardContent`);
+		cards.forEach((card) => {
+			if(card.id == `workModal_${work}`){
+				card.style.display = 'block';
+			} else {
+				card.style.display = 'none';
+			}
+		});
+  });
+</script>

@@ -1,0 +1,16 @@
+---
+import { getEntry } from 'astro:content';
+
+import WorkModal from './WorkModal.astro';
+
+import '../styles/css/works.css';
+
+const { slug } = Astro.props;
+
+const work = await getEntry('works', slug);
+const { Content } = await work.render();
+---
+
+<WorkModal {...work.data}>
+	<Content />
+</WorkModal>
