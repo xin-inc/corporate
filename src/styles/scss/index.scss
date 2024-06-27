@@ -529,6 +529,7 @@
 		// For SP
 		@media only screen and (max-width: $w_break_sp) { margin-top: 140px;
 			.unitContent {
+				/*
 				.worksArea{ margin-top: 50px; padding: 0 5px; grid-template-columns: 1fr; gap: 5%;
 					.worksSet { position: relative; 
 						&:before { height: 300px; }
@@ -602,6 +603,7 @@
 				.moreArea {margin-top: 130px;
 					.copy { font-size: 13px; }
 				}
+					*/
 			}
 		
 			
@@ -1603,12 +1605,12 @@
 }
 
 .memberSwiper  {
-  width: 100%;
+  width: calc(100vh - 80px);
   margin-top: 100px;
   position: relative;
   &:before { content: ''; display: inline-block; position: absolute; top: 80%; right: inherit; left: 50%; width: 100vw; min-width: 1700px; height: 100%; background: url(/imageFile/member_bg.svg) no-repeat center center; background-size: contain; transform: translate(-50%,-100%); }
 	@media only screen and (max-width: $w_break_sp) {
-		width: calc(100% - 20px);
+		width: calc(100vh - 20px);
   	margin-top: 50px;
 	}
 }
