@@ -12,6 +12,39 @@
  news
 ----------------------------------------*/
 
+.content {
+  p {
+    font-size: 16px; letter-spacing: $ls_small; line-height: 1.6;
+    margin-top: 1.5em;
+  }
+}
+.newsList {
+  padding: 40px;
+  &_unit {
+    border-top: 1px solid #CCC;
+	  border-bottom: 1px solid #CCC;
+    a {
+      align-items: center;
+      color: #222;
+      display: flex;
+      font-size: 16px;
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+    }
+    .newsDate {
+      font-size: 20px;
+    }
+    .newsTitle {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: normal;
+    }
+  }
+}
+
+
+
 .md_contentUnit { position: relative; margin: 0 auto; width: calc(100vw - 200px); max-width: 1300px; z-index: 1;
 	&:before { content: ""; position: absolute; display: block; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center; z-index: -1; }
 	.bgImgSet { position: absolute; top: 0; left: 50%; width: 100%; height: 100%; transform: translateX(-50%);
