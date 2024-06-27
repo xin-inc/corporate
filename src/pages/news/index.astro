@@ -2,8 +2,7 @@
 import { type CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 import { formatDate } from '../../assets/formatDate';
 
-import NewsPost from '../../layouts/NewsPost.astro';
-// import NewsPost from '../../layouts/NewsPost.astro';
+import Layout from '../../layouts/SimplePageTemplate.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('news');
@@ -25,7 +24,7 @@ const posts = (await getCollection('news')).sort(
 							});
 ---
 
-<NewsPost>
+<Layout>
 	<div class="contentArea">
 			<div class="newsList">
 				{
@@ -39,4 +38,4 @@ const posts = (await getCollection('news')).sort(
 				}
 			</div>
 	</div>
-</NewsPost>
+</Layout>

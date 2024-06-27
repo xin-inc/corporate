@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/*----------------------------------------
+ Import
+----------------------------------------*/
+
+@import '_reset';
+@import '_variable';
+@import '_default';
+
+/*----------------------------------------
+ policy
+----------------------------------------*/
+
+/* ------------ container ------------ */
+.container { padding: 70px 0 300px;
+	// For tablet
+	@media only screen and (max-width: 1000px) { padding: 70px 0 160px;}
+	// For SP
+	@media only screen and (max-width: $w_break_sp) { padding: $w_sp_pa $w_sp_pa 80px; 
+		&--noPadding { padding: 0; }
+	}
+}
+
+
+/* ------------ md_contentUNit ------------ */
+
+.md_contentUnit { position: relative; margin: 0 auto;   width: calc(100vw - 200px); max-width: 1300px; z-index: 1;
+	&:before { content: ""; position: absolute; display: block; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center; z-index: -1; }
+	.bgImgSet { position: absolute; top: 0; left: 50%; width: 100%; height: 100%; transform: translateX(-50%);
+		.bgImgSection { position: absolute; height: 100%; width: 50%;
+			&--left { bottom: 0; left: 0; }
+			&--right { top: 0; right: 0; }
+			.bgImg { position: absolute; }
+		}
+	}
+	// For SP
+	@media only screen and (max-width: $w_break_sp) { width: calc(100vw - 80px); }
+	.unitTitle { position: relative; display: flex;  padding: 0 40px;
+		.titleSet { position: relative;
+			&:before { content: ""; position: absolute; top: 50%; left: -40px; display: inline-block; width: 1000px; height: 3px; background-color: #000; transform: translateX(-100%); }
+			.title { font-size: 100px; color: #fff; font-weight: 300; letter-spacing: $ls_medium; white-space: nowrap; }
+			.rubi { position: absolute; top: 50%;  font-size: 30px; font-weight: bold; letter-spacing: $ls_small; transform: translateY(-50%); 
+				&--left { left: 45px; }
+				&--right { right: 45px; }
+			}
+		}
+		& + .unitContent { margin-top: 140px; }
+		// For tablet
+		@media only screen and (max-width: 1000px) { padding: 0 ;
+			.titleSet { position: relative;
+				&:before {left: 0;}
+				.title { font-size: 75px; }
+				.rubi { position: absolute; top: 50%;  font-size: 22px; font-weight: bold; letter-spacing: $ls_small; transform: translateY(-50%); 
+					&--left { left: 30px; }
+					&--right { right: 45px; }
+				}
+			}
+			& + .unitContent { margin-top: 80px; }
+		}
+		// For SP
+		@media only screen and (max-width: $w_break_sp) {
+			.titleSet { position: relative;
+				&:before { content: ""; position: absolute; top: 50%; left: 0; display: inline-block; width: 1000px; height: 3px; background-color: #000; transform: translateX(-100%); }
+				.title { font-size: 46px; }
+				.rubi { position: absolute; top: 50%;  font-size: 15px; font-weight: bold; letter-spacing: $ls_small; transform: translateY(-50%); 
+					&--left { left: 15px; }
+					&--right { right: 15px; }
+				}
+			}
+			& + .unitContent { margin-top: 40px; }	
+		}
+	} 
+	.unitContent { position: relative;
+		.contentArea {
+			.contentSet { display: flex; justify-content: flex-start;
+				.imgCell { padding-right: 30px; width: 530px; text-align: right;
+					img { width: 500px; height: auto; }
+				}
+				.descCell { padding-left: 45px; width: calc(100% - 530px);
+					.title, .catch { font-weight: bold; letter-spacing: $ls_small; }
+					.title { font-size: clamp(24px,2.5vw,30px);
+						& + .catch { margin-top: pxtovw(35); }
+					}
+					.catch { font-size: clamp(32px,3vw,44px); white-space: nowrap; line-height: $lh_medium;
+						& + .copy { margin-top: pxtovw(40); }
+					}
+					.copy { font-size: clamp(16px,1.5vw,20px); line-height: $lh_medium; }
+				}
+			}
+		}
+		// For SP
+		@media only screen and (max-width: $w_break_sp) {
+			.contentArea {
+				.contentSet { 
+					.imgCell { padding-right: 30px; width: 530px; text-align: right;
+						img { width: 500px; height: auto; }
+					}
+					.descCell { padding-left: 45px; width: calc(100% - 530px);
+						.title, .catch { font-weight: bold; letter-spacing: $ls_small; }
+						.title { font-size: 10px;
+							& + .catch { margin-top: pxtovw(35); }
+						}
+						.catch { font-size: 20px; white-space: nowrap; line-height: $lh_medium;
+							& + .copy { margin-top: pxtovw(40); }
+						}
+						.copy { font-size: 13px; line-height: $lh_medium; }
+					}
+				}
+			}
+		}
+	}
+	& + & { margin-top: 340px; 
+		@media only screen and (max-width: 1000px) {margin-top: 200px; }
+		@media only screen and (max-width: $w_break_sp) {margin-top: 120px; }
+ 	}
+	& + &--category { margin-top: 320px; }
+    &.md_contentUnit--policy { margin-top: 200px; 
+		.contentArea { padding: 100px; background-color: #FFF; font-size: 16px; line-height: normal;
+			.title { font-size: 30px; font-weight: bold; letter-spacing: $ls_small; }
+			.date { margin-top: 10px; color: #c1c1c1; font-size: 20px; letter-spacing: $ls_small; }
+			.content { margin-top: 60px; 
+				.catch { margin-top: 30px; font-size: 16px; font-weight: bold; line-height: 1.6;}
+				.copy { margin-top: 10px; font-size: 14px; line-height: 1.6;}
+				.end { margin-top: 30px; text-align: right; font-size: 14px; line-height: 1.6;}
+			}
+		}
+		.copyright {position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%); padding: 40px 0; font-size: 14px; }
+		// For tablet
+		@media only screen and (max-width: 1000px) { margin-top: 80px; 
+			.unitContent { 
+				.contentArea { padding: 30px;
+					.title { font-size: clamp(16px,2.8vw,20px); }
+					.date { font-size: clamp(12px,2.8vw,16px); }
+					.content { margin-top: 20px; 
+						.catch { font-size: clamp(12px,2.8vw,16px); }
+						.copy { font-size: clamp(12px,2.8vw,16px); }
+						.end { font-size: clamp(12px,2.8vw,16px); }
+					}
+				}
+				.copyright {position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); padding: 40px 0; font-size: 12px; }
+			}
+		}
+		// For SP
+		@media only screen and (max-width: $w_break_sp) { margin-top: 40px; 
+			.unitContent { 
+				.contentArea { padding: 20px;
+					.title { font-size: clamp(16px,2.8vw,20px); }
+					.date { font-size: clamp(12px,2.8vw,16px); }
+					.content { margin-top: 20px; 
+						.catch { font-size: clamp(12px,2.8vw,16px); }
+						.copy { font-size: clamp(12px,2.8vw,16px); }
+						.end { font-size: clamp(12px,2.8vw,16px); }
+					}
+				}
+				.copyright {position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); padding: 40px 0; font-size: 12px; }
+			}
+		}
+	}
+}
