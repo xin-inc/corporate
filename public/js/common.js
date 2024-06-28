@@ -89,12 +89,12 @@ $(function(){
   }
 
   // スナックバー
-	$(document).on('click','.js_snackOpen', snackOpen);
-	$(document).on('click','.js_snackX', snackX);
+	$('.js_snackOpen').click(snackOpen);
+	$('.js_snackX').click(snackX);
 
 	// ドロワー
-	$(document).on('click','.js_drawerOpen', drawerOpen);
-	$(document).on('click','.js_drawerX', drawerX);
+	$('.js_drawerOpen').click(drawerOpen);
+	$('.js_drawerX').click(drawerX);
 
 
   $('.js_slick').slick({
