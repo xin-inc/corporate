@@ -26,14 +26,6 @@ $(function(){
     });
   }); 
 
-  // スナックバー
-	$(document).on('click','.js_snackOpen', snackOpen);
-	$(document).on('click','.js_snackX', snackX);
-
-	// ドロワー
-	$(document).on('click','.js_drawerOpen', drawerOpen);
-	$(document).on('click','.js_drawerX', drawerX);
-
   var animeOption = {origin: 'bottom',duration: 1600,interval: 400,scale: 1,distance: '40px',reset: false,viewFactor: 0.15,}
   ScrollReveal().reveal('.js_animeReveal', animeOption );
   ScrollReveal().reveal('.js_animeReveal01', animeOption );
@@ -95,6 +87,14 @@ $(function(){
     $('html, .bodyWrap').prop( { scrollTop: current_scrollY } );
     return false;
   }
+
+  // スナックバー
+	$(document).on('click','.js_snackOpen', snackOpen);
+	$(document).on('click','.js_snackX', snackX);
+
+	// ドロワー
+	$(document).on('click','.js_drawerOpen', drawerOpen);
+	$(document).on('click','.js_drawerX', drawerX);
 
 
   $('.js_slick').slick({
