@@ -54,4 +54,15 @@ $(function(){
   ScrollReveal().reveal('.js_fadeIvReveal_bgImg', animeOption4 );
 
 
+  $('.js_slick').slick({
+		arrows: true,
+		autoplay: false,
+		centerMode: true,
+		centerPadding: '40px',
+		slidesToShow: 1,
+		variableWidth: true,
+		autoplaySpeed: 5000,
+		speed: 600,
+	});
+
 });
