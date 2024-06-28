@@ -29,3 +29,13 @@
 }
 
 @import 'memberUnit';
+
+.moreArea {
+  .md_btn--big {
+    width: 420px;
+    // For SP
+    @media only screen and (max-width: $w_break_sp) {
+      width: 100%;
+    }
+  }
+}
