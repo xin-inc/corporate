@@ -623,7 +623,7 @@ a.md_card { display: block; color: $col_txt;
 		.md_list { margin: 30px auto 0; box-shadow: none; border-radius: 0; }
 	}
 	.closeLink { display: flex; justify-content: center; align-itmes: center; margin: auto auto 30px; width: 40px; height: 40px; color: #000; z-index: 3;
-		// &:before { @include icon; content: "\ea12"; font-size: 32px; }
+		&:before { content: "close"; font-family: 'Material Symbols Rounded'; font-size: 32px; }
 	}
 	&--show { top: 0; 
 		.bgLayer, .base { top: 0; }
