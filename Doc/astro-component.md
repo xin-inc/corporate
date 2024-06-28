@@ -63,3 +63,15 @@
 ストーリーは `content/Story.js` で管理
 
 
+### `src/pages/company.astro` ... Company
+共通したコンポーネントのみ
+
+
+### `src/pages/news` ... お知らせ
+#### 表示
+- `src/pages/news/index.astro` ... 一覧
+  - `layouts/SimplePageTemplate.astro` ... お知らせページ用テンプレート
+- `src/pages/news/[...slug].astro` ... 詳細
+
+#### コンテンツ
+- `src/content/news` 内で管理
