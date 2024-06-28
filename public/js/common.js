@@ -61,6 +61,23 @@ $(function(){
   var animeOption4 = {origin: 'bottom',delay:1000,duration: 1600,interval: 400,scale: 1,distance: '80px',reset: false,viewFactor: 0.15,}
   ScrollReveal().reveal('.js_fadeIvReveal_bgImg', animeOption4 );
 
+  // スナックバー
+  var snackOpen =	function(){
+
+    var tgtClass = $(this).attr('data-snack'); 
+    var tgtBar = $('.md_snackBar.'+tgtClass+'');
+    
+    $('.md_snackBar').hide();
+    tgtBar.fadeIn();
+    setTimeout(function(){ tgtBar.hide(); },10000);
+
+    return false;
+  }
+  var snackX = function(){
+    $(this).parents('.md_snackBar').hide();
+    return false;
+  }
+
   // ドロワー
   var drawerOpen = function(){
     var tgtClass = $(this).attr('data-drawer');
