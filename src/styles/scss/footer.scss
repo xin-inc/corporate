@@ -94,10 +94,11 @@ footer.footer {
 	@media only screen and (max-width: $w_break_sp) { 
     color: #c1c1c1;
     font-size: clamp(12px,2.8vw,16px);
+    line-height: 1.4;
     margin-top: 80px;
     text-align: justify;
     &::before {
-      width: 240px;
+      width: 210px;
       left: 50%;
       top: -80px;
       margin-left: 0;
@@ -115,6 +116,7 @@ footer.footer {
   // For SP
 	@media only screen and (max-width: $w_break_sp) { 
     width: 100%;
+    align-items: center;
     flex-wrap: wrap;
     gap: 2%;
     margin: 40px auto 60px;
