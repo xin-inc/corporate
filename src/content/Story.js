@@ -9,7 +9,7 @@ export const STORY_LIST = [
     url: 'https://www.wantedly.com/companies/company_6613626/post_articles/882633',
   },
   {
-    thumnail: '/imageFile/join-us/story/event_report.jpg',
+    thumnail: '/imageFile/join-us/story/figma.png',
     title: 'Figmaを導入した話 - 最近のXIN -',
     url: 'https://www.wantedly.com/companies/company_6613626/post_articles/879712',
   },

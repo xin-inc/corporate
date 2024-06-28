@@ -1,4 +1,17 @@
+@charset "utf-8";
+
+/*----------------------------------------
+ Import
+----------------------------------------*/
+
+@import '_reset';
+@import '_variable';
+
+/*----------------------------------------
+ memberUnit
+----------------------------------------*/
 .memberUnit {
+  cursor: pointer;
   position: relative;
   width: 100%;
   &:hover > .slide > .imgSet > .md_btn--more{ color: #fff;  background-color:#000; transition: background-color .8s ease-in; 
@@ -24,6 +37,11 @@
   text-align: center;
   width: 90px;
   &::after { content: '';  position: absolute; z-index: -1; bottom: 0; left: 0; width: 0; height:100%; background-color:#000; transition:all .5s; opacity: 0;}
+  &:hover {
+    &::after {
+      width: 100%; opacity: 1;
+    }
+  }
   // For SP
 	@media only screen and (max-width: $w_break_sp) { 
     bottom: 5%;
