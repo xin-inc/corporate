@@ -3,6 +3,8 @@ import { Image } from 'astro:assets';
 const { key, name, isTop } = Astro.props;
 const imgPath = `/imageFile/member_img/${key}.svg`;
 const unitId = `memberUnit-${key}`;
+
+import '../styles/css/memberUnit.css';
 ---
 
 <div
