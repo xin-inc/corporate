@@ -1,5 +1,37 @@
 $(function(){ 
 
+  /**
+   * Astroのページ遷移用にURLの変更を検知する
+   */
+  let prevUrl = '';
+  const observer = new MutationObserver(() => {
+    if(prevUrl !== location.href) {
+      window.dispatchEvent(new CustomEvent('urlChange'));
+      prevUrl = location.href;
+    }
+  });
+  window.addEventListener('DOMContentLoaded', () => {
+    observer.observe(document.body, {
+        subtree: true,
+        childList: true, 
+        attributes: true,
+        characterData: true
+    });
+  });
+  window.addEventListener('urlChange', () => {
+    console.log('イベントの発火を検知');
+    $('.js_slick').slick({
+      arrows: true,
+      autoplay: false,
+      centerMode: true,
+      centerPadding: '40px',
+      slidesToShow: 1,
+      variableWidth: true,
+      autoplaySpeed: 5000,
+      speed: 600,
+    });
+  });
+
   // headerロゴ　スクロールで小さく
   $(window).scroll(function(){
     var obj = $('.header--logo');
