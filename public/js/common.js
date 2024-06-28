@@ -61,6 +61,24 @@ $(function(){
   var animeOption4 = {origin: 'bottom',delay:1000,duration: 1600,interval: 400,scale: 1,distance: '80px',reset: false,viewFactor: 0.15,}
   ScrollReveal().reveal('.js_fadeIvReveal_bgImg', animeOption4 );
 
+  // ドロワー
+  var drawerOpen = function(){
+    var tgtClass = $(this).attr('data-drawer');
+    $('.md_drawer.'+tgtClass+'').addClass('md_drawer--show');
+    // No Scroll
+    current_scrollY = $( window ).scrollTop();
+    $('.bodyWrap').addClass('body_fixed');
+    $('.bodyWrap').css({ top: -1 * current_scrollY });
+    return false;
+  }
+  var drawerX = function(){
+    $(this).parents('.md_drawer').removeClass('md_drawer--show');
+    $('.bodyWrap').removeClass('body_fixed');
+    $('.bodyWrap').attr( { style: '' } );
+    $('html, .bodyWrap').prop( { scrollTop: current_scrollY } );
+    return false;
+  }
+
 
   $('.js_slick').slick({
 		arrows: true,
