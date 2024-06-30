@@ -93,12 +93,22 @@
   #contactSubmit {
     display: none;
   }
+  .contactForm_step,
+  .contactFormUnit_inputArea,
+  #contactConfirm {
+    display: block;
+  }
 }
 .contact--step2 {
   .contactForm_step,
   .contactFormUnit_inputArea,
   #contactConfirm {
     display: none;
+  }
+  .contactForm_step2,
+  .contactFormUnit_inputConfirm,
+  #contactSubmit {
+    display: block;
   }
 }
 
