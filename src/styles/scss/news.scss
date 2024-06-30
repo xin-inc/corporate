@@ -11,6 +11,11 @@
 /*----------------------------------------
  news
 ----------------------------------------*/
+.md_contentUnit.md_contentUnit--news {
+	margin-top: 0;
+	padding-top: 200px;
+}
+
 
 .content {
   p {
@@ -135,7 +140,7 @@
 		@media only screen and (max-width: $w_break_sp) {margin-top: 120px; }
  	}
 	& + &--category { margin-top: 320px; }
-    &.md_contentUnit--news { margin-top: 200px; 
+    &.md_contentUnit--news { 
 		.contentArea { padding: 100px; background-color: #FFF; font-size: 16px; line-height: normal;
 			.title { font-size: 30px; font-weight: bold; letter-spacing: $ls_small; }
 			.date { margin-top: 20px; color: #c1c1c1; font-size: 20px; font-style: italic; font-weight: 500; letter-spacing: $ls_small; }

@@ -1,30 +1,52 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import { formatDate } from '../../assets/formatDate';
+import { type CollectionEntry, getCollection } from "astro:content";
+import { formatDate } from "../../assets/formatDate";
 
-import NewsPost from '../../layouts/SimplePageTemplate.astro';
-// import NewsPost from '../../layouts/NewsPost.astro';
+import Layout from "../../layouts/PageTemplate.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('news');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("news");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
-type Props = CollectionEntry<'news'>;
+type Props = CollectionEntry<"news">;
 
 const post = Astro.props;
 const { Content } = await post.render();
 const publishDate = formatDate(post.data.pubDate);
+
+import "../../styles/css/news.css";
 ---
 
-<NewsPost>
-	<div class="contentArea">
-			<div class="title">{post.data.title}</div>
-			<div class="date">{publishDate}</div>
-	<div class="content">
-		<Content />
-	</div>
-	</div>
-</NewsPost>
+<Layout>
+  <div id="news" class="md_contentUnit">
+    <BreadCrumbs
+      pages={[
+        { name: "TOP", url: "/" },
+        { name: "NEWS", url: "/news" },
+        { name: post.data.title, url: `/news/${post.slug}` },
+      ]}
+    />
+
+    <div id="news" class="md_contentUnit md_contentUnit--news">
+      <div class="unitTitle">
+        <div class="titleSet">
+          <div class="title">NEWS</div>
+          <h2 class="rubi rubi--left">お知らせ</h2>
+        </div>
+      </div>
+      <div class="unitContent">
+        <div class="contentArea">
+          <div class="title">{post.data.title}</div>
+          <div class="date">{publishDate}</div>
+          <div class="content">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
