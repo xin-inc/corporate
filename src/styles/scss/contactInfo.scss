@@ -23,4 +23,10 @@
   .moreArea {
     margin-top: 50px;
   }
+  // For SP
+	@media only screen and (max-width: $w_break_sp) {
+    .catchUnit {
+      text-align: justify;
+    }
+  }
 }

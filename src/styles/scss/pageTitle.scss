@@ -55,11 +55,19 @@
       }
       .rubi { margin-top: 10px; font-size: 28px; }
     }
+    .panelImg {
+      display: inline-block;
+      margin: 15px auto 0;
+      position: relative; 
+      right: auto; 
+      top: auto; 
+      text-align: center;
+      width: 85%;
+    }
   }
   .unitContent { margin-top: 50px;
     .contentArea {
       .catchSet {font-size: 13px; letter-spacing: 0; }
     }
   } 
-  
 }

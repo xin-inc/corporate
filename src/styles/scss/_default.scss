@@ -84,6 +84,7 @@ body { --sb-track-color: #ffffff; --sb-thumb-color: #aaa; --sb-size: 16px; scrol
 		margin: 50px auto 0;
 		width: calc(100vw - 80px);
 		&.pageTopCopy {
+			margin-top: 40px;
 			.catchUnit {
 				padding-left: 0px;
 			}
@@ -102,6 +103,16 @@ body { --sb-track-color: #ffffff; --sb-thumb-color: #aaa; --sb-size: 16px; scrol
 			&.level3 {
 				font-size: 12px;
 			}
+		}
+	}
+
+	br {
+		&.spShow { display: none; }
+		&.spHide { display: inline; }
+		// For SP
+		@media only screen and (max-width: $w_break_sp) { 
+			&.spShow { display: inline; }
+			&.spHide { display: none; }
 		}
 	}
 }

@@ -17,11 +17,15 @@
   .imgCell { display: flex; align-items: center; justify-content: center; width: 100%; }
   // For SP
   @media only screen and (max-width: $w_break_sp) {
-    gap: 0;
+    gap: 20px;
     grid-template-columns: 1fr;
     margin: 50px 0;
-    .imgCell { order: 2; }
-    .descCell { order: 1; }
+    .imgCell { order: 2;
+      img { width: 85%; }
+    }
+    .descCell { order: 1;
+      .lead { font-feature-settings: 'palt';}
+    }
   }
 }
 

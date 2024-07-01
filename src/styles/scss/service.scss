@@ -66,6 +66,20 @@
   // For SP
 	@media only screen and (max-width: $w_break_sp) {
     padding: 0;
+    &.partnerSection {
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 50%; left: 50%; 
+        z-index: -1;
+        width: 125vw; height: 80%; background: url(/imageFile/service/bg_partner.svg) no-repeat center;
+        background-size: contain; transform: translate(-50%, -50%);
+      }
+    }
+    .catchUnit {
+      text-align: justify;
+    }
     &_title {
       font-size: 20px;
     }
@@ -78,6 +92,7 @@
     &_copy {
       font-size: 14px;
     }
+    & + .serviceSubUnit { margin-top: 75px; }
   }
 }
 
@@ -252,12 +267,17 @@
     &_description {
       font-size: 14px;
       padding: 0;
+      text-align: justify;
+      &.isRight { text-align: justify; }
     }
     &_methods {
       gap: 20px;
       grid-template-columns: 1fr;
       margin: 50px 0 0;
       padding: 0;
+      &:before {
+        display: none;
+      }
     }
   }
 }
@@ -296,6 +316,12 @@
     &_description {
       font-size: 12px;
       padding: 20px 0 40px;
+    }
+    &_icon {
+      top: -20px;
+      span {
+        font-size: 48px;
+      }
     }
   }
 }
@@ -374,6 +400,9 @@
   }
   // For SP
 	@media only screen and (max-width: $w_break_sp) {
+    &:before {
+      display: none;
+    }
     &_title {
       font-size: 16px;
     }
