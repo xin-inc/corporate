@@ -179,8 +179,8 @@
     .setContent { margin-top: 16px; padding-left: 0px; width: 100%; min-width: auto;
       .newsList {
         .news { flex-direction: column; padding-top: 16px ;
-          .date { padding-top: 0; width: auto; font-size: clamp(12px,2.8vw,16px);  }
-          .title { margin-top: 8px; padding-left: 0; width: 76%; font-size: clamp(12px,2.8vw,16px); }
+          .date { padding-top: 0; width: auto; font-size: clamp(14px,2.8vw,18px);  }
+          .title { margin-top: 8px; padding-left: 0; width: 100%; font-size: clamp(14px,2.8vw,18px); }
           & + .news { border-top: 1px solid #323232; }
         }
       }
@@ -197,10 +197,15 @@
 .historySet { margin-top: 80px;
   .setContent { margin-top: 40px; padding-left: 30px;
     .historyList {
-      .history { display: flex;
+      .history { display: flex; align-items: flex-start;
         .year, .desc { }
-        .year { display: inline-block; padding-top: 5px; width: 80px; font-size: 20px; font-weight: 500; letter-spacing: .1em; font-style: italic; }
-        .desc { padding-left: 30px; width: calc(100% - 80px); font-size: 16px; line-height: $lh_medium; }
+        .year { display: inline-block; padding-top: 0; width: 80px; font-size: 20px; font-weight: 500; letter-spacing: .1em; font-style: italic; }
+        .desc { padding-left: 30px; width: calc(100% - 80px); font-size: 16px; line-height: $lh_medium;
+          /*
+          天地で合わせる場合
+          margin-block-start: calc((1em - 1lh) / 2);
+          */
+        }
         & + .history { margin-top: 20px; }
       }
       &--hide { position: relative; height: 0; overflow: hidden; @include transition;
